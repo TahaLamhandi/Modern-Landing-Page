@@ -68,7 +68,7 @@ const translations = {
     // Hero
     heroTitle: 'Zitalgic®',
     heroSub: 'Dites stop à la douleur.. Naturellement',
-    heroDesc: 'Soulagez vos douleurs articulaires, musculaires et nerveuses en seulement 15-30 minutes avec notre formule 100 % naturelle.',
+    heroDesc: 'Soulagez vos douleurs articulaires, musculaires et nerveuses rapidement avec notre formule 100 % naturelle.',
     choosePack: 'Choisir votre pack',
     ctaButton: 'Commander Maintenant',
 
@@ -84,15 +84,15 @@ const translations = {
   },
   ar: {
     // Header
-    headerTitle: 'زيتالجيك®',
+    headerTitle: 'Zitalgic®',
     headerSub: 'راحة المفاصل والعضلات والأعصاب',
     orderNow: 'اطلب الآن',
 
     // Hero
-    heroTitle: 'زيتالجيك®',
+    heroTitle: 'Zitalgic®',
     heroSub: 'قُل وداعًا للألم.. بشكل طبيعي',
-    heroDesc: 'تخلص من آلام المفاصل والعضلات والأعصاب في 15-30 دقيقة فقط مع تركيبتنا 100٪ طبيعية.',
-    choosePack: 'اختر باقتك',
+    heroDesc: 'تخلص من آلام المفاصل والعضلات والأعصاب بسرعة مع تركيبتنا 100٪ طبيعية.',
+    choosePack: 'اخترالعرض الذي يناسبك',
     ctaButton: 'اطلب الآن',
 
     // Sections
@@ -107,21 +107,20 @@ const translations = {
   }
 };
 
-// 1.  NEW  LanguageSwitcher (drop-in replacement)
 const LanguageSwitcher = ({ lang, setLang }) => (
   <div className="modern-lang-switch">
     <button
-      className={`lang-btn ${lang === 'fr' ? 'active' : ''}`}
-      onClick={() => setLang('fr')}
+      className={`lang-btn ${lang === "fr" ? "active" : ""}`}
+      onClick={() => setLang("fr")}
     >
       FR
     </button>
-    <div className="lang-sep"></div>
+    <span className="lang-sep" />
     <button
-      className={`lang-btn ${lang === 'ar' ? 'active' : ''}`}
-      onClick={() => setLang('ar')}
+      className={`lang-btn ${lang === "ar" ? "active" : ""}`}
+      onClick={() => setLang("ar")}
     >
-      ع
+      عربية
     </button>
   </div>
 );
