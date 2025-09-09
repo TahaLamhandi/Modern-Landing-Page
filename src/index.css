@@ -6306,3 +6306,930 @@ section {
 }
 
 /* 4.  KEEP YOUR EXISTING CSS UNCHANGED – only the above additions  */
+
+/*==========  5-a  LANGUAGE SWITCHER  ==========*/
+.modern-lang-switch {
+  display: flex;
+  align-items: center;
+  background: rgba(249, 115, 22, 0.1);
+  border: 1px solid rgba(249, 115, 22, 0.2);
+  border-radius: 50px;
+  padding: 4px;
+  gap: 4px;
+  font-family: "Inter", sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+.lang-btn {
+  all: unset;
+  padding: 8px 16px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #ea580c;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+}
+.lang-btn.active {
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #fff;
+  box-shadow: 0 2px 6px rgba(249, 115, 22, 0.4);
+  transform: scale(1.05);
+}
+.lang-sep {
+  width: 1px;
+  height: 20px;
+  background: rgba(249, 115, 22, 0.3);
+}
+
+/*==========  5-b  BOTTOM HEADER  ==========*/
+.bottom-header {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: #fff;
+  box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.08);
+  z-index: 999;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.bottom-header.show {
+  transform: translateY(0);
+}
+.bottom-header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 20px;
+  max-width: 1200px;
+  margin: auto;
+}
+.bottom-header-cta {
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #f97316, #ea580c);
+  color: #fff;
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+.bottom-header-cta:hover {
+  transform: scale(1.05);
+}
+
+/*==========  5-c  HERO GALLERY INSIDE INFOS (mobile)  ==========*/
+@media (max-width: 768px) {
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+  .hero-gallery-section {
+    order: -1;
+    margin: 0 auto 20px;
+    width: 100%;
+    max-width: 400px;
+  }
+  .gallery-container-vertical {
+    flex-direction: column;
+    align-items: center;
+  }
+  .vertical-thumbnails-container {
+    flex-direction: row;
+    width: 100%;
+    max-width: 340px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+  }
+  .vertical-thumbnails-wrapper {
+    flex-direction: row;
+    max-height: none;
+    gap: 10px;
+  }
+  .nav-arrow-vertical {
+    display: none;
+  }
+  .hero-main-image-vertical {
+    height: 320px;
+  }
+}
+
+/*==========  5-d  GLOBAL MOBILE UPGRADES  ==========*/
+@media (max-width: 768px) {
+  h1,
+  .hero-title {
+    font-size: 2.2rem !important;
+  }
+  h2,
+  .section-header h2 {
+    font-size: 1.8rem !important;
+  }
+  .section-header p,
+  .section-desc {
+    font-size: 1rem !important;
+  }
+  .container {
+    padding: 0 15px;
+  }
+  .cta-button,
+  .hero-cta-button,
+  .pricing-button,
+  .submit-btn-orange {
+    font-size: 1rem;
+    padding: 14px 24px;
+    border-radius: 50px;
+  }
+  .problem-cards,
+  .solution-cards,
+  .benefits-grid,
+  .testimonials-grid,
+  .pricing-grid,
+  .audio-grid {
+    gap: 20px;
+  }
+  .problem-card,
+  .solution-card,
+  .testimonial-card,
+  .pricing-card,
+  .audio-card {
+    padding: 20px;
+    border-radius: 16px;
+  }
+  .final-green-banner,
+  .beautiful-choice-cta,
+  .beautiful-ready-cta {
+    padding: 40px 20px;
+  }
+  .green-feature-grid,
+  .community-features,
+  .ready-cta-features {
+    gap: 15px;
+  }
+  .trust-indicators {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/*==========  5-e  SCREENSHOTS SECTION  ==========*/
+.screens-section {
+  padding: 80px 0;
+  background: #fafafa;
+}
+.screens-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 20px;
+  margin: 40px 0;
+}
+.screen-card {
+  border-radius: 18px;
+  overflow: hidden;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+  transform: scale(0.95);
+  opacity: 0;
+  animation: popIn 0.6s forwards;
+  transition: transform 0.3s;
+}
+.screen-card:hover {
+  transform: scale(1.03);
+}
+.screen-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.screens-cta {
+  text-align: center;
+  margin-top: 40px;
+}
+@keyframes popIn {
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+/* ----------  CORE BAR  ---------- */
+.bottom-header{
+  position:fixed;
+  bottom:0;left:0;right:0;
+  background:#fff;
+  box-shadow:0 -4px 20px rgba(0,0,0,.10);
+  z-index:999;
+  transform:translateY(100%);
+  transition:transform .45s cubic-bezier(.4,0,.2,1);
+  visibility:hidden;
+}
+.bottom-header.show{
+  transform:translateY(0);
+  visibility:visible;
+}
+.bar{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:12px 20px;
+  max-width:1400px;
+  margin:0 auto;
+}
+
+/* ----------  CELLs  ---------- */
+.cell{
+  flex:1 1 0;
+  display:flex;
+  align-items:center;
+}
+.logo{flex-direction:column;text-align:left}
+.lang{justify-content:center}
+.cta {justify-content:flex-end}
+
+/* ----------  TYPO  ---------- */
+.logo h1{
+  margin:0;
+  font-size:1.8rem;
+  color:#ea580c;
+  line-height:1.2;
+}
+.logo p{
+  margin:0;
+  font-size:1rem;
+  color:#555;
+}
+.cta-button{
+  padding:15px 35px;
+  font-size:1.1rem;
+  background:#ea580c;
+  color:#fff;
+  border:none;
+  border-radius:50px;
+  box-shadow:0 6px 20px rgba(249,115,22,.35);
+  cursor:pointer;
+  transition:transform .3s;
+  white-space:nowrap;
+}
+.cta-button:hover{transform:scale(1.05)}
+
+/* ----------  RTL : TITLE-LEFT / CTA-RIGHT  ---------- */
+[dir="rtl"] .bar{
+  flex-direction:row;          /* keep visual order */
+}
+[dir="rtl"] .logo{
+  text-align:left;             /* title cluster on the left */
+  order:1;                     /* 1st visual slot */
+}
+[dir="rtl"] .lang{
+  order:2;                     /* middle */
+}
+[dir="rtl"] .cta{
+  justify-content:flex-end;    /* button on the right */
+  order:3;                     /* last visual slot */
+}
+
+/* ----------  MOBILE : EXTRA-SMALL & BEAUTIFUL  ---------- */
+@media (max-width:768px){
+  .bar{gap:8px;padding:8px 12px}
+  .logo h1{font-size:1rem}      /* small title */
+  .logo p{font-size:.65rem}     /* tiny subtitle */
+  .cta-button{padding:7px 14px;font-size:.75rem}
+}
+
+@media (max-width:480px){
+  .bar{gap:6px;padding:6px 8px}
+  .logo h1{font-size:.9rem}
+  .logo p{font-size:.55rem}
+  .cta-button{padding:6px 12px;font-size:.7rem}
+}
+/* Mobile-only gallery styles */
+.mobile-gallery-image {
+  display: none;
+  margin: 1rem 0;
+  text-align: center;
+}
+
+.mobile-product-image {
+  width: 200px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+/* Show only on mobile devices */
+@media (max-width: 768px) {
+  .mobile-gallery-image {
+    display: block;
+  }
+}
+/* ------------------------------------------------------------- */
+/*  MOBILE – gallery lives INSIDE infos, thumbs under big image  */
+/* ------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* 1.  normal gallery area disappears */
+  .hero-gallery-section {
+    display: none !important;
+  }
+
+  /* 2.  kill the old mobile placeholder we no longer need */
+  .mobile-gallery-image {
+    display: none !important;
+  }
+
+  /* 3.  kill the extra infos under the gallery */
+  .quick-info-grid {
+    display: none !important;
+  }
+
+  /* 4.  re-show the gallery INSIDE the infos column */
+  .hero-info-section .hero-gallery-section {
+    display: block !important;
+    order: -1;                  /* appears first inside the white card */
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+
+  /* 5.  vertical gallery becomes horizontal for mobile */
+  .gallery-container-vertical {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 6.  thumbnails row under the big picture */
+  .vertical-thumbnails-container {
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 0 0 0;
+    gap: 10px;
+  }
+
+  .vertical-thumbnails-wrapper {
+    flex-direction: row;
+    max-height: none;
+    gap: 10px;
+  }
+
+  /* 7.  hide desktop arrows */
+  .nav-arrow-vertical {
+    display: none;
+  }
+
+  /* 8.  slightly smaller main image */
+  .hero-main-image-vertical {
+    height: 280px;
+  }
+
+  /* 9.  keep indicators (dots) if you want – already inside */
+}
+/* ----------------------------------------------------------
+   MOBILE – gallery lives INSIDE the white product-infos card
+   ---------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* 1.  hide the original left-column gallery */
+  .hero-gallery-section { display: none !important; }
+
+  /* 2.  kill the old mobile placeholder we no longer need */
+  .mobile-gallery-image { display: none !important; }
+
+  /* 3.  kill the extra infos under the gallery */
+  .quick-info-grid { display: none !important; }
+
+  /* 4.  re-show the gallery INSIDE the infos column (JS moved it) */
+  .hero-info-section .hero-gallery-section {
+    display: block !important;
+    order: -1;                 /* appears first inside the white card */
+    margin: 0 0 20px 0;
+    width: 100%;
+  }
+
+  /* 5.  vertical gallery becomes horizontal for mobile */
+  .gallery-container-vertical {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 6.  thumbnails row under the big picture */
+  .vertical-thumbnails-container {
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 0 0 0;
+    gap: 10px;
+  }
+
+  .vertical-thumbnails-wrapper {
+    flex-direction: row;
+    max-height: none;
+    gap: 10px;
+  }
+
+  /* 7.  hide desktop arrows */
+  .nav-arrow-vertical { display: none; }
+
+  /* 8.  slightly smaller main image */
+  .hero-main-image-vertical { height: 280px; }
+}
+
+@media (max-width: 768px) {
+  .hero-info-section .hero-gallery-section {
+    width: 100%;
+    margin: 20px 0;
+  }
+
+  .gallery-container-vertical {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .vertical-thumbnails-container {
+    flex-direction: row;
+    width: 100%;
+    overflow-x: auto;
+    padding: 10px 0;
+    gap: 10px;
+  }
+
+  .vertical-thumbnails-wrapper {
+    flex-direction: row;
+    gap: 10px;
+    max-height: none;
+  }
+
+  .nav-arrow-vertical {
+    display: none;
+  }
+
+  .hero-main-image-vertical {
+    height: 280px;
+  }
+}
+
+@media (max-width: 768px) {
+  .vertical-thumbnails-container {
+    display: none;
+  }
+}
+
+/* ----------------------------------------------------------
+   1.  ONE-VIEW PHONE  –  compact but still big enough
+---------------------------------------------------------- */
+.conversations{                       /* section already white */
+  padding:30px 0;                     /* ↓  much tighter  */
+}
+.phone-slider-container{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  margin:20px 0;
+}
+
+/* ----  phone frame – thin border, scaled down ---- */
+.phone-container-large{
+  max-width:280px;                   /* was 600 → 280  */
+  width:100%;
+}
+.phone-frame-large{
+  background:#111;
+  border-radius:24px;
+  padding:8px;
+  box-shadow:0 15px 35px rgba(0,0,0,.25);
+}
+.phone-speaker-large{
+  width:50px;
+  height:5px;
+  background:#333;
+  border-radius:3px;
+  margin:8px auto 10px;
+}
+.phone-screen-large{
+  border-radius:18px;
+  width:100%;
+  display:block;
+}
+
+/* ----  vertical arrows on LEFT (desktop) ---- */
+.vertical-arrows-container{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+  margin-right:15px;
+}
+.nav-arrow-green{
+  width:42px;
+  height:42px;
+  border-radius:50%;
+  background:#10B981;
+  border:none;
+  color:#fff;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  cursor:pointer;
+  box-shadow:0 4px 12px rgba(16,185,129,.3);
+  transition:all .3s ease;
+}
+.nav-arrow-green:hover{
+  background:#047857;
+  transform:scale(1.08);
+}
+
+/* ----------------------------------------------------------
+   2.  MOBILE  –  horizontal arrows ABOVE phone
+---------------------------------------------------------- */
+@media(max-width:480px){
+  .phone-slider-container{
+    flex-direction:column;
+    gap:15px;
+  }
+  .vertical-arrows-container{
+    flex-direction:row !important;
+    margin:0 0 10px 0;
+    gap:12px;
+  }
+  .phone-container-large{
+    max-width:250px;
+  }
+  .nav-arrow-green{
+    width:36px;
+    height:36px;
+  }
+}
+/* already-white background (keeps arrows green, no extra class) */
+.conversations {
+    background: #ffffff !important;
+}
+
+/* ===== MOBILE VIEW ONLY (max-width: 768px) ===== */
+@media (max-width: 768px) {
+  /* 1. Ensure the gallery is visible inside the info section */
+  .hero-gallery-section {
+    display: none !important;
+  }
+  .hero-info-section .hero-gallery-section {
+    display: block !important;
+    order: -1;
+    margin: 0 0 30px 0; /* More space below */
+    width: 100%;
+  }
+
+  /* 2. Structure the gallery vertically: main image on top, thumbnails below */
+  .gallery-container-vertical {
+    flex-direction: column;
+    align-items: center;
+    gap: 25px; /* More space between image and thumbnails */
+  }
+
+  /* 3. Make thumbnails horizontal and ensure container is visible */
+  .vertical-thumbnails-container {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    padding: 10px 0;
+    gap: 10px;
+    position: relative;
+  }
+
+  /* 4. Ensure thumbnails are in a horizontal row */
+  .vertical-thumbnails-wrapper {
+    display: flex !important;
+    flex-direction: row !important;
+    max-height: none;
+    gap: 10px;
+    padding: 5px;
+    width: fit-content;
+  }
+
+  /* 5. Style and POSITION the navigation arrows on the LEFT and RIGHT */
+  .nav-arrow-vertical {
+    display: flex !important; /* Override 'display: none' */
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(249, 115, 22, 0.8);
+    border: 1px solid rgba(249, 115, 22, 0.9);
+    color: white;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    z-index: 2;
+  }
+
+  /* Position 'left' arrow on the LEFT */
+  .nav-up {
+    left: -10px;
+  }
+
+  /* Position 'right' arrow on the RIGHT */
+  .nav-down {
+    right: -10px;
+    transform: translateY(-50%) rotate(180deg); /* Rotate to face right */
+  }
+
+  /* Beautiful, simple hover effect for arrows */
+  .nav-arrow-vertical:hover {
+    background: #f97316;
+    transform: translateY(-50%) scale(1.1);
+    box-shadow: 0 4px 12px rgba(249, 115, 22, 0.5);
+  }
+
+  /* 6. Adjust main image: BIGGER, ROUNDED CORNERS, NO CONTAINER */
+  .main-image-wrapper-vertical {
+    width: 100%;
+    max-width: 380px; /* You can adjust */
+    height: auto;
+    border: none !important; /* Remove any border */
+    box-shadow: none !important; /* Remove shadow/white container effect */
+    background: transparent !important; /* Remove background */
+    padding: 0 !important;
+    margin: 0 auto;
+  }
+
+  .hero-main-image-vertical {
+    height: 380px !important; /* ✅ BIGGER IMAGE */
+    width: 100% !important;
+    max-width: 380px !important;
+    object-fit: contain;
+    border-radius: 24px !important; /* ✅ ROUNDED CORNERS */
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15) !important; /* Optional: subtle shadow for floating effect */
+    border: none !important;
+  }
+
+  /* 7. Hide the old mobile placeholder and extra info grid */
+  .mobile-gallery-image,
+  .quick-info-grid {
+    display: none !important;
+  }
+
+  /* 8. Ensure indicators (dots) are positioned correctly */
+  .image-indicators-vertical {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin: 15px 0 5px 0;
+  }
+}
+/* Hide navigation arrows in mobile view */
+@media (max-width: 768px) {
+  .nav-arrow-vertical {
+    display: none !important;
+  }
+}
+/* Update the choice-cta-content styles */
+.choice-cta-content h3 {
+  color: white !important;
+  font-size: 3rem !important; /* Bigger title */
+  margin-bottom: 20px;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.choice-cta-content p {
+  color: white !important; /* White subtitle */
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+  text-shadow: 0 1px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Remove orange shadow from CTA button */
+.premium-button {
+  background: white !important;
+  color: #667eea !important;
+  font-weight: 700;
+  padding: 15px 35px;
+  font-size: 1.1rem;
+  border-radius: 50px;
+  box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3) !important; /* White shadow instead of orange */
+  transition: all 0.3s ease;
+}
+
+.premium-button:hover {
+  background: #f8f9ff !important;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 35px rgba(255, 255, 255, 0.4) !important; /* White shadow on hover */
+}
+/* Update the community-cta styles with light green background and white text */
+.community-cta {
+  text-align: center;
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%) !important; /* Brighter green gradient */
+  border-radius: 24px;
+  padding: 60px 40px;
+  margin: 50px 0;
+  box-shadow: 0 20px 40px rgba(34, 197, 94, 0.3);
+  border: 1px solid rgba(34, 197, 94, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Optional: Add some decorative elements */
+.community-cta::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -20%;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  opacity: 0.3;
+}
+
+.community-cta::after {
+  content: '';
+  position: absolute;
+  bottom: -30%;
+  left: -10%;
+  width: 150px;
+  height: 150px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 0%, transparent 70%);
+  opacity: 0.3;
+}
+
+/* Center all content and make text white */
+.community-cta .choice-cta-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+/* Update text colors to white */
+.community-cta h3 {
+  color: white !important; /* White text for heading */
+  margin-bottom: 15px;
+  position: relative;
+  z-index: 1;
+  font-size: 2.2rem;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.community-cta p {
+  color: white !important; /* White text for paragraph */
+  margin-bottom: 30px;
+  font-size: 1.3rem;
+  position: relative;
+  z-index: 1;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+  max-width: 600px;
+  line-height: 1.5;
+}
+
+/* Update button to complement the green theme */
+.audio-section-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 18px 36px;
+  background: white !important; /* White background */
+  color: #22c55e !important; /* Green text */
+  border: none;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+  z-index: 1;
+}
+
+.audio-section-cta-button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+  background: #f0fdf4 !important; /* Very light green on hover */
+}
+/* Footer Styles - Same structure for both languages */
+.footer {
+  background: #1a1a1a;
+  color: white;
+  padding: 40px 0 15px;
+  direction: ltr;
+  font-size: 0.9rem;
+}
+
+.footer-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  margin-bottom: 30px;
+}
+
+.footer-section {
+  display: flex;
+  flex-direction: column;
+}
+
+.footer .logo h1 {
+  color: #F97316;
+  margin-bottom: 5px;
+  font-size: 1.5rem;
+  text-align: left;
+}
+
+.footer .logo p {
+  color: #ccc;
+  margin-bottom: 12px;
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.footer-section h3 {
+  color: white;
+  margin-bottom: 12px;
+  font-size: 1.1rem;
+  position: relative;
+  text-align: left;
+}
+
+.footer-section h3::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 25px;
+  height: 2px;
+  background: #F97316;
+}
+
+.footer-section p {
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+  text-align: left;
+}
+
+.footer-section .icon {
+  color: #F97316;
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+}
+
+.phone-number {
+  direction: ltr;
+  display: inline-block;
+  unicode-bidi: isolate;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding-top: 15px;
+  border-top: 1px solid #333;
+  font-size: 0.8rem;
+}
+
+/* Arabic mode - Only text changes, no layout changes */
+.footer.ar .footer-section:first-child {
+  text-align: left;
+}
+
+.footer.ar .footer-section:last-child {
+  text-align: left;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .footer {
+    padding: 30px 0 15px;
+  }
+  
+  .footer .logo h1 {
+    font-size: 1.4rem;
+  }
+  
+  .footer-section,
+  .footer .logo h1,
+  .footer .logo p,
+  .footer-section h3,
+  .footer-section p {
+    text-align: center;
+  }
+  
+  .footer-section h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .footer-section p {
+    justify-content: center;
+  }
+}

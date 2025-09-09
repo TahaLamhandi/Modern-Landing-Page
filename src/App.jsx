@@ -11,6 +11,7 @@ import {
   Bell,
   Flower2,
   Heart,
+  Pause,
   ThumbsUp,
   BarChart3,
   Play,
@@ -252,7 +253,7 @@ useEffect(() => {
     if (isVisible.testimonials && !hasAnimated) {
       const targetValues = {
         clients: 3600,
-        satisfaction: 94,
+        satisfaction: 96,
         recommendation: 98,
         rating: 4.8,
       };
@@ -284,89 +285,83 @@ useEffect(() => {
     }
   }, [isVisible.testimonials, hasAnimated]);
 
-  const faqData = [
-    {
-      question: "Comment utiliser Zitalgic® ?",
-      question_ar: "كيفية استخدام زيتالجيك®؟",
-      answer: "Appliquez quelques gouttes de Zitalgic® sur la zone douloureuse et massez délicatement. L'effet se ressent généralement dans les 15-30 minutes. Utilisez 2-3 fois par jour selon vos besoins.",
-      answer_ar: "ضع بضع قطرات من زيتالجيك® على المنطقة المؤلمة ودلك بلطف. يظهر التأثير عادةً خلال 15-30 دقيقة. استخدم 2-3 مرات يومياً حسب الحاجة."
-    },
-    {
-      question: "Zitalgic® convient-il à tous les types de douleurs ?",
-      question_ar: "هل زيتالجيك® مناسب لجميع أنواع الألم؟",
-      answer: "Oui, Zitalgic® est efficace contre les douleurs articulaires, musculaires et nerveuses. Sa formule brevetée agit sur l'inflammation et procure un soulagement ciblé pour différents types de douleurs chroniques.",
-      answer_ar: "نعم، زيتالجيك® فعال ضد آلام المفاصل والعضلات والأعصاب. تركيبته المرخّصة تعمل على الالتهاب وتوفّر راحة موجّهة لأنواع مختلفة من الألم المزمن."
-    },
-    {
-      question: "Y a-t-il des effets secondaires ?",
-      question_ar: "هل توجد آثار جانبية؟",
-      answer: "Zitalgic® est 100% naturel et ne présente aucun effet secondaire connu. Cependant, nous recommandons un test sur une petite zone de peau avant la première utilisation, surtout si vous avez des allergies connues aux huiles essentielles.",
-      answer_ar: "زيتالجيك® طبيعي 100٪ ولا يُعرف له أي آثار جانبية. مع ذلك، نوصي باختبار على مساحة صغيرة من الجلد قبل أول استخدام، خاصةً إذا كنت تعاني من حساسية معروفة للزيوت الأساسية."
-    },
-    {
-      question: "Combien de temps dure un flacon de 30ml ?",
-      question_ar: "كم يدوم عبوة 30 مل؟",
-      answer: "Un flacon de 30ml dure environ 10-15 jours avec une utilisation régulière (2-3 applications par jour). Grâce à sa formule concentrée, quelques gouttes suffisent pour chaque application.",
-      answer_ar: "عبوة 30 مل تكفي حوالي 10-15 يوم مع الاستخدام المنتظم (2-3 مرات يومياً). بفضل التركيبة المركزة، تكفي بضع قطرات في كل مرة."
-    },
-    {
-      question: "Puis-je utiliser Zitalgic® avec d'autres médicaments ?",
-      question_ar: "هل يمكنني استخدام زيتالجيك® مع أدوية أخرى؟",
-      answer: "Zitalgic® étant un produit naturel à usage externe, il n'y a généralement pas d'interactions médicamenteuses. Cependant, consultez votre médecin si vous suivez un traitement spécifique.",
-      answer_ar: "بما أن زيتالجيك® منتج طبيعي للاستخدام الخارجي، فعادةً لا توجد تداخلات دوائية. مع ذلك، استشر طبيبك إذا كنت تتبع علاجاً محدداً."
-    },
-    {
-      question: "Livrez-vous partout au Maroc ?",
-      question_ar: "هل تُوصلون في جميع أنحاء المغرب؟",
-      answer: "Oui, nous livrons gratuitement dans tout le Maroc. La livraison prend généralement 24-48h dans les grandes villes et 2-4 jours dans les zones rurales. Paiement à la livraison disponible.",
-      answer_ar: "نعم، نوصل مجاناً في جميع أنحاء المغرب. التوصيل يستغرق عادةً 24-48 ساعة في المدن الكبرى و2-4 أيام في المناطق الريفية. الدفع عند الاستلام متاح."
-    },
-    {
-      question: "Que faire si le produit ne me convient pas ?",
-      question_ar: "ماذا لو لم يناسبني المنتج؟",
-      answer: "Nous offrons une garantie satisfait ou remboursé de 30 jours. Si Zitalgic® ne vous convient pas, contactez notre service client pour un remboursement complet, sans questions.",
-      answer_ar: "نقدم ضمان رضا أو استرداد الأموال خلال 30 يوم. إذا لم يناسبك زيتالجيك®، تواصل مع خدمة العملاء لاسترداد كامل، بدون أسئلة."
-    },
-    {
-      question: "Zitalgic® est-il certifié ?",
-      question_ar: "هل زيتالجيك® معتمد؟",
-      answer: "Oui, Zitalgic® est développé par BioEkeel Laboratory, un laboratoire certifié au Maroc. Notre formule est brevetée et tous nos produits respectent les standards internationaux de qualité.",
-      answer_ar: "نعم، زيتالجيك® طوّره BioEkeel Laboratory، مختبر معتمد في المغرب. تركيبتنا مرخّصة وجميع منتجاتنا تلتزم بالمعايير الدولية للجودة."
-    }
-  ];
-
   const packs = {
-    '1-flacon': { price: 220, original: 250, savings: 30, quantity: '1 Flacon (30ml)' },
-    '3-flacons': { price: 600, original: 750, savings: 150, quantity: '3 Flacons (3x30ml)' },
-    '5-flacons': { price: 900, original: 1250, savings: 350, quantity: '5 Flacons (5x30ml)' },
-  };
+  '1-flacon': { 
+    price: 220, 
+    original: 250, 
+    savings: 30, 
+    quantity: '1 Flacon (30ml)',
+    quantity_ar: '1 عبوة (30 مل)',
+    treatment: 'Traitement 20 jours',
+    treatment_ar: 'علاج 20 يوم'
+  },
+  '3-flacons': { 
+    price: 600, 
+    original: 750, 
+    savings: 150, 
+    quantity: '3 Flacons (3x30ml)',
+    quantity_ar: '3 عبوات (3x30 مل)',
+    treatment: 'Traitement 2 mois',
+    treatment_ar: 'علاج شهرين'
+  },
+  '5-flacons': { 
+    price: 900, 
+    original: 1250, 
+    savings: 350, 
+    quantity: '5 Flacons (5x30ml)',
+    quantity_ar: '5 عبوات (5x30 مل)',
+    treatment: 'Traitement 3 mois 1/2',
+    treatment_ar: 'علاج 3 أشهر ونصف'
+  },
+};
 
   const audioTestimonials = [
-    {
-      name: 'Fatima, 52 ans',
-      name_ar: 'فاطمة، 52 سنة',
-      location: 'Casablanca',
-      location_ar: 'الدار البيضاء',
-      audioSrc: '/audios/testimonial-fatima.mp3',
-    },
-    {
-      name: 'Mohammed, 45 ans',
-      name_ar: 'محمد، 45 سنة',
-      location: 'Rabat',
-      location_ar: 'الرباط',
-      audioSrc: '/audios/testimonial-mohammed.mp3',
-    },
-    {
-      name: 'Amina, 60 ans',
-      name_ar: 'أمينة، 60 سنة',
-      location: 'Marrakech',
-      location_ar: 'مراكش',
-      audioSrc: '/audios/testimonial-amina.mp3',
-    }
-  ];
+  {
+    name: 'Loubna, 42 ans',
+    name_ar: 'لبنى، 42 سنة',
+    location: 'Rabat',
+    location_ar: 'الرباط',
+    audioSrc: '/audios/Loubna-42-Rabat.wav',
+  },
+  {
+    name: 'Mariam, 35 ans',
+    name_ar: 'مريم، 35 سنة',
+    location: 'Oujda',
+    location_ar: 'وجدة',
+    audioSrc: '/audios/Mariam-35ans-Oujda.wav',
+  },
+  {
+    name: 'Mohamed, 33 ans',
+    name_ar: 'محمد، 33 سنة',
+    location: 'Casablanca',
+    location_ar: 'الدار البيضاء',
+    audioSrc: '/audios/Mohamed 33ans-Casablanca.wav',
+  },
+  {
+    name: 'Rajae, 35 ans',
+    name_ar: 'رجاء، 35 سنة',
+    location: 'Temara',
+    location_ar: 'تمارة',
+    audioSrc: '/audios/Rajae 35 ans Temara.wav',
+  },
+  {
+    name: 'Tawfiq, 47 ans',
+    name_ar: 'توفيق، 47 سنة',
+    location: 'Casablanca',
+    location_ar: 'الدار البيضاء',
+    audioSrc: '/audios/Tawfiq-47ans-Casablanca.wav',
+  },
+  {
+    name: 'Yassir, 50 ans',
+    name_ar: 'ياسر، 50 سنة',
+    location: 'Rabat',
+    location_ar: 'الرباط',
+    audioSrc: '/audios/Yassir-50ans-Rabat.wav',
+  }
+];
 
   useEffect(() => {
-    const sections = ['hero', 'problem', 'solution', 'composition', 'scientific', 'benefits', 'testimonials', 'audio-testimonials', 'pricing', 'order-form', 'faq', 'how-it-works', 'why-choose'];
+    const sections = ['hero', 'problem', 'solution', 'composition', 'scientific', 'benefits', 'testimonials', 'audio-testimonials', 'conversations' , 'pricing', 'order-form', 'faq', 'how-it-works', 'why-choose'];
     const handleScroll = () => {
       const newVisibility = {};
       sections.forEach((section) => {
@@ -455,27 +450,391 @@ const scrollThumbnailsHorizontal = (direction) => {
     });
   }
 };
+ // Add these state variables for audio functionality
+  const [audioDurations, setAudioDurations] = useState({});
+  const [currentTimes, setCurrentTimes] = useState({});
+  const [progressPercentages, setProgressPercentages] = useState({});
+  const [isLoading, setIsLoading] = useState({});
+  const audioRefs = useRef({});
 
-  const handlePlayAudio = (index) => {
-    if (!audioElements[index]) {
-      const audio = new Audio(process.env.PUBLIC_URL + audioTestimonials[index].audioSrc);
-      setAudioElements((prev) => ({ ...prev, [index]: audio }));
-    }
-    const audio = audioElements[index] || new Audio(process.env.PUBLIC_URL + audioTestimonials[index].audioSrc);
-    if (isPlaying === index) {
-      audio.pause();
-      setIsPlaying(null);
-    } else {
-      if (isPlaying !== null && audioElements[isPlaying]) {
-        audioElements[isPlaying].pause();
+  // Define audio sources with direct paths
+  const audioSources = [
+    "/audios/Loubna-42-Rabat.wav",
+    "/audios/Mariam-35ans-Oujda.wav",
+    "/audios/Mohamed 33ans-Casablanca.wav",
+    "/audios/Rajae 35 ans Temara.wav",
+    "/audios/Tawfiq-47ans-Casablanca.wav",
+    "/audios/Yassir-50ans-Rabat.wav"
+  ];
+
+// Replace your useEffect for loading audio durations with this improved version
+useEffect(() => {
+  const loadAudioDurations = async () => {
+    const durations = {};
+    
+    for (let i = 0; i < audioSources.length; i++) {
+      try {
+        setIsLoading(prev => ({...prev, [i]: true}));
+        
+        // Create a new audio element for each file
+        const audio = new Audio();
+        audio.src = audioSources[i];
+        audio.preload = "metadata";
+        
+        // Wait for metadata to load to get duration
+        const duration = await new Promise((resolve) => {
+          let isResolved = false;
+          
+          const onLoaded = () => {
+            if (isResolved) return;
+            isResolved = true;
+            audio.removeEventListener('loadedmetadata', onLoaded);
+            audio.removeEventListener('error', onError);
+            console.log(`Audio ${i} loaded successfully: ${audio.duration} seconds`);
+            resolve(audio.duration);
+          };
+          
+          const onError = (err) => {
+            if (isResolved) return;
+            isResolved = true;
+            audio.removeEventListener('loadedmetadata', onLoaded);
+            audio.removeEventListener('error', onError);
+            console.error(`Error loading audio ${i}:`, err);
+            resolve(null); // Return null instead of a default value
+          };
+          
+          audio.addEventListener('loadedmetadata', onLoaded);
+          audio.addEventListener('error', onError);
+          
+          // Try to load the audio
+          audio.load().catch(err => {
+            console.error(`Load error for audio ${i}:`, err);
+          });
+          
+          // Set a timeout in case the audio fails to load
+          setTimeout(() => {
+            if (isResolved) return;
+            isResolved = true;
+            audio.removeEventListener('loadedmetadata', onLoaded);
+            audio.removeEventListener('error', onError);
+            console.warn(`Timeout loading audio ${i}`);
+            resolve(null); // Return null instead of a default value
+          }, 8000); // Increased timeout to 8 seconds
+        });
+        
+        durations[i] = duration;
+      } catch (error) {
+        console.error(`Unexpected error loading audio ${i}:`, error);
+        durations[i] = null;
+      } finally {
+        setIsLoading(prev => ({...prev, [i]: false}));
       }
-      audio.play();
+    }
+    
+    setAudioDurations(durations);
+  };
+
+  loadAudioDurations();
+}, []);
+
+  // Update the handlePlayAudio function
+  const handlePlayAudio = async (index) => {
+    // If already playing, pause it
+    if (isPlaying === index) {
+      if (audioRefs.current[index]) {
+        audioRefs.current[index].pause();
+      }
+      setIsPlaying(null);
+      return;
+    }
+
+    // Pause any currently playing audio
+    if (isPlaying !== null && audioRefs.current[isPlaying]) {
+      audioRefs.current[isPlaying].pause();
+    }
+
+    // Create audio element if it doesn't exist
+    if (!audioRefs.current[index]) {
+      try {
+        setIsLoading(prev => ({...prev, [index]: true}));
+        
+        const audio = new Audio();
+        audio.src = audioSources[index];
+        audio.preload = "auto";
+        
+        // Set up event listeners for this audio
+        audio.addEventListener('timeupdate', () => {
+          setCurrentTimes(prev => ({...prev, [index]: audio.currentTime}));
+          
+          const percentage = audio.duration > 0 ? (audio.currentTime / audio.duration) * 100 : 0;
+          setProgressPercentages(prev => ({...prev, [index]: percentage}));
+        });
+        
+        audio.addEventListener('ended', () => {
+          setIsPlaying(null);
+          setCurrentTimes(prev => ({...prev, [index]: 0}));
+          setProgressPercentages(prev => ({...prev, [index]: 0}));
+        });
+        
+        audio.addEventListener('error', (e) => {
+          console.error("Audio error:", e);
+          setIsLoading(prev => ({...prev, [index]: false}));
+        });
+        
+        audio.addEventListener('canplaythrough', () => {
+          setIsLoading(prev => ({...prev, [index]: false}));
+        });
+        
+        audioRefs.current[index] = audio;
+        
+        // Wait for audio to be ready
+        await new Promise((resolve) => {
+          if (audio.readyState >= 3) {
+            resolve();
+          } else {
+            audio.addEventListener('canplay', resolve, { once: true });
+            setTimeout(resolve, 3000);
+          }
+        });
+      } catch (error) {
+        console.error("Error setting up audio:", error);
+        setIsLoading(prev => ({...prev, [index]: false}));
+        return;
+      }
+    }
+    
+    const audio = audioRefs.current[index];
+    
+    try {
+      await audio.play();
       setIsPlaying(index);
-      audio.onended = () => setIsPlaying(null);
+    } catch (error) {
+      console.error("Audio playback failed:", error);
+      try {
+        audio.load();
+        await audio.play();
+        setIsPlaying(index);
+      } catch (err) {
+        console.error("Fallback audio playback also failed:", err);
+      }
     }
   };
 
-  const [copySuccess, setCopySuccess] = useState(false);
+  // Helper function to format time (seconds to MM:SS)
+  const formatTime = (seconds) => {
+    if (isNaN(seconds) || seconds === 0) return "0:00";
+    
+    const mins = Math.floor(seconds / 60);
+    const secs = Math.floor(seconds % 60);
+    return `${mins}:${secs < 10 ? '0' : ''}${secs}`;
+  };
+
+
+// Add this CSS to your styles
+const audioPlayerStyles = `
+.audio-testimonials {
+  padding: 80px 0;
+  background: white !important;
+}
+
+.audio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 24px;
+  margin-top: 40px;
+}
+
+.audio-card {
+  background: #f9fafb;
+  border-radius: 16px;
+  padding: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.audio-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.audio-player-container {
+  margin-bottom: 16px;
+}
+
+.audio-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.play-pause-btn {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: #10B981;
+  color: white;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  position: relative;
+}
+
+.play-pause-btn:hover:not(:disabled) {
+  background: #0D966C;
+}
+
+.play-pause-btn.playing {
+  background: #10B981 !important;
+}
+
+.play-pause-btn.playing:hover:not(:disabled) {
+  background: #0D966C !important;
+}
+
+.play-pause-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.play-pause-btn.loading {
+  background: #6B7280;
+}
+
+.loading-spinner {
+  width: 20px;
+  height: 20px;
+  border: 2px solid transparent;
+  border-top: 2px solid white;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.play-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.progress-container {
+  flex-grow: 1;
+  height: 6px;
+  background-color: #E5E7EB;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 100%;
+  background-color: #10B981;
+  border-radius: 3px;
+  transition: width 0.1s linear;
+}
+
+.time-display {
+  min-width: 90px;
+  text-align: center;
+  font-size: 0.85rem;
+  color: #6B7280;
+  font-variant-numeric: tabular-nums;
+}
+
+.audio-info h4 {
+  margin: 0 0 4px 0;
+  color: #1F2937;
+  font-size: 1.1rem;
+}
+
+.audio-info p {
+  margin: 0;
+  color: #6B7280;
+  font-size: 0.9rem;
+}
+
+.community-cta {
+  margin-top: 60px;
+  text-align: center;
+  background: white;
+  padding: 40px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.choice-cta-content h3 {
+  margin: 0 0 12px 0;
+  color: #1F2937;
+  font-size: 1.5rem;
+}
+
+.choice-cta-content p {
+  margin: 0 0 24px 0;
+  color: #6B7280;
+  font-size: 1.1rem;
+}
+
+.audio-section-cta-button {
+  background: #10B981;
+  color: white;
+  border: none;
+  border-radius: 50px;
+  padding: 14px 32px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.audio-section-cta-button:hover {
+  background: #0D966C;
+  transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+  .audio-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .audio-controls {
+    flex-wrap: wrap;
+  }
+  
+  .time-display {
+    width: 100%;
+    text-align: left;
+    margin-top: 8px;
+  }
+}
+`;
+
+// Add the style tag to the document head
+useEffect(() => {
+  const styleTag = document.createElement('style');
+  styleTag.innerHTML = audioPlayerStyles;
+  document.head.appendChild(styleTag);
+  
+  return () => {
+    document.head.removeChild(styleTag);
+  };
+}, []);
+
+const manualDurations = {
+  0: 25, // Loubna-42-Rabat.wav - 42 seconds
+  1: 56, // Mariam-35ans-Oujda.wav - 38 seconds
+  2: 12, // Mohamed 33ans-Casablanca.wav - 45 seconds
+  3: 37, // Rajae 35 ans Temara.wav - 40 seconds
+  4: 10, // Tawfiq-47ans-Casablanca.wav - 50 seconds
+  5: 42  // Yassir-50ans-Rabat.wav - 55 seconds
+};
+
+
+
+const [copySuccess, setCopySuccess] = useState(false);
 
 const copyToClipboard = (text) => {
   navigator.clipboard.writeText(text).then(() => {
@@ -512,6 +871,169 @@ const scrollThumbs = (direction) => {
     });
   }
 };
+
+/* bottom-header visibility */
+const [showBottomHeader,setShowBottomHeader]=useState(false);
+useEffect(()=>{
+  const onScroll=()=>{
+    const hero=document.getElementById('hero');
+    if(!hero)return;
+    setShowBottomHeader(hero.getBoundingClientRect().bottom<0);
+  };
+  window.addEventListener('scroll',onScroll);
+  return()=>window.removeEventListener('scroll',onScroll);
+},[]);
+
+useEffect(() => {
+  const handleResizeAndMoveGallery = () => {
+    const isMobile = window.innerWidth <= 768;
+    const heroGallery = document.querySelector(".hero-gallery-section");
+    const heroInfo = document.querySelector(".hero-info-section");
+    const heroContent = document.querySelector(".hero-content");
+    const subtitle = heroInfo?.querySelector(".hero-subtitle");
+
+    if (!heroGallery || !heroInfo || !heroContent) return;
+
+    if (isMobile) {
+      // move gallery inside infos, after subtitle
+      if (subtitle && heroGallery.parentNode !== heroInfo) {
+        heroInfo.insertBefore(heroGallery, subtitle.nextSibling);
+      }
+    } else {
+      // move gallery back to the left of hero-info
+      if (heroGallery.parentNode !== heroContent) {
+        heroContent.insertBefore(heroGallery, heroInfo);
+      }
+    }
+  };
+
+  // run once and on resize
+  handleResizeAndMoveGallery();
+  window.addEventListener("resize", handleResizeAndMoveGallery);
+
+  return () => {
+    window.removeEventListener("resize", handleResizeAndMoveGallery);
+  };
+}, []);
+
+
+// Add this CSS for mobile styling
+const mobileStyles = `
+@media (max-width: 768px) {
+  .hero-info-section .hero-gallery-section {
+    width: 100%;
+    margin: 20px 0;
+  }
+  
+  .gallery-container-vertical {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .vertical-thumbnails-container {
+    flex-direction: row;
+    width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 10px 0;
+    gap: 8px;
+  }
+  
+  .vertical-thumbnails-wrapper {
+    flex-direction: row;
+    max-height: none;
+    gap: 8px;
+    padding: 5px;
+  }
+  
+  .vertical-thumbnail-item {
+    width: 60px;
+    height: 60px;
+    flex-shrink: 0;
+  }
+  
+  .nav-arrow-vertical {
+    display: none;
+  }
+  
+  .hero-main-image-vertical {
+    height: 280px;
+    margin-bottom: 10px;
+  }
+  
+  .image-indicators-vertical {
+    position: static;
+    transform: none;
+    justify-content: center;
+    margin: 10px 0;
+    flex-wrap: wrap;
+  }
+  
+  .main-image-wrapper-vertical {
+    order: -1;
+  }
+  
+  /* Horizontal line for unselected images */
+  .vertical-thumbnails-wrapper {
+    border-top: 2px solid #f0f0f0;
+    padding-top: 15px;
+    display: flex;
+    justify-content: center;
+  }
+}
+`;
+
+// Add the style tag to the document head
+useEffect(() => {
+  const styleTag = document.createElement('style');
+  styleTag.innerHTML = mobileStyles;
+  document.head.appendChild(styleTag);
+  
+  return () => {
+    document.head.removeChild(styleTag);
+  };
+}, []);
+
+
+const [currentSlide, setCurrentSlide] = useState(0);
+
+const nextSlide = () => setCurrentSlide((c) => (c + 1) % conversationImages.length);
+const prevSlide = () => setCurrentSlide((c) => (c - 1 + conversationImages.length) % conversationImages.length);
+
+const conversationImages = [
+            "/images/Screenshot 1.jpg",
+            "/images/Screenshot 2.jpg",
+            "/images/Screenshot 3.jpg",
+            "/images/Screenshot 4.jpg",
+            "/images/Screenshot 5.jpg",
+            "/images/Screenshot 6.jpg",
+            "/images/Screenshot 7.jpg",
+            "/images/Screenshot 8.jpg",
+            "/images/Screenshot 9.jpg",
+            "/images/Screenshot 10.jpg"
+        ];
+
+const phoneSliderCSS = `
+.conversations{position:relative;background:linear-gradient(135deg,#dcfce7 0%,#bbf7d0 100%);padding:100px 0;z-index:2}
+.phone-green-wrapper{max-width:320px;margin:0 auto}
+.phone-frame{background:#111;border-radius:36px;padding:8px;box-shadow:0 20px 50px rgba(0,0,0,.25)}
+.phone-speaker{width:60px;height:6px;background:#333;border-radius:3px;margin:8px auto 12px}
+.phone-screen{border-radius:24px;width:100%;display:block}
+.phone-cta-space{text-align:center;margin-top:60px;margin-bottom:40px}
+@media (max-width:768px){.phone-frame{border-radius:28px}.phone-speaker{width:50px;height:5px}.phone-green-wrapper{max-width:260px}}
+`;
+useEffect(() => {
+  const s = document.createElement('style');
+  s.innerHTML = phoneSliderCSS;
+  document.head.appendChild(s);
+  return () => s.remove();
+}, []);
+
+useEffect(() => {
+  const auto = setInterval(nextSlide, 4000);   // change every 2s
+  return () => clearInterval(auto);            // clean on unmount
+}, [currentSlide]);   // restart if slide changes manually
 
 const [lang, setLang] = useState('fr');    // NEW
 const t = translations[lang]; 
@@ -603,23 +1125,37 @@ const testimonials = [
       {/* ---------------------------------------------------- */}
       {/* HEADER  -  added language switcher                   */}
       {/* ---------------------------------------------------- */}
-      <header className="header">
-        <div className="container">
-          <div className="logo">
-            <h1>{t.headerTitle}</h1>
-            <p>{t.headerSub}</p>
-          </div>
-          <LanguageSwitcher lang={lang} setLang={setLang} /> {/* NEW */}
-          <div className="header-cta">
-            <button className="cta-button" onClick={scrollToForm}>{t.orderNow}</button>
-          </div>
+      {/* bottom copy of the header */}
+{/*  bottom copy of the header  –  LEFT  |  CENTER  |  RIGHT  */}
+{/* bottom copy of header – slides up after hero */}
+<div dir={lang === 'ar' ? 'rtl' : 'ltr'}>
+  <div className={`bottom-header ${showBottomHeader ? 'show' : ''}`}>
+    <header className="header">
+      <div className="bar">
+        <div className="cell logo">
+          <h1>{t.headerTitle}</h1>
+          <p>{t.headerSub}</p>
         </div>
-      </header>
+
+        <div className="cell lang">
+          <LanguageSwitcher lang={lang} setLang={setLang} />
+        </div>
+
+        <div className="cell cta">
+          <button className="cta-button" onClick={scrollToForm}>
+            {t.orderNow}
+          </button>
+        </div>
+      </div>
+    </header>
+  </div>
+</div>
+
 
       {/* ---------------------------------------------------- */}
       {/* HERO  -  replaced static text with t.*               */}
       {/* ---------------------------------------------------- */}
-<section id="hero" className={`hero ${isVisible.hero ? 'animate' : ''}`}>
+<section id="hero" className={`hero ${isVisible.hero ? "animate" : ""}`}>
         <div className="hero-background">
           <div className="floating-elements">
             <div className="floating-leaf leaf-1"></div>
@@ -636,68 +1172,72 @@ const testimonials = [
             <div className="hero-gallery-section">
               <div className="gallery-container-vertical">
                 <div className="vertical-thumbnails-container">
-                  <button
-                    className="nav-arrow-vertical nav-up"
-                    onClick={() => scrollThumbnails('up')}
-                  >
+                  <button className="nav-arrow-vertical nav-up" onClick={() => scrollThumbnails("up")}>
                     <ChevronUp size={20} />
                   </button>
 
                   <div className="vertical-thumbnails-wrapper" ref={thumbnailsRef}>
-                  {(lang === 'ar' ? productImagesAR : productImages).map((img, idx) => (
-                    <div
-                      key={idx}
-                      className={`vertical-thumbnail-item ${selectedImage === idx ? 'active' : ''}`}
-                      onClick={() => handleImageChange(idx)}
-                    >
-                      <img src={img} alt={`Zitalgic ${idx + 1}`} />
-                    </div>
-                  ))}
+                    {(lang === "ar" ? productImagesAR : productImages).map((img, idx) => (
+                      <div
+                        key={idx}
+                        className={`vertical-thumbnail-item ${selectedImage === idx ? "active" : ""}`}
+                        onClick={() => handleImageChange(idx)}
+                      >
+                        <img src={img || "/placeholder.svg"} alt={`Zitalgic ${idx + 1}`} />
+                      </div>
+                    ))}
                   </div>
 
-                  <button
-                    className="nav-arrow-vertical nav-down"
-                    onClick={() => scrollThumbnails('down')}
-                  >
+                  <button className="nav-arrow-vertical nav-down" onClick={() => scrollThumbnails("down")}>
                     <ChevronDown size={20} />
                   </button>
                 </div>
 
                 <div className="main-image-wrapper-vertical">
                   <img
-                    src={(lang === 'ar' ? productImagesAR : productImages)[selectedImage]}
+                    src={(lang === "ar" ? productImagesAR : productImages)[selectedImage]}
                     alt="ZITALGIC"
-                    className={`hero-main-image-vertical ${imageTransition ? 'transitioning' : ''}`}
-                    onClick={() => handleImageChange((selectedImage + 1) % (lang === 'ar' ? productImagesAR : productImages).length)}
+                    className={`hero-main-image-vertical ${imageTransition ? "transitioning" : ""}`}
+                    onClick={() =>
+                      handleImageChange((selectedImage + 1) % (lang === "ar" ? productImagesAR : productImages).length)
+                    }
                   />
                   <div className="image-indicators-vertical">
-                  {(lang === 'ar' ? productImagesAR : productImages).map((_, idx) => (
-                    <button
-                      key={idx}
-                      className={`indicator-vertical ${selectedImage === idx ? 'active' : ''}`}
-                      onClick={() => handleImageChange(idx)}
-                    />
-                  ))}
+                    {(lang === "ar" ? productImagesAR : productImages).map((_, idx) => (
+                      <button
+                        key={idx}
+                        className={`indicator-vertical ${selectedImage === idx ? "active" : ""}`}
+                        onClick={() => handleImageChange(idx)}
+                      />
+                    ))}
                   </div>
                 </div>
               </div>
 
               <div className="quick-info-grid">
                 <div className="info-card">
-                  <div className="info-icon"><Truck size={20} /></div>
-                  <span>{lang === 'ar' ? 'توصيل خلال 24-48 ساعة' : 'Livraison 24-48h'}</span>
+                  <div className="info-icon">
+                    <Truck size={20} />
+                  </div>
+                  <span>{lang === "ar" ? "توصيل خلال 24-48 ساعة" : "Livraison 24-48h"}</span>
                 </div>
                 <div className="info-card">
-                  <div className="info-icon"><MapPin size={20} /></div>
-                  <span>{lang === 'ar' ? 'في جميع أنحاء المغرب' : 'Partout au Maroc'}</span>
+                  <div className="info-icon">
+                    <MapPin size={20} />
+                  </div>
+                  <span>{lang === "ar" ? "في جميع أنحاء المغرب" : "Partout au Maroc"}</span>
                 </div>
                 <div className="info-card">
-                  <div className="info-icon"><CreditCard size={20} /></div>
-                  <span>{lang === 'ar' ? 'الدفع عند الاستلام' : 'Paiement à la livraison'}</span>
+                  <div className="info-icon">
+                    <CreditCard size={20} />
+                  </div>
+                  <span>{lang === "ar" ? "الدفع عند الاستلام" : "Paiement à la livraison"}</span>
                 </div>
                 <div className="info-card">
-                  <div className="info-icon"><Leaf size={20} /></div>
-                  <span>{lang === 'ar' ? '100٪ طبيعي' : '100% Naturel'}</span>
+                  <div className="info-icon">
+                    <Leaf size={20} />
+                  </div>
+                  <span>{lang === "ar" ? "خدمة العملاء على مدار الساعة " : "Service client 24h/24"}</span>
                 </div>
               </div>
             </div>
@@ -706,6 +1246,15 @@ const testimonials = [
             <div className="hero-info-section">
               <h1 className="hero-title">{t.heroTitle}</h1>
               <p className="hero-subtitle">{t.heroSub}</p>
+
+              <div className="mobile-gallery-image">
+                <img
+                  src={(lang === "ar" ? productImagesAR : productImages)[selectedImage]}
+                  alt="ZITALGIC"
+                  className="mobile-product-image"
+                />
+              </div>
+
               <div className="hero-description">{t.heroDesc}</div>
 
               <div className="rating-section">
@@ -714,76 +1263,79 @@ const testimonials = [
                     <Star key={i} size={20} fill="#f97316" color="#f97316" />
                   ))}
                 </div>
-                <span className="rating-text">
-                  {lang === 'ar' ? '4.8/5 من 3600+ تقييم' : '4.8/5 (3,600+ avis)'}
-                </span>
+                <span className="rating-text">{lang === "ar" ? "4.8/5 من 3600+ تقييم" : "4.8/5 (3,600+ avis)"}</span>
               </div>
 
               <div className="benefits-list">
                 <div className="benefit-item">
                   <CheckCircle size={18} color="#f97316" />
                   <span>
-                    {lang === 'ar'
-                      ? 'يسكّن بسرعة آلام المفاصل والعضلات والأعصاب.'
-                      : 'Soulage rapidement les douleurs articulaires, musculaires et nerveuses.'}
+                    {lang === "ar"
+                      ? "يسكّن بسرعة آلام المفاصل والعضلات والأعصاب."
+                      : "Soulage rapidement les douleurs articulaires, musculaires et nerveuses."}
                   </span>
                 </div>
                 <div className="benefit-item">
                   <CheckCircle size={18} color="#f97316" />
                   <span>
-                    {lang === 'ar'
-                      ? 'يقلل الالتهاب بعمق لراحة طويلة الأمد.'
-                      : 'Réduit l\'inflammation en profondeur pour un confort durable'}
+                    {lang === "ar"
+                      ? "يُقلِّّل اللتهابات في العمق ليمنح راحة طويلة الأمد"
+                      : "Réduit l'inflammation en profondeur pour un confort durable"}
                   </span>
                 </div>
                 <div className="benefit-item">
                   <CheckCircle size={18} color="#f97316" />
                   <span>
-                    {lang === 'ar'
-                      ? 'يرخّي التوتر ويزيد مرونة العضلات.'
-                      : 'Relâche les tensions et assouplit les muscles.'}
+                    {lang === "ar"
+                      ? "يُزيل التشنجات ويُعيد الليونة للعضلات."
+                      : "Relâche les tensions et assouplit les muscles."}
                   </span>
                 </div>
                 <div className="benefit-item">
                   <CheckCircle size={18} color="#f97316" />
                   <span>
-                    {lang === 'ar'
-                      ? 'يساعد في منع وعلاج التقلصات والتشنجات.'
-                      : 'Aide à prévenir et à traiter les courbatures et les Crampes.'}
+                    {lang === "ar"
+                      ? "يُساعد على الوقاية من آالم التقلصات والشد ّ العضلي ."
+                      : "Aide à prévenir et à traiter les courbatures et les Crampes."}
                   </span>
                 </div>
               </div>
 
               <div className="package-selection">
-                <h3 className="package-title">{t.choosePack}</h3>
-                <div className="package-list">
-                  {Object.entries(packs).map(([key, pack]) => (
-                    <div key={key} className="package-item">
-                      <label className="package-label">
-                        <input
-                          type="radio"
-                          name="package"
-                          checked={selectedPack === key}
-                          onChange={() => setSelectedPack(key)}
-                          className="package-radio"
-                        />
-                        <span className={`radio-custom ${selectedPack === key ? 'selected' : ''}`}></span>
-                        <div className="package-content">
-                          <div className="package-name">{pack.quantity}</div>
-                          <div className="package-pricing">
-                            <span className="package-price">{pack.price} DH</span>
-                            <span className="package-old">{pack.original} DH</span>
-                            {pack.savings > 0 && (
-                              <span className="package-save-black">
-                                {lang === 'ar' ? `توفير ${pack.savings} درهم` : `Économisez ${pack.savings} DH`}
-                              </span>
-                            )}
-                          </div>
-                        </div>
-                      </label>
-                    </div>
-                  ))}
-                </div>
+  <h3 className="package-title">{t.choosePack}</h3>
+  <div className="package-list">
+    {Object.entries(packs).map(([key, pack]) => (
+      <div key={key} className="package-item">
+        <label className="package-label">
+          <input
+            type="radio"
+            name="package"
+            checked={selectedPack === key}
+            onChange={() => setSelectedPack(key)}
+            className="package-radio"
+          />
+          <span className={`radio-custom ${selectedPack === key ? "selected" : ""}`}></span>
+          <div className="package-content">
+            <div className="package-name">
+              {lang === "ar" ? pack.quantity_ar : pack.quantity}
+            </div>
+            <div className="package-treatment">
+              {lang === "ar" ? pack.treatment_ar : pack.treatment}
+            </div>
+            <div className="package-pricing">
+              <span className="package-price">{pack.price} DH</span>
+              <span className="package-old">{pack.original} DH</span>
+              {pack.savings > 0 && (
+                <span className="package-save-black">
+                  {lang === "ar" ? `توفير ${pack.savings} درهم` : `Économisez ${pack.savings} DH`}
+                </span>
+              )}
+            </div>
+          </div>
+        </label>
+      </div>
+    ))}
+  </div>
               </div>
 
               <button className="hero-cta-button" onClick={scrollToForm}>
@@ -795,17 +1347,17 @@ const testimonials = [
               <div className="trust-indicators">
                 <div className="trust-item">
                   <Shield size={16} />
-                  <span>{lang === 'ar' ? 'فعالية مضمونة' : 'Efficacité garantie'}</span>
+                  <span>{lang === "ar" ? "فعالية مضمونة" : "Efficacité garantie"}</span>
                 </div>
                 <div className="trust-item">
                   <Users size={16} />
-                  <span>{lang === 'ar' ? '3600+ عميل راضٍ' : '3,600+ clients satisfaits'}</span>
+                  <span>{lang === "ar" ? "3600+ عميل راضٍ" : "3,600+ clients satisfaits"}</span>
                 </div>
               </div>
             </div>
           </div>
         </div>
-</section>
+      </section>
 
 {/* ---------------------------------------------------- */}
 {/* ALL OTHER SECTIONS – same code, just add `t.` where  */}
@@ -814,65 +1366,470 @@ const testimonials = [
 
 {/* AUDIO TESTIMONIALS */}
 <section id="audio-testimonials" className={`audio-testimonials ${isVisible['audio-testimonials'] ? 'animate' : ''}`}>
-  <div className="container">
-    <div className="section-header">
-      <div className="section-badge">
-        <Volume2 className="audio-icon" />
-        <span>{lang === 'ar' ? 'آراء العملاء' : 'Témoignages Client'}</span>
+        <div className="container">
+          <div className="section-header">
+            <div className="section-badge">
+              <Volume2 className="audio-icon" />
+              <span>{lang === 'ar' ? 'آراء الزبناء' : 'Témoignages Client'}</span>
+            </div>
+
+            <h2 className="audio-testimonials-title green-title-underline">
+              {lang === 'ar' ? 'استمع كيف استعادوا راحتهم بفضل ' : 'Écoutez comment ils ont retrouvé leur confort grâce à '}{' '}
+              <span className="green-text">{lang === 'ar' ? 'Zitalgic®' : 'Zitalgic®'}</span>
+            </h2>
+
+            <p className="section-desc">
+              {lang === "ar"
+                ? "آراء الزبناء: استمع كيف استعادوا راحتهم بفضل Zitalgic®. قصص حقيقية وتجارب ملهمة من أناس وجدوا في Zitalgic® الحل الطبيعي الذي كانوا يبحثون عنه، استمع إلى شهاداتهم واكتشف كيف استعادوا السيطرة على حياتهم واستمتعوا بالراحة التي يستحقونها."
+                : "Avis des clients : Écoutez comment ils ont retrouvé leur confort grâce à Zitalgic®. De vraies histoires et des témoignages inspirants de personnes qui ont trouvé dans Zitalgic® la solution naturelle qu’ils recherchaient. Découvrez leurs expériences et comment elles leur ont permis de reprendre le contrôle de leur vie et de profiter du confort qu’ils méritent."}
+            </p>
+          </div>
+
+          <div className="audio-grid">
+            {audioTestimonials.map((testimonial, index) => (
+              <div key={index} className="audio-card">
+                <div className="audio-player-container">
+                  <div className="audio-player">
+                    <div className="audio-controls">
+                      <button
+                        className={`play-pause-btn ${isPlaying === index ? 'playing' : ''} ${isLoading[index] ? 'loading' : ''}`}
+                        onClick={() => handlePlayAudio(index)}
+                        disabled={isLoading[index]}
+                      >
+                        {isLoading[index] ? (
+                          <div className="loading-spinner"></div>
+                        ) : isPlaying === index ? (
+                          <Pause className="play-icon" />
+                        ) : (
+                          <Play className="play-icon" />
+                        )}
+                      </button>
+
+                      <div className="progress-container">
+                        <div 
+                          className="progress-bar"
+                          style={{ width: `${progressPercentages[index] || 0}%` }}
+                        ></div>
+                      </div>
+
+                      <div className="time-display">
+                        {formatTime(currentTimes[index] || 0)} / {
+                          audioDurations[index] !== null && audioDurations[index] !== undefined 
+                            ? formatTime(audioDurations[index]) 
+                            : formatTime(manualDurations[index] || 0)
+                        }
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="audio-info">
+                  <h4>{lang === 'ar' ? testimonial.name_ar : testimonial.name}</h4>
+                  <p>{lang === 'ar' ? testimonial.location_ar : testimonial.location}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+
+          <div className="community-cta">
+            <div className="choice-cta-content">
+              <h3>{lang === 'ar' ? 'انضم إلى مجتمع Zitalgic®' : 'Rejoignez la communauté Zitalgic®'}</h3>
+              <p>{lang === 'ar' ? 'آلاف المغاربة غيّروا حياتهم. حان دورك الآن!' : 'Des milliers de Marocains ont déjà transformé leur vie. À votre tour !'}</p>
+              <button className="audio-section-cta-button" onClick={scrollToForm}>
+                {lang === 'ar' ? 'اختر Zitalgic® الآن' : 'Je choisis Zitalgic Maintenant'}
+              </button>
+            </div>
+          </div>
+        </div>
+      </section>
+
+<section
+  id="conversations"
+  className={`conversations ${isVisible.conversations ? 'animate' : ''}`}
+  style={{ 
+    backgroundColor: '#ffffff',
+    padding: '40px 0',
+    position: 'relative'
+  }}
+>
+  <div className="container" style={{ 
+    display: 'flex', 
+    flexDirection: 'column', 
+    alignItems: 'center',
+    maxWidth: '1000px',
+    margin: '0 auto',
+    padding: '0 20px'
+  }}>
+    
+    {/* Section Header */}
+    <div className="section-header" style={{ 
+      marginBottom: '30px', 
+      textAlign: 'center',
+      width: '100%'
+    }}>
+      <div className="section-badge" style={{ 
+        background: 'linear-gradient(135deg,#10B981,#047857)', 
+        color: '#ffffff',
+        display: 'inline-flex',
+        padding: '12px 24px',
+        marginBottom: '15px',
+        borderRadius: '50px'
+      }}>
+        <MessageCircle size={20} style={{ color: '#ffffff', marginRight: '8px' }} />
+        <span style={{ color: '#ffffff', fontSize: '1rem' }}>
+          {lang === 'ar' ? 'رسائل العملاء' : 'Messages Clients'}
+        </span>
       </div>
-
-      <h2 className="audio-testimonials-title green-title-underline">
-        {lang === 'ar' ? 'استمع إلى قصصهم عن' : 'Écoutez leurs histoires de'}{' '}
-        <span className="green-text">{lang === 'ar' ? 'الراحة' : 'Soulagement'}</span>
+      <h2 className="pricing-title" style={{ 
+        fontSize: '2rem', 
+        margin: '10px 0',
+        color: '#333'
+      }}>
+        <span style={{ color: '#10B981' }}>{lang === 'ar' ? 'شهادات حقيقية' : 'Témoignages'}</span>
+        <span> {lang === 'ar' ? 'من' : 'de nos'} </span>
+        <span style={{ color: '#10B981' }}>{lang === 'ar' ? 'واتساب' : 'WhatsApp'}</span>
       </h2>
-
-      <p className="section-desc">
+      <p className="pricing-desc" style={{ 
+        fontSize: '1rem', 
+        maxWidth: '600px', 
+        margin: '0 auto',
+        lineHeight: '1.5',
+        color: '#666'
+      }}>
         {lang === 'ar'
-          ? 'عملاء زيتالجيك® يشهدون برضاهم وينصحون الآخرين بحلنا الطبيعي.'
-          : 'Les utilisateurs de Zitalgic® témoignent de leur satisfaction et recommandent naturellement notre solution autour d\'eux.'}
+          ? 'عشرة من آلاف المحادثات – اطلع على ما يقوله من اشتروا زيتالجيك® فعلاً.'
+          : 'Dix parmi des milliers de conversations – lisez ce que disent les vrais acheteurs de Zitalgic®.'}
       </p>
     </div>
 
-    <div className="audio-grid">
-    {audioTestimonials.map((testimonial, index) => (
-  <div key={index} className="audio-card">
-    <div className="audio-player-container">
-      <div className="audio-player">
-        <div className="audio-controls">
-          <button
-            className={`play-pause-btn ${isPlaying === index ? 'playing' : ''}`}
-            onClick={() => handlePlayAudio(index)}
-          >
-            {isPlaying === index ? <Pause className="play-icon" /> : <Play className="play-icon" />}
-          </button>
+    {/* Phone Slider Container — Shorter height */}
+    <div style={{ 
+      display: 'flex', 
+      justifyContent: 'center', 
+      alignItems: 'center', 
+      margin: '0 auto 30px auto',
+      maxWidth: '100%',
+      position: 'relative'
+    }}>
+      
+      {/* LEFT ARROW — Far from container */}
+      <button 
+        className="nav-arrow-green nav-left-green" 
+        onClick={prevSlide}
+        style={{
+          position: 'absolute',
+          top: '50%',
+          left: '-80px',
+          transform: 'translateY(-50%)',
+          zIndex: 10,
+          width: '45px',
+          height: '45px',
+          borderRadius: '50%',
+          background: '#10B981',
+          border: 'none',
+          color: 'white',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          boxShadow: '0 4px 12px rgba(16, 185, 129, 0.3)',
+          transition: 'all 0.3s ease',
+          outline: 'none' // Remove focus outline
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.background = '#047857';
+          e.target.style.transform = 'translateY(-50%) scale(1.1)';
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.background = '#10B981';
+          e.target.style.transform = 'translateY(-50%) scale(1)';
+        }}
+        onFocus={(e) => {
+          e.target.style.outline = 'none'; // Remove focus outline
+        }}
+      >
+        <ChevronLeft size={20} />
+      </button>
 
-          <div className="progress-container">
-            <div className="progress-bar"></div>
+      {/* PHONE IMAGE CONTAINER — Shorter height */}
+      <div style={{ 
+        width: '340px', 
+        height: '520px', // Shorter height
+        maxWidth: '90%',
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        borderRadius: '24px',
+        overflow: 'hidden',
+        boxShadow: '0 15px 30px rgba(0,0,0,0.1)'
+      }}>
+        <div style={{
+          background: '#111',
+          borderRadius: '24px',
+          padding: '15px',
+          width: '100%',
+          height: '100%',
+          display: 'flex',
+          flexDirection: 'column'
+        }}>
+          <div style={{
+            width: '60px',
+            height: '6px',
+            background: '#333',
+            borderRadius: '3px',
+            margin: '10px auto 15px'
+          }} />
+          
+          {/* Image container with exact dimensions to match image */}
+          <div style={{
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            overflow: 'hidden',
+            borderRadius: '16px',
+            backgroundColor: '#f5f5f5',
+            width: '100%',
+            height: '100%'
+          }}>
+            <img
+              src={conversationImages[currentSlide]}
+              alt={`Conversation ${currentSlide + 1}`}
+              style={{
+                width: '100%',
+                height: '100%',
+                objectFit: 'contain',
+                display: 'block'
+              }}
+            />
           </div>
-
-          <div className="time-display">0:00</div>
         </div>
       </div>
+
+      {/* RIGHT ARROW — Far from container */}
+      <button 
+        className="nav-arrow-green nav-right-green" 
+        onClick={nextSlide}
+        style={{
+          position: 'absolute',
+          top: '50%',
+          right: '-80px',
+          transform: 'translateY(-50%)',
+          zIndex: 10,
+          width: '45px',
+          height: '45px',
+          borderRadius: '50%',
+          background: '#10B981',
+          border: 'none',
+          color: 'white',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          boxShadow: '0 4px 12px rgba(16, 185, 129, 0.3)',
+          transition: 'all 0.3s ease',
+          outline: 'none' // Remove focus outline
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.background = '#047857';
+          e.target.style.transform = 'translateY(-50%) scale(1.1)';
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.background = '#10B981';
+          e.target.style.transform = 'translateY(-50%) scale(1)';
+        }}
+        onFocus={(e) => {
+          e.target.style.outline = 'none'; // Remove focus outline
+        }}
+      >
+        <ChevronRight size={20} />
+      </button>
     </div>
 
-    <div className="audio-info">
-      <h4>{lang === 'ar' ? testimonial.name_ar : testimonial.name}</h4>
-      <p>{lang === 'ar' ? testimonial.location_ar : testimonial.location}</p>
-    </div>
-  </div>
-))}
+    {/* Slide Indicators */}
+    <div style={{
+      display: 'flex',
+      justifyContent: 'center',
+      gap: '8px',
+      marginBottom: '20px'
+    }}>
+      {conversationImages.map((_, index) => (
+        <div
+          key={index}
+          style={{
+            width: '8px',
+            height: '8px',
+            borderRadius: '50%',
+            backgroundColor: currentSlide === index ? '#10B981' : '#ccc',
+            transition: 'background-color 0.3s ease'
+          }}
+        />
+      ))}
     </div>
 
-    <div className="community-cta">
-      <div className="choice-cta-content">
-        <h3>{lang === 'ar' ? 'انضم إلى مجتمع زيتالجيك®' : 'Rejoignez la communauté Zitalgic®'}</h3>
-        <p>{lang === 'ar' ? 'آلاف المغاربة غيّروا حياتهم. حان دورك الآن!' : 'Des milliers de Marocains ont déjà transformé leur vie. À votre tour !'}</p>
-        <button className="audio-section-cta-button" onClick={scrollToForm}>
-          {lang === 'ar' ? 'اختر زيتالجيك الآن' : 'Je choisis Zitalgic Maintenant'}
-        </button>
-      </div>
+    {/* Mobile Arrows (Hidden on Desktop) - Moved above CTA button */}
+    <div className="mobile-arrows" style={{ 
+      display: 'none',
+      justifyContent: 'center',
+      gap: '20px',
+      marginBottom: '20px'
+    }}>
+      <button 
+        onClick={prevSlide}
+        style={{
+          width: '40px',
+          height: '40px',
+          borderRadius: '50%',
+          background: '#10B981',
+          border: 'none',
+          color: 'white',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          boxShadow: '0 3px 10px rgba(16, 185, 129, 0.3)',
+          transition: 'all 0.3s ease',
+          outline: 'none' // Remove focus outline
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.background = '#0d9665';
+          e.target.style.transform = 'scale(1.1)';
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.background = '#10B981';
+          e.target.style.transform = 'scale(1)';
+        }}
+        onFocus={(e) => {
+          e.target.style.outline = 'none'; // Remove focus outline
+        }}
+      >
+        <ChevronLeft size={18} />
+      </button>
+      
+      <button 
+        onClick={nextSlide}
+        style={{
+          width: '40px',
+          height: '40px',
+          borderRadius: '50%',
+          background: '#10B981',
+          border: 'none',
+          color: 'white',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+          cursor: 'pointer',
+          boxShadow: '0 3px 10px rgba(16, 185, 129, 0.3)',
+          transition: 'all 0.3s ease',
+          outline: 'none' // Remove focus outline
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.background = '#0d9665';
+          e.target.style.transform = 'scale(1.1)';
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.background = '#10B981';
+          e.target.style.transform = 'scale(1)';
+        }}
+        onFocus={(e) => {
+          e.target.style.outline = 'none'; // Remove focus outline
+        }}
+      >
+        <ChevronRight size={18} />
+      </button>
+    </div>
+
+    {/* CTA Button — Simple & Centered */}
+    <div style={{ textAlign: 'center' }}>
+      <button 
+        onClick={scrollToForm} 
+        style={{ 
+          background: '#10B981', 
+          color: 'white',
+          border: 'none',
+          borderRadius: '50px',
+          padding: '14px 32px',
+          fontSize: '1.1rem',
+          fontWeight: '600',
+          cursor: 'pointer',
+          boxShadow: '0 4px 15px rgba(16, 185, 129, 0.3)',
+          transition: 'all 0.3s ease',
+          outline: 'none' // Remove focus outline
+        }}
+        onMouseEnter={(e) => {
+          e.target.style.background = '#0d9665';
+          e.target.style.transform = 'translateY(-2px)';
+        }}
+        onMouseLeave={(e) => {
+          e.target.style.background = '#10B981';
+          e.target.style.transform = 'translateY(0)';
+        }}
+        onFocus={(e) => {
+          e.target.style.outline = 'none'; // Remove focus outline
+        }}
+      >
+        {lang === 'ar' ? 'أطلب الآن وانضم للقائمة' : 'Je commande et j’envoie mon message'}
+      </button>
     </div>
   </div>
+
+  {/* Responsive Styles */}
+  <style jsx>{`
+    @media (max-width: 768px) {
+      .container > div:first-child {
+        padding: 0 10px;
+      }
+      .pricing-title {
+        font-size: 1.6rem !important;
+      }
+      .pricing-desc {
+        font-size: 0.95rem !important;
+        padding: 0 15px;
+      }
+      
+      /* Hide desktop arrows on mobile */
+      .nav-left-green, .nav-right-green {
+        display: none !important;
+      }
+      
+      /* Show mobile arrows */
+      .mobile-arrows {
+        display: flex !important;
+        justify-content: center;
+        gap: 20px;
+        margin: 20px 0;
+      }
+      
+      /* Adjust phone size for mobile */
+      #conversations > div > div:nth-child(2) > div:last-child {
+        width: 300px !important;
+        height: 460px !important;
+      }
+    }
+    
+    @media (max-width: 480px) {
+      .pricing-title {
+        font-size: 1.4rem !important;
+      }
+      .section-badge {
+        padding: 8px 16px !important;
+      }
+      .section-badge span {
+        font-size: 0.9rem !important;
+      }
+      
+      /* Further adjust phone size for small mobile */
+      #conversations > div > div:nth-child(2) > div:last-child {
+        width: 280px !important;
+        height: 420px !important;
+      }
+      
+      .mobile-arrows {
+        margin: 15px 0;
+      }
+    }
+  `}</style>
 </section>
 
 {/* PROBLEM */}
@@ -925,8 +1882,8 @@ const testimonials = [
       <div className="quote-content">
         <p>
           {lang === 'ar'
-            ? 'جربت الكثير من المنتجات... لا شيء يعمل فعلاً. أريد فقط استعادة حركتي القديمة وأستمتع بعائلتي بدون ألم مستمر.'
-            : 'J\'ai essayé tellement de produits différents... Rien ne marche vraiment. Je veux juste retrouver ma mobilité d\'avant et pouvoir profiter de ma famille sans ces douleurs constantes.'}
+            ? 'جربت الكثير من المنتجات... لا شيء يعمل فعلاً. أريد فقط استعادة حركتي وأستمتع بعائلتي بدون ألم مستمر.'
+            : 'J\'ai essayé tellement de produits différents... Rien ne marche vraiment. Je veux juste retrouver ma mobilité et pouvoir profiter de ma famille sans ces douleurs constantes.'}
         </p>
         <span className="quote-author">
           — {lang === 'ar' ? 'شهادة شخص يعاني من آلام مزمنة' : 'Témoignage d\'une personne souffrant de douleurs chroniques'}
@@ -958,14 +1915,15 @@ const testimonials = [
       </div>
       <h2 className="solution-title">
         <span className="orange-text">Zitalgic</span>{' '}
-        <span className="black-text">{lang === 'ar' ? 'هو حليفك الطبيعي لراحة' : 'est votre allié naturel pour un'}</span>{' '}
-        <span className="orange-text">{lang === 'ar' ? 'فعّالة' : 'apaisement efficace'}</span>
+        <span className="black-text">{lang === 'ar' ? 'حليفك الطبيعي للتخلص من األلم واستعادة ' : 'Votre allié naturel pour vous débarrasser de la douleur et retrouver'}</span>{' '}
+        <span className="orange-text">{lang === 'ar' ? 'راحتك' : 'votre confort'}</span>
       </h2>
       <p className="solution-desc">
-        {lang === 'ar'
-          ? 'تركيبة ثورية طورتها Authentic Laboratory، تجمع بين التقليد والابتكار لتقدم لك أفضل ما في الطبيعة.'
-          : 'Une formule révolutionnaire développée par Authentic Laboratory, alliant tradition et innovation pour vous offrir le meilleur de la nature.'}
+        {lang === "ar"
+          ? "تركيبة متميزة طورها مختبر Authentic Laboratory، تجمع بين الفعالية والتأثير السريع لتقدم لك أفضل ما في الطبيعة."
+          : "Une formule unique développée par Authentic Laboratory, alliant efficacité et action rapide pour vous offrir le meilleur de la nature."}
       </p>
+
     </div>
 
     <div className="solution-content">
@@ -999,9 +1957,9 @@ const testimonials = [
             <Activity size={28} className="solution-card-icon relax-icon" />
             <h3>{lang === 'ar' ? 'مرخٍ للعضلات' : 'Décontractant Musculaire'}</h3>
             <p>
-              {lang === 'ar'
-                ? 'يرخّي التوتر ويزيد مرونة العضلات.'
-                : 'Relâche les tensions et assouplit les muscles.'}
+              {lang === "ar"
+                ? "يُزيل التشنجات ويزيد من مرونة العضلات."
+                : "Élimine les crampes et améliore la souplesse des muscles."}
             </p>
           </div>
 
@@ -1019,9 +1977,9 @@ const testimonials = [
             <Leaf size={28} className="solution-card-icon natural-icon" />
             <h3>{lang === 'ar' ? '100٪ طبيعي' : '100% Naturel'}</h3>
             <p>
-              {lang === 'ar'
-                ? 'مزيج من الزيوت الأساسية النقية، صديقة للجسم.'
-                : 'Synergie d\'huiles essentielles pures, respectueuses de l\'organisme.'}
+              {lang === "ar"
+                ? "تركيبة من الزيوت الأساسية النقية وعالية الجودة."
+                : "Une synergie d'huiles essentielles pures et de haute qualité."}
             </p>
           </div>
 
@@ -1029,9 +1987,9 @@ const testimonials = [
             <Award size={28} className="solution-card-icon formula-icon" />
             <h3>{lang === 'ar' ? 'تركيبة مرخّصة' : 'Formule Brevetée'}</h3>
             <p>
-              {lang === 'ar'
-                ? 'ثمرة الابتكار العلمي وخبرة المختبر.'
-                : 'Fruit d\'une innovation scientifique et du savoir-faire du laboratoire.'}
+              {lang === "ar"
+                ? "ثمرة البحث والتطوير وخبرة مختبر Authentic Laboratory®."
+                : "Le fruit de la recherche, du développement et de l'expertise d'Authentic Laboratory®."}
             </p>
           </div>
         </div>
@@ -1046,64 +2004,84 @@ const testimonials = [
     <div className="section-header">
       <div className="pricing-badge">
         <Gift size={24} />
-        <span>{lang === 'ar' ? 'عرض محدود' : 'Offre limitée'}</span>
+        <span>{lang === "ar" ? "عرض محدود" : "Offre limitée"}</span>
       </div>
       <h2 className="pricing-title">
-        <span className="orange-text">{lang === 'ar' ? 'استفد' : 'Profitez'}</span>{' '}
-        <span className="black-text">{lang === 'ar' ? 'من عرضنا الحصري' : 'de notre Offre Exclusive'}</span>{' '}
+        <span className="orange-text">{lang === "ar" ? "استفد" : "Profitez"}</span>{" "}
+        <span className="black-text">{lang === "ar" ? "من عرضنا الحصري" : "de notre offre exclusive"}</span>{" "}
         <span className="orange-text">Zitalgic®</span>
       </h2>
       <p className="pricing-desc">
-        {lang === 'ar'
-          ? 'الطلب مرتفع والمخزون ينفد بسرعة، استغل العرض واحصل على باقتك من زيتالجيك®.'
-          : 'La demande est élevée et les stocks s\'épuisent rapidement, profitez de cette offre et commandez rapidement votre Pack de Zitalgic®.'}
+        {lang === "ar"
+          ? "الطلب مرتفع والمخزون ينفد بسرعة، استغل العرض واحصل على باقتك من زيتالجيك®."
+          : "La demande est forte et les stocks s’épuisent rapidement. Profitez de cette offre et commandez votre pack Zitalgic® dès maintenant."}
       </p>
     </div>
 
     <div className="pricing-grid">
       {Object.entries(packs).map(([key, pack]) => (
-        <div key={key} className={`pricing-card ${selectedPack === key ? 'selected' : ''}`}>
+        <div key={key} className={`pricing-card ${selectedPack === key ? "selected" : ""}`}>
           <div className="pricing-image-container">
             <img src={pricingImages[key]} alt={`Pack ${pack.quantity}`} />
-            {key === '3-flacons' && (
-              <div className="popular-badge">{lang === 'ar' ? 'الأكثر مبيعًا' : 'le plus populaire'}</div>
+            {key === "3-flacons" && (
+              <div className="popular-badge">{lang === "ar" ? "الأكثر مبيعًا" : "Le plus populaire"}</div>
             )}
           </div>
 
           <div className="pricing-header">
-            <h3>{pack.quantity}</h3>
-            <p>
-              {lang === 'ar'
-                ? key === '1-flacon'
-                  ? 'علاج 20 يوم'
-                  : key === '3-flacons'
-                  ? 'علاج شهرين'
-                  : key === '5-flacons'
-                  ? 'علاج 3 أشهر ونصف'
-                  : ''
-                : key === '1-flacon'
-                ? 'Traitement 20 jours'
-                : key === '3-flacons'
-                ? 'Traitement 2 mois'
-                : key === '5-flacons'
-                ? 'Traitement 3 mois 1/2'
-                : ''}
-            </p>
-
+  <h3>
+    {lang === 'ar'
+      ? key === '1-flacon'
+        ? 'عبوة 30 مل'
+        : key === '3-flacons'
+        ? '3 عبوات × 30 مل'
+        : key === '5-flacons'
+        ? '5 عبوات × 30 مل'
+        : ''
+      : key === '1-flacon'
+      ? '1 Flacon (30 ml)'
+      : key === '3-flacons'
+      ? '3 Flacons (3x30 ml)'
+      : key === '5-flacons'
+      ? '5 Flacons (5x30 ml)'
+      : ''}
+  </h3>
+  <p>
+    {lang === 'ar'
+      ? key === '1-flacon'
+        ? 'علاج 20 يوم'
+        : key === '3-flacons'
+        ? 'علاج شهرين'
+        : key === '5-flacons'
+        ? 'علاج 3 أشهر ونصف'
+        : ''
+      : key === '1-flacon'
+      ? 'Traitement 20 jours'
+      : key === '3-flacons'
+      ? 'Traitement 2 mois'
+      : key === '5-flacons'
+      ? 'Traitement 3 mois 1/2'
+      : ''}
+  </p>
           </div>
 
+
           <div className="pricing-price">
-            <span className="original-price">{pack.original} DH</span>
-            <span className="current-price">{pack.price} DH</span>
+            <span className="original-price">
+              {pack.original} {lang === "ar" ? "درهم" : "DH"}
+            </span>
+            <span className="current-price">
+              {pack.price} {lang === "ar" ? "درهم" : "DH"}
+            </span>
             {pack.savings > 0 && (
               <span className="savings">
-                {lang === 'ar' ? `وفّر ${pack.savings} درهم` : `Économisez ${pack.savings} DH`}
+                {lang === "ar" ? `وفّر ${pack.savings} درهم` : `Économisez ${pack.savings} DH`}
               </span>
             )}
           </div>
 
           <button className="pricing-button" onClick={() => setSelectedPack(key)}>
-            {lang === 'ar' ? 'اختر هذا العرض' : 'choisir cette offre'}
+            {lang === "ar" ? "اختر هذا العرض" : "Choisir cette offre"}
           </button>
         </div>
       ))}
@@ -1112,20 +2090,22 @@ const testimonials = [
     <div className="urgent-cta-banner">
       <div className="container">
         <div className="urgent-cta-content">
-          <h3>{lang === 'ar' ? 'لا تفوّت الفرصة!' : 'Ne Laissez Pas Passer Cette Chance !'}</h3>
+          <h3>{lang === "ar" ? "لا تفوّت الفرصة!" : "Ne laissez pas passer cette chance !"}</h3>
           <p>
-            {lang === 'ar'
-              ? 'هذا العرض الاستثنائي لن يدوم. اطلب الآن واحصل على راحتك غداً!'
-              : 'Cette offre exceptionnelle ne durera pas. Commandez maintenant et retrouvez votre confort dès demain !'}
+            {lang === "ar"
+              ? "هذا العرض الاستثنائي لن يدوم. اطلب الآن و تخلص من آلامك بطريقة فعالة وطبيعية"
+              : "Cette offre exceptionnelle ne durera pas. Commandez maintenant et libérez-vous de vos douleurs de manière efficace et naturelle."}
           </p>
+
           <button className="cta-button" onClick={scrollToForm}>
-            {lang === 'ar' ? 'اطلب الآن' : 'Commander maintenant'}
+            {lang === "ar" ? "اطلب الآن" : "Commander maintenant"}
           </button>
         </div>
       </div>
     </div>
   </div>
 </section>
+
 
 {/* WHY CHOOSE */}
 <section id="why-choose" className={`why-choose ${isVisible['why-choose'] ? 'animate' : ''}`} style={{ backgroundColor: '#ffffff' }}>
@@ -1134,9 +2114,10 @@ const testimonials = [
       <h2>{lang === 'ar' ? 'لماذا تختار زيتالجيك®؟' : 'Pourquoi Choisir Zitalgic® ?'}</h2>
       <p>
         {lang === 'ar'
-          ? 'اكتشف مزايا حلنا الطبيعي مقارنة بالبدائل التقليدية'
-          : 'Découvrez les avantages de notre solution naturelle comparée aux alternatives traditionnelles'}
+          ? 'تعرف على مزايا Zitalgic® التي تجعل منه الخيار والأمثل لمن يبحث عن الفعالية واألمان '
+          : 'Découvrez les avantages de Zitalgic®, le choix optimal pour ceux qui recherchent efficacité et sécurité'}
       </p>
+
     </div>
 
     <div className="comparison-grid">
@@ -1162,15 +2143,15 @@ const testimonials = [
           <h3 style={{ color: '#16a34a' }}>Zitalgic®</h3>
         </div>
         <ul className="comparison-features" style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-          <li>✓ {lang === 'ar' ? 'تركيبة مرخّصة مثبتة علمياً' : 'Formule brevetée scientifiquement prouvée'}</li>
-          <li>✓ {lang === 'ar' ? 'راحة سريعة' : 'Soulagement rapide'}</li>
-          <li>✓ {lang === 'ar' ? '100٪ طبيعي – مزيج زيوت أساسية' : '100% naturel - Synergie d\'huiles essentielles'}</li>
-          <li>✓ {lang === 'ar' ? 'لا آثار جانبية' : 'Aucun effet secondaire'}</li>
-          <li>✓ {lang === 'ar' ? 'عمل موجّه: مفصلي، عضلي، عصبي' : 'Action ciblée : Articulaire, Musculaire & Nerveux'}</li>
-          <li>✓ {lang === 'ar' ? 'تركيز عالي 30 مل – كفاءة عالية' : 'Format 30ml concentré - Haute efficacité'}</li>
-          <li>✓ {lang === 'ar' ? 'موصى به من المحترفين' : 'Recommandé par les professionnels'}</li>
-          <li>✓ {lang === 'ar' ? 'ضمان الرضا أو استرداد المال' : 'Garantie satisfait ou remboursé'}</li>
+          <li>✓ {lang === 'ar' ? 'تركيبة حاصلة على براءة اختراع' : 'Formule brevetée'}</li>
+          <li>✓ {lang === 'ar' ? 'مكونات طبيعية 100% وعالية الجودة' : 'Ingrédients 100% naturels et de haute qualité'}</li>
+          <li>✓ {lang === 'ar' ? 'بدون آثار جانبية' : 'Sans effets secondaires'}</li>
+          <li>✓ {lang === 'ar' ? 'تأثير موجه: المفاصل، العضلات، الأعصاب' : 'Action ciblée : articulations, muscles et nerfs'}</li>
+          <li>✓ {lang === 'ar' ? 'حجم 30 مل، بتركيز عالٍ' : 'Format 30 ml, haute concentration'}</li>
+          <li>✓ {lang === 'ar' ? 'تركيبة مطوّرة من طرف صيادلة متخصصين' : 'Formule développée par des pharmaciens spécialisés'}</li>
+          <li>✓ {lang === 'ar' ? 'فعالية مضمونة' : 'Efficacité garantie'}</li>
         </ul>
+
       </div>
 
       <div className="comparison-column home-remedies-column">
@@ -1179,15 +2160,16 @@ const testimonials = [
           <h3>{lang === 'ar' ? 'العلاجات المنزلية' : 'Remèdes Maison'}</h3>
         </div>
         <ul className="comparison-features">
-          <li>⚠️ {lang === 'ar' ? 'فعالية محدودة وغير متوقعة' : 'Efficacité limitée et imprévisible'}</li>
+          <li>⚠️ {lang === 'ar' ? 'فعالية محدودة وغير موثوقة' : 'Efficacité limitée et peu fiable'}</li>
           <li>⛔ {lang === 'ar' ? 'راحة مؤقتة فقط' : 'Soulagement temporaire seulement'}</li>
-          <li>⛔ {lang === 'ar' ? 'مكونات غير موحّدة' : 'Ingrédients non standardisés'}</li>
-          <li>⚠️ {lang === 'ar' ? 'خطر الحساسية أو التهيج' : 'Risque d\'allergies ou irritations'}</li>
-          <li>⛔ {lang === 'ar' ? 'عمل عام غير موجّه' : 'Action générale non ciblée'}</li>
-          <li>⛔ {lang === 'ar' ? 'تحضير طويل وممل' : 'Préparation longue et fastidieuse'}</li>
-          <li>⛔ {lang === 'ar' ? 'بلا توثيق علمي' : 'Pas de validation scientifique'}</li>
-          <li>⛔ {lang === 'ar' ? 'بلا ضمان للنتائج' : 'Aucune garantie de résultat'}</li>
+          <li>⛔ {lang === 'ar' ? 'مكونات غير موحّدة المعايير' : 'Ingrédients non standardisés'}</li>
+          <li>⚠️ {lang === 'ar' ? 'خطر الحساسية أو التهيج' : 'Risque d’allergies ou irritations'}</li>
+          <li>⛔ {lang === 'ar' ? 'تأثير عام غير موجّه' : 'Action générale non ciblée'}</li>
+          <li>⛔ {lang === 'ar' ? 'تحضير طويل ومرهق' : 'Préparation longue et fastidieuse'}</li>
+          <li>⛔ {lang === 'ar' ? 'غياب الإثبات العلمي' : 'Pas de validation scientifique'}</li>
+          <li>⛔ {lang === 'ar' ? 'لا يوجد ضمان للنتائج' : 'Aucune garantie de résultat'}</li>
         </ul>
+
       </div>
 
       <div className="comparison-column chemical-column">
@@ -1197,14 +2179,15 @@ const testimonials = [
         </div>
         <ul className="comparison-features">
           <li>⛔ {lang === 'ar' ? 'آثار جانبية متعددة' : 'Effets secondaires nombreux'}</li>
-          <li>⚠️ {lang === 'ar' ? 'راحة مع خطر على المعدة' : 'Soulagement mais risques pour l\'estomac'}</li>
+          <li>⚠️ {lang === 'ar' ? 'راحة مع خطورة عالية على المعدة' : 'Soulagement mais risque élevé pour l’estomac'}</li>
           <li>⛔ {lang === 'ar' ? 'مواد كيميائية صناعية' : 'Substances chimiques synthétiques'}</li>
-          <li>⛔ {lang === 'ar' ? 'إمكانية الإدمان' : 'Accoutumance possible'}</li>
+          <li>⛔ {lang === 'ar' ? 'تأثير متناقص يتطلب تغيير الدواء' : 'Effet décroissant nécessitant un changement de médicament'}</li>
           <li>⛔ {lang === 'ar' ? 'يُخفي الأعراض بدون علاج' : 'Masque les symptômes sans traiter'}</li>
           <li>⛔ {lang === 'ar' ? 'تكلفة عالية على المدى الطويل' : 'Coût élevé sur le long terme'}</li>
           <li>⛔ {lang === 'ar' ? 'موانع استعمال متعددة' : 'Contre-indications multiples'}</li>
           <li>⚠️ {lang === 'ar' ? 'مراقبة طبية إجبارية' : 'Surveillance médicale obligatoire'}</li>
         </ul>
+
       </div>
     </div>
 
@@ -1219,10 +2202,10 @@ const testimonials = [
         <div className="choice-cta-content">
           <div className="choice-icon"><Award size={48} /></div>
           <h3>{lang === 'ar' ? 'الاختيار واضح!' : 'Le Choix Est Évident !'}</h3>
-          <p>{lang === 'ar' ? 'زيتالجيك يجمع بين فعالية العلم الحديث ونعومة الطبيعة' : 'Zitalgic combine l\'efficacité de la science moderne avec la douceur de la nature'}</p>
+          <p>{lang === 'ar' ? 'زيتالجيك يجمع بين فعالية البحث العلمي وقوة الطبيعة' : 'Zitalgic combine l\'efficacité de la science moderne avec la douceur de la nature'}</p>
           <div className="choice-benefits">
             <div className="choice-benefit"><Zap size={20} /><span>{lang === 'ar' ? 'فعالية علمية' : 'Efficacité Scientifique'}</span></div>
-            <div className="choice-benefit"><Leaf size={20} /><span>{lang === 'ar' ? 'نعومة طبيعية' : 'Douceur Naturelle'}</span></div>
+            <div className="choice-benefit"><Leaf size={20} /><span>{lang === 'ar' ? 'مكونات طبيعية' : 'Douceur Naturelle'}</span></div>
             <div className="choice-benefit"><CheckCircle size={20} /><span>{lang === 'ar' ? 'نتائج مضمونة' : 'Résultats Garantis'}</span></div>
           </div>
           <button className="cta-button premium-button" onClick={scrollToForm}>
@@ -1240,11 +2223,11 @@ const testimonials = [
     <div className="scientific-section-header">
       <div className="scientific-badge-simple">
         <CheckCircle size={24} />
-        <span>{lang === 'ar' ? 'دليل علمي' : 'Preuve Scientifique'}</span>
+        <span>{lang === 'ar' ? 'القوة العلمية' : 'Preuve Scientifique'}</span>
       </div>
       <h2>
         <span className="highlight-blue">{lang === 'ar' ? 'العلم في قلب' : 'La Science au'}</span>{' '}
-        {lang === 'ar' ? 'تركيبتنا المرخّصة' : 'Cœur de Notre Formule Brevetée'}
+        {lang === 'ar' ? 'تركيبتنا المبتكرة' : 'Cœur de Notre Formule Brevetée'}
       </h2>
       <p className="scientific-description">
         {lang === 'ar'
@@ -1263,19 +2246,19 @@ const testimonials = [
       <div className="scientific-cards-row-1">
         <div className="scientific-card-new">
           <div className="scientific-card-icon"><FlaskConical size={32} /></div>
-          <h4>{lang === 'ar' ? 'مختبر أصيل' : 'Authentic Laboratory'}</h4>
+          <h4>{lang === 'ar' ? 'مختبر Authentic Laboratory®' : 'Authentic Laboratory®'}</h4>
           <p>{lang === 'ar' ? 'مختبر مغربي متخصص في تطوير حلول الصحة.' : 'Un laboratoire Marocain spécialisé dans le développement de solutions de santé.'}</p>
         </div>
 
         <div className="scientific-card-new featured">
           <div className="scientific-card-icon"><Award size={32} /></div>
-          <h4>{lang === 'ar' ? 'تركيبة مرخّصة' : 'Formule Brevetée'}</h4>
+          <h4>{lang === 'ar' ? 'تركيبة حاصلة على براءة اختراع' : 'Formule Brevetée'}</h4>
           <p>{lang === 'ar' ? 'تركيبة علمية مبتكرة محمية و100٪ مغربية.' : 'Une formule scientifique innovante protégée et 100% Marocaine.'}</p>
         </div>
 
         <div className="scientific-card-new">
           <div className="scientific-card-icon"><CheckCircle size={32} /></div>
-          <h4>{lang === 'ar' ? 'فعالية مثبتة' : 'Efficacité Accrue'}</h4>
+          <h4>{lang === 'ar' ? 'فعالية مضمونة' : 'Efficacité Accrue'}</h4>
           <p>{lang === 'ar' ? '96٪ رضا العملاء حسب دراساتنا الداخلية.' : '96% de satisfaction client selon nos études internes.'}</p>
         </div>
       </div>
@@ -1303,7 +2286,7 @@ const testimonials = [
     <div className="testimonials-section-header">
       <div className="testimonials-badge-simple">
         <CheckCircle size={24} />
-        <span>{lang === 'ar' ? 'آراء العملاء' : 'Témoignages Clients'}</span>
+        <span>{lang === 'ar' ? 'آراء الزبناء' : 'Témoignages Clients'}</span>
       </div>
       <h2>
         {lang === 'ar'
@@ -1313,7 +2296,7 @@ const testimonials = [
       </h2>
       <p>
         {lang === 'ar'
-          ? 'اكتشف شهادات صادقة من عملائنا المغاربة الذين استعادوا راحتهم وحركتهم بفضل زيتالجيك®.'
+          ? 'اكتشف شهادات صادقة للعديد من المغاربة الذين استعادوا راحتهم وحركتهم بفضل ®Zitalgic.'
           : 'Découvrez les témoignages authentiques de nos clients marocains qui ont retrouvé leur confort et leur mobilité grâce à Zitalgic®.'}
       </p>
     </div>
@@ -1373,7 +2356,7 @@ const testimonials = [
       <div className="banner-content">
         <h3>
           {lang === 'ar' ? 'انضم إلى مجتمع' : 'Rejoignez la communauté'}{' '}
-          <span className="brand-glow">Zitalgic®</span>
+          <span className="brand-glow">®Zitalgic</span>
         </h3>
         <p className="banner-sub">
           {lang === 'ar'
@@ -1384,7 +2367,7 @@ const testimonials = [
         <div className="green-feature-grid">
           <div className="g-feature">
             <div className="icon-ring"><Award className="g-icon" /></div>
-            <span>{lang === 'ar' ? 'رائد في المغرب' : 'Leader au Maroc'}</span>
+            <span>{lang === 'ar' ? 'فعالية مضمونة' : 'Efficacité garantie'}</span>
           </div>
           <div className="g-feature">
             <div className="icon-ring"><Leaf className="g-icon" /></div>
@@ -1392,7 +2375,7 @@ const testimonials = [
           </div>
           <div className="g-feature">
             <div className="icon-ring"><FlaskConical className="g-icon" /></div>
-            <span>{lang === 'ar' ? 'تركيبة مرخّصة' : 'Formule Brevetée'}</span>
+            <span>{lang === 'ar' ? 'تركيبة حاصلة على براءة اختراع' : 'Formule Brevetée'}</span>
           </div>
           <div className="g-feature">
             <div className="icon-ring"><Truck className="g-icon" /></div>
@@ -1410,42 +2393,82 @@ const testimonials = [
 </section>
 
 {/* ORDER FORM */}
-<section id="order-form" ref={formRef} className={`order-form ${isVisible['order-form'] ? 'animate' : ''}`}>
+<section
+  id="order-form"
+  ref={formRef}
+  className={`order-form ${isVisible['order-form'] ? 'animate' : ''}`}
+>
   <div className="container">
     <div className="section-header">
       <h2 className="form-main-title" style={{ color: 'black' }}>
         {lang === 'ar' ? 'اطلب' : 'Commandez'}{' '}
-        <span className="orange-text">Zitalgic®</span> {lang === 'ar' ? 'الآن' : 'maintenant'}
+        <span className="orange-text">Zitalgic®</span>{' '}
+        {lang === 'ar' ? 'الآن' : 'maintenant'}
       </h2>
-      <p className="form-subtitle">{lang === 'ar' ? 'املأ النموذج أدناه واستعد راحتك ابتداءً من الغد. الدفع آمن 100٪ عند الاستلام' : 'Remplissez le formulaire ci-dessous et retrouver votre confort dès demain. Paiement 100 % sécurisé à la livraison'}</p>
+      <p className="form-subtitle">
+        {lang === 'ar'
+          ? 'املأ النموذج أدناه واستعد راحتك ابتداءً من الغد. الدفع آمن 100٪ عند الاستلام'
+          : 'Remplissez le formulaire ci-dessous et retrouvez votre confort dès demain. Paiement 100 % sécurisé à la livraison'}
+      </p>
     </div>
 
     <div className="order-content-modern">
       <form onSubmit={handleSubmit} className="form-card-gray">
-        <h3 className="form-title-black">{lang === 'ar' ? 'اختر باقتك' : 'Choisissez votre pack'}</h3>
+        <h3 className="form-title-black">
+          {lang === 'ar' ? 'اختر باقتك' : 'Choisissez votre pack'}
+        </h3>
         <div className="pack-selector-animated">
-          {Object.entries(packs).map(([key, pack]) => (
-            <label key={key} className={`pack-option-animated ${selectedPack === key ? 'selected-orange' : ''}`}>
-              <input
-                type="radio"
-                name="pack"
-                checked={selectedPack === key}
-                onChange={() => setSelectedPack(key)}
-              />
-              <div className="pack-visual">
-                <span className="pack-name-black">{pack.quantity}</span>
-                <div className="pack-price-group">
-                  <span className="price-current">{pack.price} DH</span>
-                  <span className="price-old">{pack.original} DH</span>
-                  {pack.savings > 0 && (
-                    <span className="price-save">
-                      {lang === 'ar' ? `وفّر ${pack.savings} درهم` : `économisez ${pack.savings} DH`}
+          {Object.entries(packs).map(([key, pack]) => {
+            const packLabel =
+              lang === 'ar'
+                ? key === '1-flacon'
+                  ? 'عبوة 30 مل'
+                  : key === '3-flacons'
+                  ? '3 عبوات × 30 مل'
+                  : key === '5-flacons'
+                  ? '5 عبوات × 30 مل'
+                  : ''
+                : key === '1-flacon'
+                ? '1 Flacon (30 ml)'
+                : key === '3-flacons'
+                ? '3 Flacons (3x30 ml)'
+                : key === '5-flacons'
+                ? '5 Flacons (5x30 ml)'
+                : '';
+            return (
+              <label
+                key={key}
+                className={`pack-option-animated ${
+                  selectedPack === key ? 'selected-orange' : ''
+                }`}
+              >
+                <input
+                  type="radio"
+                  name="pack"
+                  checked={selectedPack === key}
+                  onChange={() => setSelectedPack(key)}
+                />
+                <div className="pack-visual">
+                  <span className="pack-name-black">{packLabel}</span>
+                  <div className="pack-price-group">
+                    <span className="price-current">
+                      {lang === 'ar' ? `${pack.price} درهم` : `${pack.price} DH`}
                     </span>
-                  )}
+                    <span className="price-old">
+                      {lang === 'ar' ? `${pack.original} درهم` : `${pack.original} DH`}
+                    </span>
+                    {pack.savings > 0 && (
+                      <span className="price-save">
+                        {lang === 'ar'
+                          ? `وفّر ${pack.savings} درهم`
+                          : `Économisez ${pack.savings} DH`}
+                      </span>
+                    )}
+                  </div>
                 </div>
-              </div>
-            </label>
-          ))}
+              </label>
+            );
+          })}
         </div>
 
         <h3 className="form-title-black">{lang === 'ar' ? 'بياناتك' : 'Vos informations'}</h3>
@@ -1487,27 +2510,60 @@ const testimonials = [
         </div>
 
         <button type="submit" className="submit-btn-orange" disabled={isSubmitting}>
-          {isSubmitting ? (lang === 'ar' ? 'جارٍ الإرسال...' : 'Envoi...') : (lang === 'ar' ? 'أؤكد طلبي' : 'Je confirme ma commande')}
+          {isSubmitting
+            ? lang === 'ar'
+              ? 'جارٍ الإرسال...'
+              : 'Envoi...'
+            : lang === 'ar'
+            ? 'أؤكد طلبي'
+            : 'Je confirme ma commande'}
         </button>
       </form>
 
       <div className="sidebar-animated">
         <div className="summary-card-gray">
-          <h3 className="summary-title-black">{lang === 'ar' ? 'ملخص الطلب' : 'Résumé de la commande'}</h3>
+          <h3 className="summary-title-black">
+            {lang === 'ar' ? 'ملخص الطلب' : 'Résumé de la commande'}
+          </h3>
           <div className="summary-item">
             <div>
-              <strong className="pack-name-black">{packs[selectedPack].quantity}</strong>
+              <strong className="pack-name-black">
+                {lang === 'ar'
+                  ? selectedPack === '1-flacon'
+                    ? 'عبوة 30 مل'
+                    : selectedPack === '3-flacons'
+                    ? '3 عبوات × 30 مل'
+                    : selectedPack === '5-flacons'
+                    ? '5 عبوات × 30 مل'
+                    : ''
+                  : selectedPack === '1-flacon'
+                  ? '1 Flacon (30 ml)'
+                  : selectedPack === '3-flacons'
+                  ? '3 Flacons (3x30 ml)'
+                  : selectedPack === '5-flacons'
+                  ? '5 Flacons (5x30 ml)'
+                  : ''}
+              </strong>
               <br />
-              <span className="price-large">{packs[selectedPack].price + 25} DH</span>
+              <span className="black-text">
+                {lang === 'ar'
+                  ? `${packs[selectedPack].price} درهم`
+                  : `${packs[selectedPack].price} DH`}
+              </span>
             </div>
           </div>
-          {packs[selectedPack].savings > 0 && (
-            <div className="summary-item">
-              <span>{lang === 'ar' ? 'توفّر' : 'Économisé'}: <strong>{packs[selectedPack].savings} DH</strong></span>
-            </div>
-          )}
           <div className="summary-item">
-            <span>{lang === 'ar' ? 'التوصيل 25 درهم' : 'Livraison 25DH'}</span>
+            <span>{lang === 'ar' ? 'التوصيل 25 درهم' : 'Livraison 25 DH'}</span>
+          </div>
+          <div className="summary-item">
+            <span>
+              {lang === 'ar' ? 'المجموع' : 'Total'}:{' '}
+              <strong className="price-large">
+                {lang === 'ar'
+                  ? `${packs[selectedPack].price + 25} درهم`
+                  : `${packs[selectedPack].price + 25} DH`}
+              </strong>
+            </span>
           </div>
         </div>
 
@@ -1515,14 +2571,12 @@ const testimonials = [
           <div className="contact-text">
             <span className="contact-title-black">{lang === 'ar' ? 'أسئلة؟' : 'Des Questions ?'}</span>
             <div className="phone-copy-container">
-            <span className="contact-phone">
-              {lang === 'ar' ? '00 10 56 53 06' : '06 53 56 10 00'}
-            </span>
+              <span className="contact-phone">{lang === 'ar' ? '00 10 56 53 06' : '06 53 56 10 00'}</span>
               <button type="button" className="copy-btn" onClick={() => copyToClipboard('0653561000')}>
                 {copySuccess ? <span className="gray-check">✓</span> : <Copy size={16} className="copy-icon" />}
               </button>
             </div>
-            <span className="contact-hours">{lang === 'ar' ? '7 أيام / 9 ص-8 م' : '7j/7j 9h-20h'}</span>
+            <span className="contact-hours">{lang === 'ar' ? '7 أيام / 9 ص-8 م' : '7j/7 9h-20h'}</span>
           </div>
         </div>
       </div>
@@ -1530,53 +2584,35 @@ const testimonials = [
   </div>
 </section>
 
-{/* FAQ */}
-<section id="faq" className={`faq ${isVisible.faq ? 'animate' : ''}`}>
-  <div className="container">
-    <div className="section-header">
-      <h2>{lang === 'ar' ? 'الأسئلة الشائعة' : 'Questions fréquentes'}</h2>
-      <p>{lang === 'ar' ? 'أجوبة لأكثر الأسئلة تكراراً حول زيتالجيك®' : 'Trouvez les réponses à vos questions sur Zitalgic®'}</p>
-    </div>
 
-    <div className="faq-list">
-      {faqData.map((faq, index) => (
-        <div key={index} className={`faq-item ${openFaq === index ? 'open' : ''}`}>
-          <button className="faq-question" onClick={() => setOpenFaq(openFaq === index ? null : index)}>
-            {lang === 'ar' ? faq.question_ar : faq.question}
-            <ChevronDown className={`faq-icon ${openFaq === index ? 'open' : ''}`} />
-          </button>
-          {openFaq === index && (
-            <div className="faq-answer">
-              <p>{lang === 'ar' ? faq.answer_ar : faq.answer}</p>
-            </div>
-          )}
+
+<footer className={`footer ${lang === 'ar' ? 'ar' : ''}`}>
+  <div className="container">
+    <div className="footer-content">
+      {/* Left Section - Zitalgic Info */}
+      <div className="footer-section">
+        <div className="logo">
+          <h1>Zitalgic®</h1>
+          <p>{lang === 'ar' ? 'راحة المفاصل والعضلات والأعصاب' : 'Confort Articulaire, musculaire et Nerveux'}</p>
         </div>
-      ))}
+        <p>{lang === 'ar' ? 'منتج مطوّر بواسطة Authentic Laboratory' : 'Produit Développé par Authentic Laboratory'}</p>
+      </div>
+      
+      {/* Right Section - Contact Info */}
+      <div className="footer-section">
+        <h3>{lang === 'ar' ? 'تواصل معنا' : 'Contact'}</h3>
+        <p>
+          <Phone className="icon" /> 
+          <span className="phone-number">06 53 56 10 00</span>
+        </p>
+        <p>{lang === 'ar' ? 'متاح 7 أيام في الأسبوع من 9 ص إلى 8 م' : 'Disponible 7j/7 de 9h à 20h'}</p>
+      </div>
+    </div>
+    <div className="footer-bottom">
+      <p>&copy; 2023 Zitalgic. {lang === 'ar' ? 'جميع الحقوق محفوظة' : 'Tous droits réservés'}</p>
     </div>
   </div>
-</section>
-
-<footer className="footer">
-        <div className="container">
-          <div className="footer-content">
-            <div className="footer-section">
-              <div className="logo">
-                <h1>{t.headerTitle}</h1>
-                <p>{lang === 'ar' ? 'راحة المفاصل والعضلات والأعصاب' : 'Confort Articulaire, musculaire et Nerveux'}</p>
-              </div>
-              <p>{lang === 'ar' ? 'منتج مطوّر بواسطة Authentic Laboratory' : 'Produit Développé par Authentic Laboratory'}</p>
-            </div>
-            <div className="footer-section">
-              <h3>{lang === 'ar' ? 'تواصل معنا' : 'Contact'}</h3>
-              <p><Phone className="icon" /> 06 53 56 10 00</p>
-              <p>{lang === 'ar' ? 'متاح 7 أيام في الأسبوع من 9 ص إلى 8 م' : 'Disponible 7j/7 de 9h à 20h'}</p>
-            </div>
-          </div>
-          <div className="footer-bottom">
-            <p>{t.footerRights}</p>
-          </div>
-        </div>
-      </footer>
+</footer>
     </div>
   );
 };
