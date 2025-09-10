@@ -389,7 +389,7 @@ useEffect(() => {
       }
   };
 
-  const handleSubmit = async (e) => {
+ const handleSubmit = async (e) => {
     e.preventDefault();
     // Validate inputs
   // Validate inputs
@@ -1139,37 +1139,37 @@ const testimonials = [
     <div className="zitalgic-landing" lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       {/* Popup unchanged */}
       {showPopup && (
-  <div className="popup-overlay" onClick={closePopup}>
-    <div className="popup-container" onClick={(e) => e.stopPropagation()}>
-      <button className="popup-close" onClick={closePopup}><X size={24} /></button>
-      <div className="popup-content">
-        {submissionError ? (
-          <>
-            <div className="popup-icon error"><AlertCircle size={48} /></div>
-            <h3>{lang === 'ar' ? 'خطأ في الإدخال' : 'Erreur de saisie'}</h3>
-            <p>{submissionError}</p>
-            <button className="popup-button" onClick={closePopup}>
-              {lang === 'ar' ? 'حاول مرة أخرى' : 'Réessayer'}
-            </button>
-          </>
-        ) : (
-          <>
-            <div className="popup-icon success"><CheckCircle size={48} /></div>
-            <h3>{lang === 'ar' ? 'تم تسجيل الطلب!' : 'Commande Enregistrée !'}</h3>
-            <p>
-              {lang === 'ar'
-                ? 'شكرًا لطلبك! سيتصل بك موظفنا خلال 24 ساعة.'
-                : 'Merci pour votre commande ! Notre commercial vous contactera dans les 24h.'}
-            </p>
-            <button className="popup-button" onClick={closePopup}>
-              {lang === 'ar' ? 'إغلاق' : 'Fermer'}
-            </button>
-          </>
-        )}
-      </div>
-    </div>
-  </div>
-)}
+        <div className="popup-overlay" onClick={closePopup}>
+          <div className="popup-container" onClick={(e) => e.stopPropagation()}>
+            <button className="popup-close" onClick={closePopup}><X size={24} /></button>
+            <div className="popup-content">
+              {submissionError ? (
+                <>
+                  <div className="popup-icon error"><AlertCircle size={48} /></div>
+                  <h3>{lang === 'ar' ? 'خطأ في الإرسال' : 'Erreur lors de l\'envoi'}</h3>
+                  <p>{submissionError}</p>
+                  <button className="popup-button" onClick={closePopup}>
+                    {lang === 'ar' ? 'إغلاق' : 'Fermer'}
+                  </button>
+                </>
+              ) : (
+                <>
+                  <div className="popup-icon success"><CheckCircle size={48} /></div>
+                  <h3>{lang === 'ar' ? 'تم تسجيل الطلب!' : 'Commande Enregistrée !'}</h3>
+                  <p>
+                    {lang === 'ar'
+                      ? 'شكرًا لطلبك! سيتصل بك موظفنا خلال 24 ساعة.'
+                      : 'Merci pour votre commande ! Notre commercial vous contactera dans les 24h.'}
+                  </p>
+                  <button className="popup-button" onClick={closePopup}>
+                    {lang === 'ar' ? 'إغلاق' : 'Fermer'}
+                  </button>
+                </>
+              )}
+            </div>
+          </div>
+        </div>
+      )}
 
       {/* ---------------------------------------------------- */}
       {/* HEADER  -  added language switcher                   */}
@@ -1419,7 +1419,7 @@ const testimonials = [
           <div className="section-header">
             <div className="section-badge">
               <Volume2 className="audio-icon" />
-              <span>{lang === 'ar' ? 'آراء الزبناء' : 'Témoignages Client'}</span>
+              <span>{lang === 'ar' ? 'آراء الزبناء' : 'Témoignages Clients'}</span>
             </div>
 
             <h2 className="audio-testimonials-title green-title-underline">
@@ -1429,9 +1429,10 @@ const testimonials = [
 
             <p className="section-desc">
               {lang === "ar"
-                ? "آراء الزبناء: استمع كيف استعادوا راحتهم بفضل Zitalgic®. قصص حقيقية وتجارب ملهمة من أناس وجدوا في Zitalgic® الحل الطبيعي الذي كانوا يبحثون عنه، استمع إلى شهاداتهم واكتشف كيف استعادوا السيطرة على حياتهم واستمتعوا بالراحة التي يستحقونها."
-                : "Avis des clients : Écoutez comment ils ont retrouvé leur confort grâce à Zitalgic®. De vraies histoires et des témoignages inspirants de personnes qui ont trouvé dans Zitalgic® la solution naturelle qu’ils recherchaient. Découvrez leurs expériences et comment elles leur ont permis de reprendre le contrôle de leur vie et de profiter du confort qu’ils méritent."}
+                ? ". قصص حقيقية وتجارب ملهمة من أناس وجدوا في Zitalgic® الحل الطبيعي الذي كانوا يبحثون عنه، استمع إلى شهاداتهم واكتشف كيف استعادوا السيطرة على حياتهم واستمتعوا بالراحة التي يستحقونها."
+                : "Des histoires réelles et des témoignages inspirants de personnes ayant trouvé dans Zitalgic® la solution naturelle qu’elles recherchaient. Écoutez leurs récits et découvrez comment elles ont repris le contrôle de leur vie et retrouvé le confort qu’elles méritent."}
             </p>
+
           </div>
 
           <div className="audio-grid">
@@ -1546,8 +1547,8 @@ const testimonials = [
         color: '#666'
       }}>
         {lang === 'ar'
-          ? 'عشرة من آلاف المحادثات – اطلع على ما يقوله من اشتروا زيتالجيك® فعلاً.'
-          : 'Dix parmi des milliers de conversations – lisez ce que disent les vrais acheteurs de Zitalgic®.'}
+          ? 'اطلع على ما يقوله مستخدموا زيتالجيك® فعلاً.'
+          : 'Lisez ce que racontent les utilisateurs de Zitalgic®.'}
       </p>
     </div>
 
@@ -1818,7 +1819,7 @@ const testimonials = [
           e.target.style.outline = 'none'; // Remove focus outline
         }}
       >
-        {lang === 'ar' ? 'أطلب الآن وانضم للقائمة' : 'Je commande et j’envoie mon message'}
+        {lang === 'ar' ? 'أطلب الآن' : 'Je commande maintenant'}
       </button>
     </div>
   </div>
@@ -2671,6 +2672,5 @@ const testimonials = [
     </div>
   );
 };
-
 
 export default App;
