@@ -484,8 +484,11 @@ useEffect(() => {
 
   const closePopup = () => {
   setShowPopup(false);
+  // Only clear form if success popup
+  if (!submissionError) {
+    setFormData({ nom: '', telephone: '', email: '', ville: '', adresse: '' });
+  }
   setSubmissionError(null);
-  setFormData({ nom: '', telephone: '', email: '', ville: '', adresse: '' });
   };
 
   // Add this new function for horizontal scrolling
