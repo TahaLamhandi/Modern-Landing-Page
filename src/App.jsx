@@ -483,8 +483,9 @@ useEffect(() => {
   };
 
   const closePopup = () => {
-    setShowPopup(false);
-    setSubmissionError(null);
+  setShowPopup(false);
+  setSubmissionError(null);
+  setFormData({ nom: '', telephone: '', email: '', ville: '', adresse: '' });
   };
 
   // Add this new function for horizontal scrolling
@@ -1139,37 +1140,37 @@ const testimonials = [
     <div className="zitalgic-landing" lang={lang} dir={lang === 'ar' ? 'rtl' : 'ltr'}>
       {/* Popup unchanged */}
       {showPopup && (
-        <div className="popup-overlay" onClick={closePopup}>
-          <div className="popup-container" onClick={(e) => e.stopPropagation()}>
-            <button className="popup-close" onClick={closePopup}><X size={24} /></button>
-            <div className="popup-content">
-              {submissionError ? (
-                <>
-                  <div className="popup-icon error"><AlertCircle size={48} /></div>
-                  <h3>{lang === 'ar' ? 'خطأ في الإرسال' : 'Erreur lors de l\'envoi'}</h3>
-                  <p>{submissionError}</p>
-                  <button className="popup-button" onClick={closePopup}>
-                    {lang === 'ar' ? 'إغلاق' : 'Fermer'}
-                  </button>
-                </>
-              ) : (
-                <>
-                  <div className="popup-icon success"><CheckCircle size={48} /></div>
-                  <h3>{lang === 'ar' ? 'تم تسجيل الطلب!' : 'Commande Enregistrée !'}</h3>
-                  <p>
-                    {lang === 'ar'
-                      ? 'شكرًا لطلبك! سيتصل بك موظفنا خلال 24 ساعة.'
-                      : 'Merci pour votre commande ! Notre commercial vous contactera dans les 24h.'}
-                  </p>
-                  <button className="popup-button" onClick={closePopup}>
-                    {lang === 'ar' ? 'إغلاق' : 'Fermer'}
-                  </button>
-                </>
-              )}
-            </div>
-          </div>
-        </div>
-      )}
+  <div className="popup-overlay" onClick={closePopup}>
+    <div className="popup-container" onClick={(e) => e.stopPropagation()}>
+      <button className="popup-close" onClick={closePopup}><X size={24} /></button>
+      <div className="popup-content">
+        {submissionError ? (
+          <>
+            <div className="popup-icon error"><AlertCircle size={48} /></div>
+            <h3>{lang === 'ar' ? 'خطأ في الإرسال' : 'Erreur lors de l\'envoi'}</h3>
+            <p>{submissionError}</p>
+            <button className="popup-button error-btn" onClick={closePopup}>
+              {lang === 'ar' ? 'حاول مرة أخرى' : 'Réessayer'}
+            </button>
+          </>
+        ) : (
+          <>
+            <div className="popup-icon success"><CheckCircle size={48} /></div>
+            <h3>{lang === 'ar' ? 'تم تسجيل الطلب!' : 'Commande Enregistrée !'}</h3>
+            <p>
+              {lang === 'ar'
+                ? 'شكرًا لطلبك! سيتصل بك موظفنا خلال 24 ساعة.'
+                : 'Merci pour votre commande ! Notre commercial vous contactera dans les 24h.'}
+            </p>
+            <button className="popup-button success-btn" onClick={closePopup}>
+              {lang === 'ar' ? 'إغلاق' : 'Fermer'}
+            </button>
+          </>
+        )}
+      </div>
+    </div>
+  </div>
+)}
 
       {/* ---------------------------------------------------- */}
       {/* HEADER  -  added language switcher                   */}

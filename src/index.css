@@ -8660,3 +8660,37 @@ section {
     margin-left: 5px;
   }
 }
+
+/* Popup button styles */
+.popup-button {
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  color: white !important;
+}
+
+/* Error button - red */
+.popup-button.error-btn {
+  background: #EF4444 !important; /* Red color */
+}
+
+.popup-button.error-btn:hover {
+  background: #DC2626 !important; /* Darker red on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Success button - green */
+.popup-button.success-btn {
+  background: #10B981 !important; /* Green color */
+}
+
+.popup-button.success-btn:hover {
+  background: #059669 !important; /* Darker green on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+}
