@@ -89,7 +89,7 @@ const translations = {
     orderNow: 'اطلب الآن',
 
     // Hero
-    heroTitle: 'Zitalgic®',
+    heroTitle: '®Zitalgic',
     heroSub: 'قُل وداعًا للألم.. بشكل طبيعي',
     heroDesc: 'تخلص من آلام المفاصل والعضلات والأعصاب بسرعة مع تركيبتنا 100٪ طبيعية.',
     choosePack: 'اخترالعرض الذي يناسبك',
