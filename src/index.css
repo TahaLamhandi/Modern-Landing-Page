@@ -8620,3 +8620,43 @@ section {
 
 /* dots always on top */
 .image-indicators-vertical { z-index: 9999 !important; }
+
+/* Style the check marks with green color and light black border */
+.styled-check {
+  color: #10B981; /* Green color */
+  font-weight: 900; /* Bold check mark */
+  font-size: 1.1rem;
+  text-shadow: 0 0 1px rgba(0, 0, 0, 1); /* Light black border effect */
+  margin-right: 8px;
+  display: inline-block;
+}
+
+/* RTL support for Arabic */
+[dir="rtl"] .styled-check {
+  margin-right: 0;
+  margin-left: 8px;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .styled-check {
+    font-size: 1rem;
+    margin-right: 6px;
+  }
+  
+  [dir="rtl"] .styled-check {
+    margin-left: 6px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .styled-check {
+    font-size: 0.9rem;
+    margin-right: 5px;
+  }
+  
+  [dir="rtl"] .styled-check {
+    margin-left: 5px;
+  }
+}

@@ -290,8 +290,8 @@ useEffect(() => {
     price: 220, 
     original: 250, 
     savings: 30, 
-    quantity: '1 Flacon (30ml)',
-    quantity_ar: '1 عبوة (30 مل)',
+    quantity: '1 Flacon',
+    quantity_ar: '1 عبوة',
     treatment: 'Traitement 20 jours',
     treatment_ar: 'علاج 20 يوم'
   },
@@ -299,8 +299,8 @@ useEffect(() => {
     price: 600, 
     original: 750, 
     savings: 150, 
-    quantity: '3 Flacons (3x30ml)',
-    quantity_ar: '3 عبوات (3x30 مل)',
+    quantity: '3 Flacons',
+    quantity_ar: '3 عبوات',
     treatment: 'Traitement 2 mois',
     treatment_ar: 'علاج شهرين'
   },
@@ -308,8 +308,8 @@ useEffect(() => {
     price: 900, 
     original: 1250, 
     savings: 350, 
-    quantity: '5 Flacons (5x30ml)',
-    quantity_ar: '5 عبوات (5x30 مل)',
+    quantity: '5 Flacons',
+    quantity_ar: '5 عبوات',
     treatment: 'Traitement 3 mois 1/2',
     treatment_ar: 'علاج 3 أشهر ونصف'
   },
@@ -446,7 +446,7 @@ useEffect(() => {
         prix: packs[selectedPack].price,
         date: new Date().toLocaleString('fr-FR')
       };
-      const formspreeResponse = await fetch('https://formspree.io/f/xpwlgwag', {
+      const formspreeResponse = await fetch('https://formspree.io/f/xjkelaqj', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -2192,14 +2192,14 @@ const testimonials = [
           </div>
           <h3 style={{ color: '#16a34a' }}>Zitalgic®</h3>
         </div>
-        <ul className="comparison-features" style={{ listStyle: 'none', padding: 0, margin: 0 }}>
-          <li>✓ {lang === 'ar' ? 'تركيبة حاصلة على براءة اختراع' : 'Formule brevetée'}</li>
-          <li>✓ {lang === 'ar' ? 'مكونات طبيعية 100% وعالية الجودة' : 'Ingrédients 100% naturels et de haute qualité'}</li>
-          <li>✓ {lang === 'ar' ? 'بدون آثار جانبية' : 'Sans effets secondaires'}</li>
-          <li>✓ {lang === 'ar' ? 'تأثير موجه: المفاصل، العضلات، الأعصاب' : 'Action ciblée : articulations, muscles et nerfs'}</li>
-          <li>✓ {lang === 'ar' ? 'حجم 30 مل، بتركيز عالٍ' : 'Format 30 ml, haute concentration'}</li>
-          <li>✓ {lang === 'ar' ? 'تركيبة مطوّرة من طرف صيادلة متخصصين' : 'Formule développée par des pharmaciens spécialisés'}</li>
-          <li>✓ {lang === 'ar' ? 'فعالية مضمونة' : 'Efficacité garantie'}</li>
+         <ul className="comparison-features" style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+          <li><span className="styled-check">✓</span> {lang === 'ar' ? 'تركيبة حاصلة على براءة اختراع' : 'Formule brevetée'}</li>
+          <li><span className="styled-check">✓</span> {lang === 'ar' ? 'مكونات طبيعية 100% وعالية الجودة' : 'Ingrédients 100% naturels et de haute qualité'}</li>
+          <li><span className="styled-check">✓</span> {lang === 'ar' ? 'بدون آثار جانبية' : 'Sans effets secondaires'}</li>
+          <li><span className="styled-check">✓</span> {lang === 'ar' ? 'تأثير موجه: المفاصل، العضلات، الأعصاب' : 'Action ciblée : articulations, muscles et nerfs'}</li>
+          <li><span className="styled-check">✓</span> {lang === 'ar' ? 'تأثير فوري بالبرودة والحرارة، راحة تدوم طويلاً' : 'Effet froid-chaud immédiat, Soulagement durable'}</li>
+          <li><span className="styled-check">✓</span> {lang === 'ar' ? 'تركيبة مطوّرة من طرف صيادلة متخصصين' : 'Formule développée par des pharmaciens spécialisés'}</li>
+          <li><span className="styled-check">✓</span> {lang === 'ar' ? 'فعالية مضمونة' : 'Efficacité garantie'}</li>
         </ul>
 
       </div>
