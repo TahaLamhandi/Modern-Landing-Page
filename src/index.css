@@ -8329,3 +8329,294 @@ section {
     font-size: 1rem !important;
   }
 }
+
+/* Beautiful popup styles */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+  padding: 20px;
+}
+
+.popup-container {
+  background: white;
+  border-radius: 16px;
+  padding: 30px;
+  max-width: 400px;
+  width: 100%;
+  text-align: center;
+  position: relative;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+}
+
+.popup-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+
+.popup-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.popup-icon {
+  margin-bottom: 10px;
+}
+
+.popup-icon.success {
+  color: #10B981;
+}
+
+.popup-icon.error {
+  color: #EF4444;
+}
+
+.popup-container h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.popup-container p {
+  font-size: 1rem;
+  margin-bottom: 20px;
+  line-height: 1.5;
+}
+
+.popup-button {
+  background: #F97316;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.popup-button:hover {
+  background: #EA580C;
+}
+
+/* RTL support for popup */
+[dir="rtl"] .popup-close {
+  right: auto;
+  left: 15px;
+}
+
+[dir="rtl"] .popup-container {
+  text-align: center;
+}
+
+/* Make selected image cover the white container with rounded corners */
+@media (max-width: 768px) {
+  .main-image-wrapper-vertical {
+    border-radius: 16px;
+    overflow: hidden;
+    background: white;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  
+  .hero-main-image-vertical {
+    border-radius: 16px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
+/* Make popup button red with white text */
+.popup-button {
+  background: #EF4444 !important; /* Red color */
+  color: white !important;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.popup-button:hover {
+  background: #DC2626 !important; /* Darker red on hover */
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
+}
+
+/* Reduce height of image and container, move it closer to title */
+@media (max-width: 768px) {
+  .main-image-wrapper-vertical {
+    height: 280px !important; /* Reduced height */
+    margin-bottom: 15px !important; /* Reduced margin to bring it closer to title */
+  }
+  
+  .hero-main-image-vertical {
+    height: 280px !important; /* Reduced height */
+    object-fit: cover;
+  }
+  
+  /* Bring gallery section closer to title */
+  .hero-gallery-section {
+    margin-bottom: 10px !important;
+  }
+}
+
+/* Fix bottom header text alignment - don't force right alignment */
+.bottom-header .logo {
+  text-align: left;
+}
+
+[dir="rtl"] .bottom-header .logo {
+  text-align: right;
+}
+
+.bottom-header .logo p {
+  text-align: left;
+  unicode-bidi: plaintext;
+}
+
+[dir="rtl"] .bottom-header .logo p {
+  text-align: right;
+  unicode-bidi: plaintext;
+}
+
+/* Keep dots under selected image and ensure they appear in one line */
+@media (max-width: 768px) {
+  .main-image-wrapper-vertical {
+    height: 320px !important;
+    width: 100% !important;
+    margin-bottom: 15px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-main-image-vertical {
+    height: auto !important;
+    width: auto !important;
+    max-height: 300px !important; /* Slightly less than container to make space for dots */
+    max-width: 100% !important;
+    object-fit: contain !important;
+  }
+  
+  .image-indicators-vertical {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .indicator-vertical {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d1d5db;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+  
+  .indicator-vertical.active {
+    background: #f97316;
+    transform: scale(1.2);
+  }
+  
+  /* Bring gallery section closer to title */
+  .hero-gallery-section {
+    margin-bottom: 10px !important;
+  }
+}
+
+/* Make selected image bigger and adjust dots */
+@media (max-width: 768px) {
+  .main-image-wrapper-vertical {
+    height: 380px !important; /* Increased height */
+    width: 100% !important;
+    margin-bottom: 15px !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .hero-main-image-vertical {
+    height: auto !important;
+    width: auto !important;
+    max-height: 360px !important; /* Increased size */
+    max-width: 100% !important;
+    object-fit: contain !important;
+  }
+  
+  .image-indicators-vertical {
+    display: flex !important;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    margin-top: 10px;
+    width: 100%;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .indicator-vertical {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #f3f4f6 !important; /* Very light gray */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    flex-shrink: 0;
+  }
+  
+  .indicator-vertical.active {
+    background: #f97316 !important;
+    transform: scale(1.2);
+  }
+  
+  /* Bring gallery section closer to title */
+  .hero-gallery-section {
+    margin-bottom: 10px !important;
+  }
+}
+
+/* Fix check marks position for Arabic - on the right side */
+[dir="rtl"] .benefit-item {
+  flex-direction: row; /* Keep normal direction for RTL */
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .benefit-item svg {
+  margin-right: 0;
+  margin-left: 10px; /* Space on the left for Arabic */
+  order: 2; /* Move icon to the right */
+}
+
+[dir="rtl"] .benefit-item span {
+  order: 1; /* Keep text on the left */
+  text-align: right; /* Right align text for Arabic */
+}
+
+/* dots always on top */
+.image-indicators-vertical { z-index: 9999 !important; }
