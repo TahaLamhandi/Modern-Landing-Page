@@ -128,12 +128,13 @@ const LanguageSwitcher = ({ lang, setLang }) => (
 const App = ({ onAddToCart }) => {
   const [selectedImage, setSelectedImage] = useState(0);
   const [selectedPack, setSelectedPack] = useState('1-flacon');
-  const [formData, setFormData] = useState({
-    nom: '',
-    telephone: '',
-    email: '',
-    ville: '',
-  });
+ const [formData, setFormData] = useState({
+  nom: '',
+  telephone: '',
+  adresse: '',
+  ville: '',
+});
+const [formErrors, setFormErrors] = useState({});
   const [isVisible, setIsVisible] = useState({});
   const [openFaq, setOpenFaq] = useState(null);
   const [counters, setCounters] = useState({
@@ -379,14 +380,52 @@ useEffect(() => {
 
   
   const handleInputChange = (e) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
+     const { name, value } = e.target;
+      setFormData((prev) => ({ ...prev, [name]: value }));
+      
+      // Clear error when user starts typing
+      if (formErrors[name]) {
+        setFormErrors((prev) => ({ ...prev, [name]: '' }));
+      }
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setSubmissionError(null);
+    // Validate inputs
+  const errors = {};
+  
+  if (!formData.nom.trim()) {
+    errors.nom = lang === 'ar' ? 'يرجى ملء هذا الحقل' : 'Veuillez remplir ce champ';
+  }
+  
+  if (!formData.telephone.trim()) {
+    errors.telephone = lang === 'ar' ? 'يرجى ملء هذا الحقل' : 'Veuillez remplir ce champ';
+  } else if (!/^[0-9]{10}$/.test(formData.telephone.replace(/\s/g, ''))) {
+    errors.telephone = lang === 'ar' ? 'رقم الهاتف يجب أن يكون 10 أرقام' : 'Le numéro doit contenir 10 chiffres';
+  }
+  
+  if (!formData.adresse.trim()) {
+    errors.adresse = lang === 'ar' ? 'يرجى ملء هذا الحقل' : 'Veuillez remplir ce champ';
+  }
+  
+  if (!formData.ville.trim()) {
+    errors.ville = lang === 'ar' ? 'يرجى ملء هذا الحقل' : 'Veuillez remplir ce champ';
+  }
+  
+  setFormErrors(errors);
+  
+  // If there are errors, show popup and stop submission
+  if (Object.keys(errors).length > 0) {
+    setSubmissionError(lang === 'ar' 
+      ? 'يرجى ملء جميع الحقول المطلوبة بشكل صحيح' 
+      : 'Veuillez remplir tous les champs obligatoires correctement');
+    setShowPopup(true);
+    return;
+  }
+  
+  // Continue with form submission if no errors...
+  setIsSubmitting(true);
+  setSubmissionError(null);
     try {
       const submissionPayload = {
         nom: formData.nom,
@@ -1034,6 +1073,7 @@ useEffect(() => {
   return () => clearInterval(auto);            // clean on unmount
 }, [currentSlide]);   // restart if slide changes manually
 
+
 const [lang, setLang] = useState('fr');    // NEW
 const t = translations[lang]; 
 
@@ -1166,7 +1206,7 @@ const testimonials = [
         </div>
 
         <div className="container">
-          <div className="hero-content">
+          <div className="hero-content mobile-centered">
             {/* LEFT GALLERY */}
             <div className="hero-gallery-section">
               <div className="gallery-container-vertical">
@@ -2190,7 +2230,7 @@ const testimonials = [
       </div>
     </div>
 
-    <div className="beautiful-choice-cta">
+    <div className="beautiful-choice-cta mobile-wide-banner">
       <div className="choice-cta-background">
         <div className="floating-particles">
           <div className="particle particle-1"></div>
@@ -2472,40 +2512,46 @@ const testimonials = [
 
         <h3 className="form-title-black">{lang === 'ar' ? 'بياناتك' : 'Vos informations'}</h3>
         <div className="input-grid-animated">
-          <input
-            className="input-gray-border"
-            name="nom"
-            placeholder={lang === 'ar' ? 'الاسم الكامل' : 'Nom complet'}
-            value={formData.nom}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            className="input-gray-border"
-            name="telephone"
-            placeholder={lang === 'ar' ? 'رقم الهاتف' : 'Téléphone'}
-            value={formData.telephone}
-            onChange={handleInputChange}
-            required
-            pattern="[0-9]{10}"
-          />
-          <input
-            className="input-gray-border"
-            name="adresse"
-            type="text"
-            placeholder={lang === 'ar' ? 'العنوان' : 'Adresse'}
-            value={formData.email}
-            onChange={handleInputChange}
-            required
-          />
-          <input
-            className="input-gray-border"
-            name="ville"
-            placeholder={lang === 'ar' ? 'المدينة' : 'Ville'}
-            value={formData.ville}
-            onChange={handleInputChange}
-            required
-          />
+<input
+  className={`input-gray-border ${formErrors.nom ? 'error' : ''}`}
+  name="nom"
+  placeholder={lang === 'ar' ? 'الاسم الكامل' : 'Nom complet'}
+  value={formData.nom}
+  onChange={handleInputChange}
+  required
+/>
+{formErrors.nom && <div className="error-message">{formErrors.nom}</div>}
+
+<input
+  className={`input-gray-border ${formErrors.telephone ? 'error' : ''}`}
+  name="telephone"
+  placeholder={lang === 'ar' ? 'رقم الهاتف' : 'Téléphone'}
+  value={formData.telephone}
+  onChange={handleInputChange}
+  required
+/>
+{formErrors.telephone && <div className="error-message">{formErrors.telephone}</div>}
+
+<input
+  className={`input-gray-border ${formErrors.adresse ? 'error' : ''}`}
+  name="adresse"
+  type="text"
+  placeholder={lang === 'ar' ? 'العنوان' : 'Adresse'}
+  value={formData.adresse}
+  onChange={handleInputChange}
+  required
+/>
+{formErrors.adresse && <div className="error-message">{formErrors.adresse}</div>}
+
+<input
+  className={`input-gray-border ${formErrors.ville ? 'error' : ''}`}
+  name="ville"
+  placeholder={lang === 'ar' ? 'المدينة' : 'Ville'}
+  value={formData.ville}
+  onChange={handleInputChange}
+  required
+/>
+{formErrors.ville && <div className="error-message">{formErrors.ville}</div>}
         </div>
 
         <button type="submit" className="submit-btn-orange" disabled={isSubmitting}>

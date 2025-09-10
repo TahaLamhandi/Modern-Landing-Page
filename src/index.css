@@ -7233,3 +7233,1021 @@ section {
     justify-content: center;
   }
 }
+
+/* Mobile-specific compact styles */
+@media (max-width: 768px) {
+  /* Make everything more compact */
+  .container {
+    padding: 0 15px;
+  }
+  
+  /* Reduce section padding */
+  section {
+    padding: 40px 0 !important;
+  }
+  
+  /* Hero section adjustments */
+  .hero-content {
+    padding: 20px 0 40px;
+  }
+  
+  .hero-info-section {
+    padding: 25px 20px;
+  }
+  
+  .hero-title {
+    font-size: 2.2rem !important;
+    margin-bottom: 10px;
+  }
+  
+  .hero-subtitle {
+    font-size: 1.1rem !important;
+    margin-bottom: 15px;
+  }
+  
+  .hero-description {
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+  }
+  
+  .benefits-list {
+    margin-bottom: 20px;
+  }
+  
+  .benefit-item {
+    margin-bottom: 8px;
+    font-size: 0.9rem;
+  }
+  
+  .benefit-item svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  /* Package selection */
+  .package-selection {
+    margin-bottom: 20px;
+  }
+  
+  .package-title {
+    font-size: 1.1rem;
+    margin-bottom: 15px;
+  }
+  
+  .package-content {
+    padding: 15px;
+  }
+  
+  .package-name {
+    font-size: 0.95rem;
+  }
+  
+  .package-treatment {
+    font-size: 0.85rem;
+  }
+  
+  .package-price {
+    font-size: 1.1rem;
+  }
+  
+  .package-old {
+    font-size: 0.8rem;
+  }
+  
+  .package-save-black {
+    font-size: 0.75rem;
+  }
+  
+  /* CTA button */
+  .hero-cta-button {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+  
+  .hero-cta-button svg {
+    width: 20px;
+    height: 20px;
+  }
+  
+  /* Trust indicators */
+  .trust-indicators {
+    gap: 15px;
+    margin-top: 15px;
+  }
+  
+  .trust-item {
+    font-size: 0.8rem;
+  }
+  
+  .trust-item svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  /* Section headers */
+  .section-header {
+    margin-bottom: 30px;
+  }
+  
+  .section-header h2 {
+    font-size: 1.8rem !important;
+    margin-bottom: 15px;
+  }
+  
+  .section-header p {
+    font-size: 1rem !important;
+    margin-bottom: 20px;
+  }
+  
+  /* Cards */
+  .problem-card,
+  .solution-card,
+  .testimonial-card,
+  .pricing-card,
+  .audio-card {
+    padding: 15px;
+    margin-bottom: 15px;
+  }
+  
+  .problem-card h3,
+  .solution-card h3 {
+    font-size: 1rem;
+    margin-bottom: 8px;
+  }
+  
+  .problem-card p,
+  .solution-card p {
+    font-size: 0.85rem;
+  }
+  
+  /* Testimonials */
+  .testimonial-stats {
+    margin: 30px 0;
+  }
+  
+  .stat-item {
+    padding: 20px 15px;
+  }
+  
+  .stat-number {
+    font-size: 2.2rem;
+  }
+  
+  .stat-label {
+    font-size: 0.85rem;
+  }
+  
+  /* Pricing */
+  .pricing-header {
+    padding: 20px;
+  }
+  
+  .pricing-header h3 {
+    font-size: 1.2rem;
+  }
+  
+  .pricing-header p {
+    font-size: 0.9rem;
+  }
+  
+  .pricing-price {
+    padding: 20px;
+  }
+  
+  .current-price {
+    font-size: 2rem;
+  }
+  
+  .original-price {
+    font-size: 1rem;
+  }
+  
+  .savings {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+  }
+  
+  .pricing-button {
+    margin: 0 20px 20px;
+    padding: 12px;
+    font-size: 1rem;
+  }
+  
+  /* Form */
+  .form-card-gray {
+    padding: 25px 20px;
+  }
+  
+  .form-title-black {
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+  }
+  
+  .pack-option-animated {
+    padding: 15px;
+  }
+  
+  .pack-name-black {
+    font-size: 1rem;
+  }
+  
+  .price-current {
+    font-size: 1.1rem;
+  }
+  
+  .price-old {
+    font-size: 0.9rem;
+  }
+  
+  .price-save {
+    font-size: 0.8rem;
+    padding: 3px 8px;
+  }
+  
+  .input-grid-animated {
+    gap: 15px;
+  }
+  
+  .input-gray-border {
+    padding: 14px;
+    font-size: 1rem;
+  }
+  
+  .submit-btn-orange {
+    padding: 16px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+  }
+  
+  /* Sidebar */
+  .sidebar-animated {
+    gap: 20px;
+  }
+  
+  .summary-card-gray,
+  .contact-banner-gray {
+    padding: 20px;
+  }
+  
+  .summary-title-black {
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+  }
+  
+  .summary-item {
+    font-size: 1rem;
+    margin-bottom: 10px;
+  }
+  
+  .price-large {
+    font-size: 1.5rem;
+  }
+  
+  .contact-phone {
+    font-size: 1.5rem;
+  }
+  
+  .contact-hours {
+    font-size: 0.9rem;
+  }
+  
+  /* Banners */
+  .red-banner,
+  .urgent-cta-banner,
+  .community-cta,
+  .final-green-banner,
+  .beautiful-choice-cta,
+  .beautiful-ready-cta,
+  .beautiful-testimonial-quote {
+    padding: 30px 20px;
+    margin: 30px 0;
+  }
+  
+  .red-banner h3,
+  .urgent-cta-content h3,
+  .community-cta h3,
+  .final-green-banner h3,
+  .choice-cta-content h3,
+  .ready-cta-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 12px;
+  }
+  
+  .red-banner p,
+  .urgent-cta-content p,
+  .community-cta p,
+  .final-green-banner p,
+  .choice-cta-content p,
+  .ready-cta-content p {
+    font-size: 1rem;
+    margin-bottom: 20px;
+  }
+  
+  .cta-button-red,
+  .cta-button,
+  .audio-section-cta-button,
+  .premium-button,
+  .ready-cta-white-button,
+  .giant-green-cta {
+    padding: 12px 24px;
+    font-size: 1rem;
+  }
+  
+  /* Bottom header */
+  .bottom-header .bar {
+    padding: 8px 15px;
+  }
+  
+  .bottom-header .logo h1 {
+    font-size: 1.4rem;
+  }
+  
+  .bottom-header .logo p {
+    font-size: 0.8rem;
+  }
+  
+  .bottom-header .cta-button {
+    padding: 10px 18px;
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  /* Even more compact */
+  section {
+    padding: 30px 0 !important;
+  }
+  
+  .hero-title {
+    font-size: 1.9rem !important;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem !important;
+  }
+  
+  .section-header h2 {
+    font-size: 1.6rem !important;
+  }
+  
+  .section-header p {
+    font-size: 0.95rem !important;
+  }
+  
+  /* Cards */
+  .problem-card,
+  .solution-card,
+  .testimonial-card,
+  .pricing-card,
+  .audio-card {
+    padding: 12px;
+  }
+  
+  /* Form */
+  .form-card-gray {
+    padding: 20px 15px;
+  }
+  
+  .pack-option-animated {
+    padding: 12px;
+  }
+  
+  .input-gray-border {
+    padding: 12px;
+    font-size: 0.95rem;
+  }
+  
+  /* Banners */
+  .red-banner,
+  .urgent-cta-banner,
+  .community-cta,
+  .final-green-banner,
+  .beautiful-choice-cta,
+  .beautiful-ready-cta,
+  .beautiful-testimonial-quote {
+    padding: 25px 15px;
+  }
+  
+  /* Bottom header */
+  .bottom-header .bar {
+    padding: 6px 12px;
+  }
+  
+  .bottom-header .logo h1 {
+    font-size: 1.2rem;
+  }
+  
+  .bottom-header .logo p {
+    font-size: 0.7rem;
+  }
+  
+  .bottom-header .cta-button {
+    padding: 8px 15px;
+    font-size: 0.8rem;
+  }
+}
+
+/* Mobile-specific adjustments for the community banner and header */
+@media (max-width: 768px) {
+  /* Community CTA Banner */
+  .community-cta {
+    padding: 25px 15px !important;
+    margin: 25px 0 !important;
+    border-radius: 16px !important;
+  }
+  
+  .community-cta h3 {
+    font-size: 1.4rem !important;
+    margin-bottom: 10px !important;
+    line-height: 1.3;
+  }
+  
+  .community-cta p {
+    font-size: 0.95rem !important;
+    margin-bottom: 20px !important;
+    line-height: 1.4;
+  }
+  
+  .community-features {
+    margin: 20px 0 !important;
+    gap: 15px !important;
+  }
+  
+  .community-feature {
+    padding: 10px 12px !important;
+    min-width: 120px !important;
+  }
+  
+  .community-feature .icon {
+    width: 22px !important;
+    height: 22px !important;
+  }
+  
+  .community-feature span {
+    font-size: 0.8rem !important;
+  }
+  
+  .audio-section-cta-button {
+    padding: 12px 24px !important;
+    font-size: 0.95rem !important;
+  }
+  
+  /* Bottom Header - Make it much smaller and organized */
+  .bottom-header .bar {
+    padding: 6px 10px !important;
+  }
+  
+  .bottom-header .logo h1 {
+    font-size: 1.1rem !important;
+    line-height: 1.1;
+  }
+  
+  .bottom-header .logo p {
+    font-size: 0.65rem !important;
+    margin-top: 2px;
+  }
+  
+  .bottom-header .cta-button {
+    padding: 8px 14px !important;
+    font-size: 0.8rem !important;
+    border-radius: 12px !important;
+    box-shadow: 0 3px 10px rgba(249, 115, 22, 0.3) !important;
+  }
+  
+  /* Language switcher in header */
+  .modern-lang-switch {
+    padding: 3px !important;
+  }
+  
+  .lang-btn {
+    padding: 5px 10px !important;
+    font-size: 0.75rem !important;
+  }
+  
+  /* Additional mobile optimizations for other banners */
+  .red-banner,
+  .urgent-cta-banner,
+  .final-green-banner,
+  .beautiful-choice-cta,
+  .beautiful-ready-cta {
+    padding: 20px 15px !important;
+    margin: 20px 0 !important;
+  }
+  
+  .red-banner h3,
+  .urgent-cta-content h3,
+  .final-green-banner h3,
+  .choice-cta-content h3,
+  .ready-cta-content h3 {
+    font-size: 1.3rem !important;
+    margin-bottom: 10px !important;
+  }
+  
+  .red-banner p,
+  .urgent-cta-content p,
+  .final-green-banner p,
+  .choice-cta-content p,
+  .ready-cta-content p {
+    font-size: 0.9rem !important;
+    margin-bottom: 15px !important;
+  }
+  
+  .cta-button-red,
+  .cta-button,
+  .premium-button,
+  .ready-cta-white-button,
+  .giant-green-cta {
+    padding: 10px 20px !important;
+    font-size: 0.9rem !important;
+  }
+}
+
+/* Extra small devices (very small phones) */
+@media (max-width: 380px) {
+  /* Even smaller adjustments for tiny screens */
+  .community-cta {
+    padding: 20px 12px !important;
+  }
+  
+  .community-cta h3 {
+    font-size: 1.2rem !important;
+  }
+  
+  .community-cta p {
+    font-size: 0.85rem !important;
+  }
+  
+  .community-features {
+    gap: 10px !important;
+    margin: 15px 0 !important;
+  }
+  
+  .community-feature {
+    padding: 8px 10px !important;
+    min-width: 100px !important;
+  }
+  
+  .community-feature .icon {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  
+  .community-feature span {
+    font-size: 0.7rem !important;
+  }
+  
+  .audio-section-cta-button {
+    padding: 10px 18px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  /* Bottom Header - Even smaller */
+  .bottom-header .bar {
+    padding: 5px 8px !important;
+  }
+  
+  .bottom-header .logo h1 {
+    font-size: 0.95rem !important;
+  }
+  
+  .bottom-header .logo p {
+    font-size: 0.6rem !important;
+  }
+  
+  .bottom-header .cta-button {
+    padding: 6px 10px !important;
+    font-size: 0.7rem !important;
+  }
+  
+  /* Language switcher */
+  .lang-btn {
+    padding: 4px 8px !important;
+    font-size: 0.7rem !important;
+  }
+}
+/* Mobile-specific adjustments for the choice banner */
+@media (max-width: 768px) {
+  /* Make the main title bigger */
+  .choice-cta-content h3 {
+    font-size: 2.2rem !important;
+    margin-bottom: 15px !important;
+    line-height: 1.2;
+  }
+  
+  /* Make the subtitle smaller */
+  .choice-cta-content p {
+    font-size: 1.1rem !important;
+    margin-bottom: 25px !important;
+  }
+  
+  /* Make the feature items smaller */
+  .choice-benefits {
+    gap: 15px !important;
+    margin: 20px 0 !important;
+  }
+  
+  .choice-benefit {
+    padding: 10px 15px !important;
+    font-size: 0.85rem !important;
+  }
+  
+  .choice-benefit svg {
+    width: 18px !important;
+    height: 18px !important;
+  }
+  
+  /* Adjust the CTA button */
+  .premium-button {
+    padding: 14px 30px !important;
+    font-size: 1rem !important;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .choice-cta-content h3 {
+    font-size: 1.9rem !important;
+  }
+  
+  .choice-cta-content p {
+    font-size: 1rem !important;
+  }
+  
+  .choice-benefits {
+    gap: 12px !important;
+  }
+  
+  .choice-benefit {
+    padding: 8px 12px !important;
+    font-size: 0.8rem !important;
+  }
+  
+  .choice-benefit svg {
+    width: 16px !important;
+    height: 16px !important;
+  }
+  
+  .premium-button {
+    padding: 12px 25px !important;
+    font-size: 0.95rem !important;
+  }
+}
+
+/* Very small devices */
+@media (max-width: 380px) {
+  .choice-cta-content h3 {
+    font-size: 1.7rem !important;
+  }
+  
+  .choice-benefits {
+    flex-direction: column;
+    gap: 10px !important;
+  }
+  
+  .choice-benefit {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* Fix hero section features alignment and check mark sizes */
+.benefits-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 12px;
+}
+
+.benefit-item svg {
+  min-width: 20px;
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.benefit-item span {
+  flex: 1;
+  text-align: left;
+}
+
+/* Ensure all check marks are the same size in all views */
+.benefit-item .feather-check-circle {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+}
+
+/* Mobile-specific adjustments */
+@media (max-width: 768px) {
+  .benefits-list {
+    margin-bottom: 20px;
+  }
+  
+  .benefit-item {
+    margin-bottom: 10px;
+  }
+  
+  .benefit-item svg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    margin-right: 8px;
+  }
+  
+  .benefit-item span {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .benefit-item svg {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    margin-right: 6px;
+  }
+  
+  .benefit-item span {
+    font-size: 0.85rem;
+  }
+}
+
+/* Arabic benefits alignment */
+[dir="rtl"] .benefits-list {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+[dir="rtl"] .benefit-item {
+  display: flex;
+  align-items: flex-start;
+  width: 100%;
+  margin-bottom: 12px;
+  flex-direction: row-reverse; /* Reverse order for RTL */
+}
+
+[dir="rtl"] .benefit-item svg {
+  min-width: 20px;
+  width: 20px;
+  height: 20px;
+  margin-left: 10px; /* Use margin-left instead of margin-right for RTL */
+  margin-right: 0;
+  flex-shrink: 0;
+}
+
+[dir="rtl"] .benefit-item span {
+  flex: 1;
+  text-align: right; /* Right align text for Arabic */
+}
+
+/* Ensure all check marks are the same size in all views for Arabic */
+[dir="rtl"] .benefit-item .feather-check-circle {
+  width: 20px !important;
+  height: 20px !important;
+  min-width: 20px !important;
+}
+
+/* Mobile-specific adjustments for Arabic */
+@media (max-width: 768px) {
+  [dir="rtl"] .benefits-list {
+    margin-bottom: 20px;
+  }
+  
+  [dir="rtl"] .benefit-item {
+    margin-bottom: 10px;
+  }
+  
+  [dir="rtl"] .benefit-item svg {
+    width: 18px !important;
+    height: 18px !important;
+    min-width: 18px !important;
+    margin-left: 8px;
+  }
+  
+  [dir="rtl"] .benefit-item span {
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+}
+
+/* Extra small devices for Arabic */
+@media (max-width: 480px) {
+  [dir="rtl"] .benefit-item svg {
+    width: 16px !important;
+    height: 16px !important;
+    min-width: 16px !important;
+    margin-left: 6px;
+  }
+  
+  [dir="rtl"] .benefit-item span {
+    font-size: 0.85rem;
+  }
+}
+
+/* Additional RTL adjustments for proper alignment */
+[dir="rtl"] .hero-info-section {
+  text-align: right;
+}
+
+[dir="rtl"] .hero-title,
+[dir="rtl"] .hero-subtitle,
+[dir="rtl"] .hero-description {
+  text-align: right;
+}
+
+[dir="rtl"] .rating-section {
+  justify-content: flex-end;
+}
+
+[dir="rtl"] .rating-text {
+  margin-right: 8px;
+  margin-left: 0;
+}
+
+[dir="rtl"] .stars {
+  flex-direction: row-reverse;
+}
+
+/* Center the rating section in product info */
+.rating-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 25px;
+  gap: 8px;
+}
+
+/* Center stars */
+.stars {
+  display: flex;
+  justify-content: center;
+}
+
+/* Center rating text */
+.rating-text {
+  text-align: center;
+}
+
+/* RTL specific adjustments */
+[dir="rtl"] .rating-section {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .stars {
+  flex-direction: row;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .rating-section {
+    margin-bottom: 20px;
+    gap: 6px;
+  }
+  
+  .rating-text {
+    font-size: 0.9rem;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .rating-section {
+    margin-bottom: 18px;
+    gap: 5px;
+  }
+  
+  .rating-text {
+    font-size: 0.85rem;
+  }
+}
+
+/* Add orange lines under specific headings */
+.form-title-black {
+  position: relative;
+  padding-bottom: 10px;
+  margin-bottom: 20px;
+}
+
+.form-title-black::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, #f97316, #ea580c);
+  border-radius: 2px;
+}
+
+/* Center the line for Arabic */
+[dir="rtl"] .form-title-black::after {
+  left: auto;
+  right: 0;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .form-title-black {
+    padding-bottom: 8px;
+    margin-bottom: 18px;
+  }
+  
+  .form-title-black::after {
+    width: 50px;
+    height: 2.5px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .form-title-black {
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+  }
+  
+  .form-title-black::after {
+    width: 45px;
+    height: 2px;
+  }
+}
+/* Ensure all form inputs are accessible */
+.input-gray-border {
+  padding: 18px;
+  border: 2px solid #ced4da;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  background: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-gray-border:focus {
+  border-color: #6c757d;
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(108, 117, 125, 0.1);
+}
+
+/* Error styling */
+.input-gray-border:invalid {
+  border-color: #e53e3e;
+}
+
+.error-message {
+  color: #e53e3e;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  display: none;
+}
+
+.input-gray-border:invalid + .error-message {
+  display: block;
+}
+
+/* Remove orange border and use light gray instead */
+.input-gray-border {
+  padding: 18px;
+  border: 2px solid #e5e7eb !important; /* Light gray border */
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: all 0.3s;
+  background: white;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.input-gray-border:focus {
+  border-color: #9ca3af !important; /* Slightly darker gray on focus */
+  outline: none;
+  box-shadow: 0 0 0 3px rgba(156, 163, 175, 0.1);
+}
+
+/* Error styling */
+.input-gray-border.error {
+  border-color: #e53e3e !important; /* Red border for errors */
+}
+
+.error-message {
+  color: #e53e3e;
+  font-size: 0.85rem;
+  margin-top: 5px;
+  text-align: left;
+}
+
+[dir="rtl"] .error-message {
+  text-align: right;
+}
