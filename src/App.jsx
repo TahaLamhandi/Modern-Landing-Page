@@ -69,7 +69,7 @@ const translations = {
     heroTitle: 'Zitalgic®',
     heroSub: 'Dites stop à la douleur.. Naturellement',
     heroDesc: 'Soulagez vos douleurs articulaires, musculaires et nerveuses rapidement avec notre formule 100 % naturelle.',
-    choosePack: 'Choisir votre pack',
+    choosePack: 'Choisir votre offre',
     ctaButton: 'Commander Maintenant',
 
     // Sections (shortened for brevity – extend as needed)
@@ -2086,7 +2086,7 @@ const testimonials = [
   <h3>
     {lang === 'ar'
       ? key === '1-flacon'
-        ? 'عبوة'
+        ? 'عبوة 1'
         : key === '3-flacons'
         ? '3 عبوات  '
         : key === '5-flacons'
@@ -2201,7 +2201,8 @@ const testimonials = [
           <li><span className="styled-check">✓</span> {lang === 'ar' ? 'مكونات طبيعية 100% وعالية الجودة' : 'Ingrédients 100% naturels et de haute qualité'}</li>
           <li><span className="styled-check">✓</span> {lang === 'ar' ? 'بدون آثار جانبية' : 'Sans effets secondaires'}</li>
           <li><span className="styled-check">✓</span> {lang === 'ar' ? 'تأثير موجه: المفاصل، العضلات، الأعصاب' : 'Action ciblée : articulations, muscles et nerfs'}</li>
-          <li><span className="styled-check">✓</span> {lang === 'ar' ? 'تأثير فوري بالبرودة والحرارة، راحة تدوم طويلاً' : 'Effet froid-chaud immédiat, Soulagement durable'}</li>
+          <li><span className="styled-check">✓</span> {lang === 'ar' ? 'تأثير فوري بالبرودة والحرارة' : 'Effet froid-chaud immédiat'}</li>
+          <li><span className="styled-check">✓</span> {lang === 'ar' ? 'راحة تدوم طويلاً' : 'Soulagement durable'}</li>
           <li><span className="styled-check">✓</span> {lang === 'ar' ? 'تركيبة مطوّرة من طرف صيادلة متخصصين' : 'Formule développée par des pharmaciens spécialisés'}</li>
           <li><span className="styled-check">✓</span> {lang === 'ar' ? 'فعالية مضمونة' : 'Efficacité garantie'}</li>
         </ul>
@@ -2476,7 +2477,7 @@ const testimonials = [
             const packLabel =
               lang === 'ar'
                 ? key === '1-flacon'
-                  ? 'عبوة'
+                  ? 'عبوة 1'
                   : key === '3-flacons'
                   ? '3 عبوات'
                   : key === '5-flacons'
@@ -2590,7 +2591,7 @@ const testimonials = [
               <strong className="pack-name-black">
                 {lang === 'ar'
                   ? selectedPack === '1-flacon'
-                    ? 'عبوة'
+                    ? 'عبوة 1'
                     : selectedPack === '3-flacons'
                     ? '3 عبوات'
                     : selectedPack === '5-flacons'

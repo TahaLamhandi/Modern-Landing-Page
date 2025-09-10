@@ -8694,3 +8694,83 @@ section {
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
 }
+
+/* Center line under title and subtitle in mobile view */
+@media (max-width: 768px) {
+  .hero-title, .hero-subtitle {
+    text-align: center;
+    width: 100%;
+  }
+  
+  .hero-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(90deg, #f97316, #ea580c);
+    margin: 10px auto 0;
+    border-radius: 2px;
+  }
+}
+
+/* Position check marks at the start of Arabic sentences */
+[dir="rtl"] .benefit-item {
+  flex-direction: row-reverse;
+  justify-content: flex-start;
+}
+
+[dir="rtl"] .benefit-item svg {
+  margin-right: 0;
+  margin-left: 10px;
+  order: 2; /* Move icon to the right (start of Arabic text) */
+}
+
+[dir="rtl"] .benefit-item span {
+  order: 1; /* Keep text on the left */
+  text-align: right;
+}
+
+/* Ensure proper spacing for both languages */
+.benefit-item {
+  display: flex;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.benefit-item svg {
+  margin-right: 10px;
+  flex-shrink: 0;
+}
+
+.benefit-item span {
+  flex: 1;
+  text-align: left;
+}
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .benefit-item {
+    margin-bottom: 10px;
+  }
+  
+  .benefit-item svg {
+    width: 18px;
+    height: 18px;
+  }
+  
+  [dir="rtl"] .benefit-item svg {
+    margin-left: 8px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .benefit-item svg {
+    width: 16px;
+    height: 16px;
+  }
+  
+  [dir="rtl"] .benefit-item svg {
+    margin-left: 6px;
+  }
+}
