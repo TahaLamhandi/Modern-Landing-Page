@@ -2082,18 +2082,18 @@ const testimonials = [
   <h3>
     {lang === 'ar'
       ? key === '1-flacon'
-        ? 'عبوة 30 مل'
+        ? 'عبوة'
         : key === '3-flacons'
-        ? '3 عبوات × 30 مل'
+        ? '3 عبوات  '
         : key === '5-flacons'
-        ? '5 عبوات × 30 مل'
+        ? '5 عبوات'
         : ''
       : key === '1-flacon'
-      ? '1 Flacon (30 ml)'
+      ? '1 Flacon'
       : key === '3-flacons'
-      ? '3 Flacons (3x30 ml)'
+      ? '3 Flacons'
       : key === '5-flacons'
-      ? '5 Flacons (5x30 ml)'
+      ? '5 Flacons'
       : ''}
   </h3>
   <p>
@@ -2472,18 +2472,18 @@ const testimonials = [
             const packLabel =
               lang === 'ar'
                 ? key === '1-flacon'
-                  ? 'عبوة 30 مل'
+                  ? 'عبوة'
                   : key === '3-flacons'
-                  ? '3 عبوات × 30 مل'
+                  ? '3 عبوات'
                   : key === '5-flacons'
-                  ? '5 عبوات × 30 مل'
+                  ? '5 عبوات'
                   : ''
                 : key === '1-flacon'
-                ? '1 Flacon (30 ml)'
+                ? '1 Flacon'
                 : key === '3-flacons'
-                ? '3 Flacons (3x30 ml)'
+                ? '3 Flacons'
                 : key === '5-flacons'
-                ? '5 Flacons (5x30 ml)'
+                ? '5 Flacons'
                 : '';
             return (
               <label
@@ -2586,18 +2586,18 @@ const testimonials = [
               <strong className="pack-name-black">
                 {lang === 'ar'
                   ? selectedPack === '1-flacon'
-                    ? 'عبوة 30 مل'
+                    ? 'عبوة'
                     : selectedPack === '3-flacons'
-                    ? '3 عبوات × 30 مل'
+                    ? '3 عبوات'
                     : selectedPack === '5-flacons'
-                    ? '5 عبوات × 30 مل'
+                    ? '5 عبوات'
                     : ''
                   : selectedPack === '1-flacon'
-                  ? '1 Flacon (30 ml)'
+                  ? '1 Flacon'
                   : selectedPack === '3-flacons'
-                  ? '3 Flacons (3x30 ml)'
+                  ? '3 Flacons'
                   : selectedPack === '5-flacons'
-                  ? '5 Flacons (5x30 ml)'
+                  ? '5 Flacons'
                   : ''}
               </strong>
               <br />
