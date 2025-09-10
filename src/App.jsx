@@ -1409,7 +1409,7 @@ const testimonials = [
           <div className="section-header">
             <div className="section-badge">
               <Volume2 className="audio-icon" />
-              <span>{lang === 'ar' ? 'آراء الزبناء' : 'Témoignages Client'}</span>
+              <span>{lang === 'ar' ? 'آراء الزبناء' : 'Témoignages Clients'}</span>
             </div>
 
             <h2 className="audio-testimonials-title green-title-underline">
@@ -1419,9 +1419,10 @@ const testimonials = [
 
             <p className="section-desc">
               {lang === "ar"
-                ? "آراء الزبناء: استمع كيف استعادوا راحتهم بفضل Zitalgic®. قصص حقيقية وتجارب ملهمة من أناس وجدوا في Zitalgic® الحل الطبيعي الذي كانوا يبحثون عنه، استمع إلى شهاداتهم واكتشف كيف استعادوا السيطرة على حياتهم واستمتعوا بالراحة التي يستحقونها."
-                : "Avis des clients : Écoutez comment ils ont retrouvé leur confort grâce à Zitalgic®. De vraies histoires et des témoignages inspirants de personnes qui ont trouvé dans Zitalgic® la solution naturelle qu’ils recherchaient. Découvrez leurs expériences et comment elles leur ont permis de reprendre le contrôle de leur vie et de profiter du confort qu’ils méritent."}
+                ? ". قصص حقيقية وتجارب ملهمة من أناس وجدوا في Zitalgic® الحل الطبيعي الذي كانوا يبحثون عنه، استمع إلى شهاداتهم واكتشف كيف استعادوا السيطرة على حياتهم واستمتعوا بالراحة التي يستحقونها."
+                : "Des histoires réelles et des témoignages inspirants de personnes ayant trouvé dans Zitalgic® la solution naturelle qu’elles recherchaient. Écoutez leurs récits et découvrez comment elles ont repris le contrôle de leur vie et retrouvé le confort qu’elles méritent."}
             </p>
+
           </div>
 
           <div className="audio-grid">
@@ -1536,8 +1537,8 @@ const testimonials = [
         color: '#666'
       }}>
         {lang === 'ar'
-          ? 'عشرة من آلاف المحادثات – اطلع على ما يقوله من اشتروا زيتالجيك® فعلاً.'
-          : 'Dix parmi des milliers de conversations – lisez ce que disent les vrais acheteurs de Zitalgic®.'}
+          ? 'اطلع على ما يقوله مستخدموا زيتالجيك® فعلاً.'
+          : 'Lisez ce que racontent les utilisateurs de Zitalgic®.'}
       </p>
     </div>
 
@@ -1808,7 +1809,7 @@ const testimonials = [
           e.target.style.outline = 'none'; // Remove focus outline
         }}
       >
-        {lang === 'ar' ? 'أطلب الآن وانضم للقائمة' : 'Je commande et j’envoie mon message'}
+        {lang === 'ar' ? 'أطلب الآن' : 'Je commande maintenant'}
       </button>
     </div>
   </div>
@@ -2454,7 +2455,7 @@ const testimonials = [
     <div className="order-content-modern">
       <form onSubmit={handleSubmit} className="form-card-gray">
         <h3 className="form-title-black">
-          {lang === 'ar' ? 'اختر باقتك' : 'Choisissez votre pack'}
+          {lang === 'ar' ? 'اختر باقتك' : 'Choisissez votre offre'}
         </h3>
         <div className="pack-selector-animated">
           {Object.entries(packs).map(([key, pack]) => {
