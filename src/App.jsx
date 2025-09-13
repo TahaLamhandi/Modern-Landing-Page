@@ -1969,7 +1969,7 @@ const testimonials = [
       </div>
       <h2 className="solution-title">
         <span className="orange-text">Zitalgic</span>{' '}
-        <span className="black-text">{lang === 'ar' ? 'حليفك الطبيعي للتخلص من األلم واستعادة ' : 'Votre allié naturel pour vous débarrasser de la douleur et retrouver'}</span>{' '}
+        <span className="black-text">{lang === 'ar' ? 'حليفك الطبيعي للتخلص من الألم واستعادة ' : 'Votre allié naturel pour vous débarrasser de la douleur et retrouver'}</span>{' '}
         <span className="orange-text">{lang === 'ar' ? 'راحتك' : 'votre confort'}</span>
       </h2>
       <p className="solution-desc">
@@ -1982,7 +1982,7 @@ const testimonials = [
 
     <div className="solution-content">
       <div className="solution-image">
-        <img src="/images/dds.png" alt={lang === 'ar' ? 'تطبيق زيتالجيك' : 'Application de Zitalgic'} />
+        <img src={lang === 'ar' ? "/images/ddsar.png" : "/images/dds.png"} alt={lang === 'ar' ? 'تطبيق زيتالجيك' : 'Application de Zitalgic'} />
       </div>
 
       <div className="solution-cards-container">
@@ -2168,7 +2168,7 @@ const testimonials = [
       <h2>{lang === 'ar' ? 'لماذا تختار زيتالجيك®؟' : 'Pourquoi Choisir Zitalgic® ?'}</h2>
       <p>
         {lang === 'ar'
-          ? 'تعرف على مزايا Zitalgic® التي تجعل منه الخيار والأمثل لمن يبحث عن الفعالية واألمان '
+          ? 'تعرف على مزايا Zitalgic® التي تجعل منه الخيار والأمثل لمن يبحث عن الفعالية والأمان '
           : 'Découvrez les avantages de Zitalgic®, le choix optimal pour ceux qui recherchent efficacité et sécurité'}
       </p>
 
