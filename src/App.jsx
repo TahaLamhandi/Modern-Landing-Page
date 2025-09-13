@@ -1088,7 +1088,7 @@ useEffect(() => {
 }, [currentSlide]);   // restart if slide changes manually
 
 
-const [lang, setLang] = useState('fr');    // NEW
+const [lang, setLang] = useState('ar');    // NEW
 const t = translations[lang]; 
 
 // ------------------------------------------------------------------
