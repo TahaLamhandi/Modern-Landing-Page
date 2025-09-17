@@ -154,40 +154,40 @@ const [formErrors, setFormErrors] = useState({});
   const thumbnailsRef = useRef(null);
 
   const productImages = [
-    "/images/Miniature 01.png",
-    "/images/Miniature 02.png",
-    "/images/Miniature 03.png",
-    "/images/Miniature 04.png",
-    "/images/Miniature 05.png",
-    "/images/Miniature 06.png",
-    "/images/Miniature 07.png",
-    "/images/Miniature 08.png",
-    "/images/Miniature 09.png",
-    "/images/Miniature 10.png",
-    "/images/Miniature 11.png",
-    "/images/Miniature 12.png",
-    "/images/Miniature 13.png",
-    "/images/Miniature 14.png",
-    "/images/Miniature 15.png"
+    "/images/Miniature Zitalgic FR-01.webp",
+    "/images/Miniature Zitalgic FR-02.webp",
+    "/images/Miniature Zitalgic FR-03.webp",
+    "/images/Miniature Zitalgic FR-04.webp",
+    "/images/Miniature Zitalgic FR-05.webp",
+    "/images/Miniature Zitalgic FR-06.webp",
+    "/images/Miniature Zitalgic FR-07.webp",
+    "/images/Miniature Zitalgic FR-08.webp",
+    "/images/Miniature Zitalgic FR-09.webp",
+    "/images/Miniature Zitalgic FR-10.webp",
+    "/images/Miniature Zitalgic FR-11.webp",
+    "/images/Miniature Zitalgic FR-12.webp",
+    "/images/Miniature Zitalgic FR-13.webp",
+    "/images/Miniature Zitalgic FR-14.webp",
+    "/images/Miniature Zitalgic FR-15.webp"
   ];
 
   // Arabic image files
 const productImagesAR = [
-  "/images/Miniature 01 AR.png",
-  "/images/Miniature 02 AR.png",
-  "/images/Miniature 03 AR.png",
-  "/images/Miniature 04 AR.png",
-  "/images/Miniature 05 AR.png",
-  "/images/Miniature 06 AR.png",
-  "/images/Miniature 07 AR.png",
-  "/images/Miniature 08 AR.png",
-  "/images/Miniature 09 AR.png",
-  "/images/Miniature 10 AR.png",
-  "/images/Miniature 11 AR.png",
-  "/images/Miniature 12 AR.png",
-  "/images/Miniature 13 AR.png",
-  "/images/Miniature 14 AR.png",
-  "/images/Miniature 15 AR.png"
+  "/images/Miniature Zitalgic AR-01.webp",
+  "/images/Miniature Zitalgic AR-02.webp",
+  "/images/Miniature Zitalgic AR-03.webp",
+  "/images/Miniature Zitalgic AR-04.webp",
+  "/images/Miniature Zitalgic AR-05.webp",
+  "/images/Miniature Zitalgic AR-06.webp",
+  "/images/Miniature Zitalgic AR-07.webp",
+  "/images/Miniature Zitalgic AR-08.webp",
+  "/images/Miniature Zitalgic AR-09.webp",
+  "/images/Miniature Zitalgic AR-10.webp",
+  "/images/Miniature Zitalgic AR-11.webp",
+  "/images/Miniature Zitalgic AR-12.webp",
+  "/images/Miniature Zitalgic AR-13.webp",
+  "/images/Miniature Zitalgic AR-14.webp",
+  "/images/Miniature Zitalgic AR-15.webp"
 ];
 
 // Update handleImageChange for smoother transitions
@@ -907,9 +907,9 @@ const copyToClipboard = (text) => {
   };
 
   const pricingImages = {
-    '1-flacon': '/images/pack-1-flacons.png',
-    '3-flacons': '/images/pack-3-flacons.png',
-    '5-flacons': '/images/pack-5-flacons.png'
+    '1-flacon': '/images/Zitalgic 1 Bottle.png',
+    '3-flacons': '/images/Zitalgic 3 Bottles.png',
+    '5-flacons': '/images/Zitalgic 5 Bottles.png'
   };
 
   // Add these new functions to handle thumbnail scrolling
@@ -1054,16 +1054,16 @@ const nextSlide = () => setCurrentSlide((c) => (c + 1) % conversationImages.leng
 const prevSlide = () => setCurrentSlide((c) => (c - 1 + conversationImages.length) % conversationImages.length);
 
 const conversationImages = [
-            "/images/Screenshot 1.jpg",
-            "/images/Screenshot 2.jpg",
-            "/images/Screenshot 3.jpg",
-            "/images/Screenshot 4.jpg",
-            "/images/Screenshot 5.jpg",
-            "/images/Screenshot 6.jpg",
-            "/images/Screenshot 7.jpg",
-            "/images/Screenshot 8.jpg",
-            "/images/Screenshot 9.jpg",
-            "/images/Screenshot 10.jpg"
+            "/images/Tem 01.webp",
+            "/images/Tem 02.webp",
+            "/images/Tem 03.webp",
+            "/images/Tem 04.webp",
+            "/images/Tem 05.webp",
+            "/images/Tem 06.webp",
+            "/images/Tem 07.webp",
+            "/images/Tem 08.webp",
+            "/images/Tem 09.webp",
+            "/images/Tem 10.webp"
         ];
 
 const phoneSliderCSS = `
@@ -1236,7 +1236,7 @@ const testimonials = [
                         className={`vertical-thumbnail-item ${selectedImage === idx ? "active" : ""}`}
                         onClick={() => handleImageChange(idx)}
                       >
-                        <img src={img || "/placeholder.svg"} alt={`Zitalgic ${idx + 1}`} />
+                        <img src={img || "/placeholder.svg"} alt={`Zitalgic ${idx + 1}`} loading="lazy" decoding="async" />
                       </div>
                     ))}
                   </div>
@@ -1251,6 +1251,9 @@ const testimonials = [
                     src={(lang === "ar" ? productImagesAR : productImages)[selectedImage]}
                     alt="ZITALGIC"
                     className={`hero-main-image-vertical ${imageTransition ? "transitioning" : ""}`}
+                    loading="eager"
+                    fetchpriority="high"
+                    decoding="async"
                     onClick={() =>
                       handleImageChange((selectedImage + 1) % (lang === "ar" ? productImagesAR : productImages).length)
                     }
@@ -1305,6 +1308,9 @@ const testimonials = [
                   src={(lang === "ar" ? productImagesAR : productImages)[selectedImage]}
                   alt="ZITALGIC"
                   className="mobile-product-image"
+                  loading="eager"
+                  fetchpriority="high"
+                  decoding="async"
                 />
               </div>
 
@@ -1656,6 +1662,7 @@ const testimonials = [
                 objectFit: 'contain',
                 display: 'block'
               }}
+              loading="lazy" decoding="async"
             />
           </div>
         </div>
@@ -1904,7 +1911,7 @@ const testimonials = [
 
     <div className="problem-content">
       <div className="problem-image">
-        <img src="/images/zitalgic_feel_better.png" alt={lang === 'ar' ? 'شخص يعاني من الألم' : 'Person experiencing pain'} />
+        <img src="/images/zitalgic_feel_better.webp" alt={lang === 'ar' ? 'شخص يعاني من الألم' : 'Person experiencing pain'} loading="lazy" decoding="async" />
       </div>
       <div className="problem-cards-container">
         <div className="problem-cards">
@@ -1982,7 +1989,7 @@ const testimonials = [
 
     <div className="solution-content">
       <div className="solution-image">
-        <img src={lang === 'ar' ? "/images/ddsar.png" : "/images/dds.png"} alt={lang === 'ar' ? 'تطبيق زيتالجيك' : 'Application de Zitalgic'} />
+        <img src={lang === 'ar' ? "/images/ZitalgicMen.jpg" : "/images/ZitalgicMen.jpg"} alt={lang === 'ar' ? 'تطبيق زيتالجيك' : 'Application de Zitalgic'} loading="lazy" decoding="async" />
       </div>
 
       <div className="solution-cards-container">
@@ -2076,7 +2083,7 @@ const testimonials = [
       {Object.entries(packs).map(([key, pack]) => (
         <div key={key} className={`pricing-card ${selectedPack === key ? "selected" : ""}`}>
           <div className="pricing-image-container">
-            <img src={pricingImages[key]} alt={`Pack ${pack.quantity}`} />
+            <img src={pricingImages[key]} alt={`Pack ${pack.quantity}`} loading="lazy" decoding="async" />
             {key === "3-flacons" && (
               <div className="popular-badge">{lang === "ar" ? "الأكثر مبيعًا" : "Le plus populaire"}</div>
             )}
@@ -2293,7 +2300,7 @@ const testimonials = [
 
     <div className="scientific-image-section">
       <div className="scientific-image-container">
-        <img src="/images/labo.jpg" alt={lang === 'ar' ? 'مختبر BioEkeel' : 'Laboratoire BioEkeel'} className="scientific-main-image" />
+        <img src="/images/labo.webp" alt={lang === 'ar' ? 'مختبر BioEkeel' : 'Laboratoire BioEkeel'} className="scientific-main-image" loading="lazy" decoding="async" />
       </div>
     </div>
 
@@ -2384,7 +2391,7 @@ const testimonials = [
           </div>
           <div className="testimonial-author">
             <div className="author-image">
-              <img src={item.img} alt={item.name} />
+              <img src={item.img} alt={item.name} loading="lazy" decoding="async" />
               <div className="image-overlay"></div>
             </div>
             <div className="author-info">
