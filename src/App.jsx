@@ -1337,7 +1337,7 @@ const testimonials = [
                   <CheckCircle size={18} color="#f97316" />
                   <span>
                     {lang === "ar"
-                      ? "يُقلِّّل اللتهابات في العمق ليمنح راحة طويلة الأمد"
+                      ? "يُقلِّّل الإلتهابات في العمق ليمنح راحة طويلة الأمد"
                       : "Réduit l'inflammation en profondeur pour un confort durable"}
                   </span>
                 </div>
@@ -1353,7 +1353,7 @@ const testimonials = [
                   <CheckCircle size={18} color="#f97316" />
                   <span>
                     {lang === "ar"
-                      ? "يُساعد على الوقاية من آالم التقلصات والشد ّ العضلي ."
+                      ? "يُساعد على الوقاية من الآلام التقلصات والشد ّ العضلي ."
                       : "Aide à prévenir et à traiter les courbatures et les Crampes."}
                   </span>
                 </div>
