@@ -90,7 +90,7 @@ const translations = {
 
     // Hero
     heroTitle: '®Zitalgic',
-    heroSub: 'قُل واعًا لآلام المفاصل والعضلات بشكل طبيعي',
+    heroSub: 'قُل وداعًا لآلام المفاصل والعضلات بشكل طبيعي',
     heroDesc: 'تخلص من آلام المفاصل والعضلات والأعصاب بسرعة مع تركيبتنا 100٪ طبيعية.',
     choosePack: 'اغتنم هذه الفرصة',
     ctaButton: 'اطلب الآن',
@@ -131,7 +131,6 @@ const App = ({ onAddToCart }) => {
  const [formData, setFormData] = useState({
   nom: '',
   telephone: '',
-  adresse: '',
   ville: '',
 });
 const [formErrors, setFormErrors] = useState({});
@@ -399,9 +398,6 @@ useEffect(() => {
     errors.telephone = true;
   }
   
-  if (!formData.adresse.trim()) {
-    errors.adresse = true;
-  }
   
   if (!formData.ville.trim()) {
     errors.ville = true;
@@ -480,7 +476,7 @@ useEffect(() => {
   setShowPopup(false);
   // Only clear form if success popup
   if (!submissionError) {
-    setFormData({ nom: '', telephone: '', email: '', ville: '', adresse: '' });
+    setFormData({ nom: '', telephone: '', email: '', ville: '' });
   }
   setSubmissionError(null);
   };
@@ -1425,7 +1421,7 @@ const testimonials = [
 
             <p className="section-desc">
               {lang === "ar"
-                ? ". قصص حقيقية وتجارب ملهمة من أناس وجدوا في Zitalgic® الحل الطبيعي الذي كانوا يبحثون عنه، استمع إلى شهاداتهم واكتشف كيف استعادوا السيطرة على حياتهم واستمتعوا بالراحة التي يستحقونها."
+                ? ". قصص حقيقية وتجارب ملهمة من أناس وجدوا في Zitalgic® الحل الطبيعي الذي كانوا يبحثون عنه، استمع إلى شهاداتهم واكتشف كيف استعادوا السيطرة على حياتهم واستمتعوا بالراحة التي يستحقونها"
                 : "Des histoires réelles et des témoignages inspirants de personnes ayant trouvé dans Zitalgic® la solution naturelle qu’elles recherchaient. Écoutez leurs récits et découvrez comment elles ont repris le contrôle de leur vie et retrouvé le confort qu’elles méritent."}
             </p>
 
@@ -1543,7 +1539,7 @@ const testimonials = [
         color: '#666'
       }}>
         {lang === 'ar'
-          ? 'اطلع على ما يقوله مستخدموا زيتالجيك® فعلاً.'
+          ? 'اطلع على ما يقوله مستخدموا ®زيتالجيك'
           : 'Lisez ce que racontent les utilisateurs de Zitalgic®.'}
       </p>
     </div>
@@ -2002,7 +1998,7 @@ const testimonials = [
 
           <div className="solution-card">
             <Activity size={28} className="solution-card-icon relax-icon" />
-            <h3>{lang === 'ar' ? 'مرخٍ للعضلات' : 'Décontractant Musculaire'}</h3>
+            <h3>{lang === 'ar' ? 'يريح العضلات' : 'Décontractant Musculaire'}</h3>
             <p>
               {lang === "ar"
                 ? "يُزيل التشنجات ويزيد من مرونة العضلات."
@@ -2524,16 +2520,6 @@ const testimonials = [
 />
 {formErrors.telephone && <div className="error-message">{formErrors.telephone}</div>}
 
-<input
-  className={`input-gray-border ${formErrors.adresse ? 'error' : ''}`}
-  name="adresse"
-  type="text"
-  placeholder={lang === 'ar' ? 'العنوان' : 'Adresse'}
-  value={formData.adresse}
-  onChange={handleInputChange}
-  required
-/>
-{formErrors.adresse && <div className="error-message">{formErrors.adresse}</div>}
 
 <input
   className={`input-gray-border ${formErrors.ville ? 'error' : ''}`}

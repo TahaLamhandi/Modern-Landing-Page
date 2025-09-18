@@ -3350,7 +3350,7 @@ section {
   }
 
   .hero-title {
-    font-size: 2.7rem;
+    font-size: 3.1rem;
   }
 
   .hero-subtitle {
@@ -4178,7 +4178,7 @@ section {
   }
 
   .hero-title {
-    font-size: 2.7rem;
+    font-size: 3.1rem;
   }
 
   .hero-subtitle {
@@ -4558,7 +4558,7 @@ section {
   }
   
   .audio-testimonials-title {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
   
   .audio-grid {
@@ -4582,7 +4582,7 @@ section {
 
 @media (max-width: 480px) {
   .audio-testimonials-title {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
   
   .section-desc {
@@ -5531,7 +5531,7 @@ section {
   }
   
   .pricing-title {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
   
   .pricing-desc {
@@ -5551,7 +5551,7 @@ section {
 
 @media (max-width: 480px) {
   .pricing-title {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
   
   .current-price {
@@ -6048,7 +6048,7 @@ section {
   }
   
   .form-main-title {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
     text-align: center;
   }
   
@@ -6108,7 +6108,7 @@ section {
 
 @media (max-width: 480px) {
   .form-main-title {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
   
   .form-title-black {
@@ -6420,15 +6420,15 @@ section {
 @media (max-width: 768px) {
   h1,
   .hero-title {
-    font-size: 2.2rem !important;
+    font-size: 2.6rem !important;
   }
   h2,
   .section-header h2 {
-    font-size: 1.8rem !important;
+    font-size: 2.2rem !important;
   }
   .section-header p,
   .section-desc {
-    font-size: 1rem !important;
+    font-size: 1.2rem !important;
   }
   .container {
     padding: 0 15px;
