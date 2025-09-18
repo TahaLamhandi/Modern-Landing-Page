@@ -1984,7 +1984,7 @@ const testimonials = [
 
     <div className="solution-content">
       <div className="solution-image">
-        <img src={lang === 'ar' ? "/images/ZitalgicMen.jpg" : "/images/ZitalgicMen.jpg"} alt={lang === 'ar' ? 'تطبيق زيتالجيك' : 'Application de Zitalgic'} loading="lazy" decoding="async" />
+        <img src={lang === 'ar' ? "/images/Solution Zitalgic AR.webp" : "/images/Solution Zitalgic FR.webp"} alt={lang === 'ar' ? 'تطبيق زيتالجيك' : 'Application de Zitalgic'} loading="lazy" decoding="async" />
       </div>
 
       <div className="solution-cards-container">
