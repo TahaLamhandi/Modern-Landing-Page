@@ -90,9 +90,9 @@ const translations = {
 
     // Hero
     heroTitle: '®Zitalgic',
-    heroSub: 'قُل وداعًا للألم.. بشكل طبيعي',
+    heroSub: 'قُل واعًا لآلام المفاصل والعضلات بشكل طبيعي',
     heroDesc: 'تخلص من آلام المفاصل والعضلات والأعصاب بسرعة مع تركيبتنا 100٪ طبيعية.',
-    choosePack: 'اخترالعرض الذي يناسبك',
+    choosePack: 'اغتنم هذه الفرصة',
     ctaButton: 'اطلب الآن',
 
     // Sections
@@ -1314,7 +1314,6 @@ const testimonials = [
                 />
               </div>
 
-              <div className="hero-description">{t.heroDesc}</div>
 
               <div className="rating-section">
                 <div className="stars">
@@ -1361,40 +1360,36 @@ const testimonials = [
               </div>
 
               <div className="package-selection">
-  <h3 className="package-title">{t.choosePack}</h3>
-  <div className="package-list">
-    {Object.entries(packs).map(([key, pack]) => (
-      <div key={key} className="package-item">
-        <label className="package-label">
-          <input
-            type="radio"
-            name="package"
-            checked={selectedPack === key}
-            onChange={() => setSelectedPack(key)}
-            className="package-radio"
-          />
-          <span className={`radio-custom ${selectedPack === key ? "selected" : ""}`}></span>
-          <div className="package-content">
-            <div className="package-name">
-              {lang === "ar" ? pack.quantity_ar : pack.quantity}
-            </div>
-            <div className="package-treatment">
-              {lang === "ar" ? pack.treatment_ar : pack.treatment}
-            </div>
-            <div className="package-pricing">
-              <span className="package-price">{pack.price} DH</span>
-              <span className="package-old">{pack.original} DH</span>
-              {pack.savings > 0 && (
-                <span className="package-save-black">
-                  {lang === "ar" ? `توفير ${pack.savings} درهم` : `Économisez ${pack.savings} DH`}
-                </span>
-              )}
-            </div>
-          </div>
-        </label>
-      </div>
-    ))}
-  </div>
+                <h3 className="package-title">{t.choosePack}</h3>
+                <div className="package-list">
+                  <div className="package-item">
+                    <label className="package-label">
+                      <input
+                        type="radio"
+                        name="package"
+                        checked={selectedPack === '1-flacon'}
+                        onChange={() => setSelectedPack('1-flacon')}
+                        className="package-radio"
+                      />
+                      <span className="radio-custom selected"></span>
+                      <div className="package-content">
+                        <div className="package-name">
+                          {lang === "ar" ? packs['1-flacon'].quantity_ar : packs['1-flacon'].quantity}
+                        </div>
+                        <div className="package-treatment">
+                          {lang === "ar" ? packs['1-flacon'].treatment_ar : packs['1-flacon'].treatment}
+                        </div>
+                        <div className="package-pricing">
+                          <span className="package-price">{packs['1-flacon'].price} DH</span>
+                          <span className="package-old">{packs['1-flacon'].original} DH</span>
+                          <span className="package-save-black">
+                            {lang === "ar" ? `توفير ${packs['1-flacon'].savings} درهم` : `Économisez ${packs['1-flacon'].savings} DH`}
+                          </span>
+                        </div>
+                      </div>
+                    </label>
+                  </div>
+                </div>
               </div>
 
               <button className="hero-cta-button" onClick={scrollToForm}>
@@ -2093,11 +2088,11 @@ const testimonials = [
   <h3>
     {lang === 'ar'
       ? key === '1-flacon'
-        ? 'عبوة 1'
+        ? 'عبوة واحدة'
         : key === '3-flacons'
-        ? '3 عبوات  '
+        ? 'ثلاثة عبوات  '
         : key === '5-flacons'
-        ? '5 عبوات'
+        ? 'خمسة عبوات  '
         : ''
       : key === '1-flacon'
       ? '1 Flacon'
@@ -2482,21 +2477,21 @@ const testimonials = [
         <div className="pack-selector-animated">
           {Object.entries(packs).map(([key, pack]) => {
             const packLabel =
-              lang === 'ar'
-                ? key === '1-flacon'
-                  ? 'عبوة 1'
-                  : key === '3-flacons'
-                  ? '3 عبوات'
-                  : key === '5-flacons'
-                  ? '5 عبوات'
-                  : ''
-                : key === '1-flacon'
-                ? '1 Flacon'
+            lang === 'ar'
+              ? key === '1-flacon'
+                ? 'عبوة واحدة'
                 : key === '3-flacons'
-                ? '3 Flacons'
+                ? 'ثلاثة عبوات  '
                 : key === '5-flacons'
-                ? '5 Flacons'
-                : '';
+                ? 'خمسة عبوات  '
+                : ''
+              : key === '1-flacon'
+              ? '1 Flacon'
+              : key === '3-flacons'
+              ? '3 Flacons'
+              : key === '5-flacons'
+              ? '5 Flacons'
+              : '';
             return (
               <label
                 key={key}
@@ -2598,11 +2593,11 @@ const testimonials = [
               <strong className="pack-name-black">
                 {lang === 'ar'
                   ? selectedPack === '1-flacon'
-                    ? 'عبوة 1'
+                    ? 'عبوة واحدة'
                     : selectedPack === '3-flacons'
-                    ? '3 عبوات'
+                    ? 'ثلاثة عبوات  '
                     : selectedPack === '5-flacons'
-                    ? '5 عبوات'
+                    ? 'خمسة عبوات  '
                     : ''
                   : selectedPack === '1-flacon'
                   ? '1 Flacon'
