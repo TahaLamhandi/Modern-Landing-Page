@@ -1421,7 +1421,7 @@ const testimonials = [
 
             <p className="section-desc">
               {lang === "ar"
-                ? ". قصص حقيقية وتجارب ملهمة من أناس وجدوا في Zitalgic® الحل الطبيعي الذي كانوا يبحثون عنه، استمع إلى شهاداتهم واكتشف كيف استعادوا السيطرة على حياتهم واستمتعوا بالراحة التي يستحقونها"
+                ? " قصص حقيقية وتجارب ملهمة من أناس وجدوا في Zitalgic® الحل الطبيعي الذي كانوا يبحثون عنه، استمع إلى شهاداتهم واكتشف كيف استعادوا السيطرة على حياتهم واستمتعوا بالراحة التي يستحقونها"
                 : "Des histoires réelles et des témoignages inspirants de personnes ayant trouvé dans Zitalgic® la solution naturelle qu’elles recherchaient. Écoutez leurs récits et découvrez comment elles ont repris le contrôle de leur vie et retrouvé le confort qu’elles méritent."}
             </p>
 

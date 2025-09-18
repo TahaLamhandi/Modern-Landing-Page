@@ -3350,11 +3350,11 @@ section {
   }
 
   .hero-title {
-    font-size: 3.1rem;
+    font-size: 3.5rem;
   }
 
   .hero-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .hero-info-section {
@@ -3382,7 +3382,7 @@ section {
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
 
   .package-name {
@@ -4178,11 +4178,11 @@ section {
   }
 
   .hero-title {
-    font-size: 3.1rem;
+    font-size: 3.5rem;
   }
 
   .hero-subtitle {
-    font-size: 1.4rem;
+    font-size: 1.8rem;
   }
 
   .hero-info-section {
@@ -4210,7 +4210,7 @@ section {
 
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 2.4rem;
+    font-size: 2.8rem;
   }
 
   .vertical-thumbnail-item {
@@ -6420,7 +6420,7 @@ section {
 @media (max-width: 768px) {
   h1,
   .hero-title {
-    font-size: 2.6rem !important;
+    font-size: 3rem !important;
   }
   h2,
   .section-header h2 {
@@ -7257,12 +7257,12 @@ section {
   }
   
   .hero-title {
-    font-size: 2.2rem !important;
+    font-size: 2.6rem !important;
     margin-bottom: 10px;
   }
   
   .hero-subtitle {
-    font-size: 1.1rem !important;
+    font-size: 1.5rem !important;
     margin-bottom: 15px;
   }
   
@@ -7581,11 +7581,11 @@ section {
   }
   
   .hero-title {
-    font-size: 1.9rem !important;
+    font-size: 2.3rem !important;
   }
   
   .hero-subtitle {
-    font-size: 1rem !important;
+    font-size: 1.3rem !important;
   }
   
   .section-header h2 {
@@ -8293,13 +8293,13 @@ section {
 /* Mobile adjustments to ensure consistent positioning */
 @media (max-width: 768px) {
   .hero-title {
-    font-size: 2.2rem !important;
+    font-size: 2.6rem !important;
     line-height: 1.2;
     margin-bottom: 10px;
   }
   
   .hero-subtitle {
-    font-size: 1.1rem !important;
+    font-size: 1.5rem !important;
     line-height: 1.3;
     margin-bottom: 15px;
   }
@@ -8307,7 +8307,7 @@ section {
   /* Ensure Arabic text doesn't affect layout */
   [dir="rtl"] .hero-title,
   [dir="rtl"] .hero-subtitle {
-    font-size: 2.2rem !important;
+    font-size: 2.6rem !important;
     line-height: 1.2;
   }
 }
@@ -8315,19 +8315,19 @@ section {
 /* Extra small devices */
 @media (max-width: 480px) {
   .hero-title {
-    font-size: 1.9rem !important;
+    font-size: 2.3rem !important;
   }
   
   .hero-subtitle {
-    font-size: 1rem !important;
+    font-size: 1.3rem !important;
   }
   
   [dir="rtl"] .hero-title {
-    font-size: 1.9rem !important;
+    font-size: 2.3rem !important;
   }
   
   [dir="rtl"] .hero-subtitle {
-    font-size: 1rem !important;
+    font-size: 1.3rem !important;
   }
 }
 
