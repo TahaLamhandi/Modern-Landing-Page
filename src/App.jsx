@@ -291,27 +291,21 @@ useEffect(() => {
     original: 250, 
     savings: 30, 
     quantity: '1 Flacon',
-    quantity_ar: '1 عبوة',
-    treatment: 'Traitement 20 jours',
-    treatment_ar: 'علاج 20 يوم'
+    quantity_ar: '1 عبوة'
   },
   '3-flacons': { 
     price: 600, 
     original: 750, 
     savings: 150, 
     quantity: '3 Flacons',
-    quantity_ar: '3 عبوات',
-    treatment: 'Traitement 2 mois',
-    treatment_ar: 'علاج شهرين'
+    quantity_ar: '3 عبوات'
   },
   '5-flacons': { 
     price: 900, 
     original: 1250, 
     savings: 350, 
     quantity: '5 Flacons',
-    quantity_ar: '5 عبوات',
-    treatment: 'Traitement 3 mois 1/2',
-    treatment_ar: 'علاج 3 أشهر ونصف'
+    quantity_ar: '5 عبوات'
   },
 };
 
@@ -1376,9 +1370,6 @@ const testimonials = [
                         <div className="package-name">
                           {lang === "ar" ? packs['1-flacon'].quantity_ar : packs['1-flacon'].quantity}
                         </div>
-                        <div className="package-treatment">
-                          {lang === "ar" ? packs['1-flacon'].treatment_ar : packs['1-flacon'].treatment}
-                        </div>
                         <div className="package-pricing">
                           <span className="package-price">{packs['1-flacon'].price} DH</span>
                           <span className="package-old">{packs['1-flacon'].original} DH</span>
@@ -2102,23 +2093,6 @@ const testimonials = [
       ? '5 Flacons'
       : ''}
   </h3>
-  <p>
-    {lang === 'ar'
-      ? key === '1-flacon'
-        ? 'علاج 20 يوم'
-        : key === '3-flacons'
-        ? 'علاج شهرين'
-        : key === '5-flacons'
-        ? 'علاج 3 أشهر ونصف'
-        : ''
-      : key === '1-flacon'
-      ? 'Traitement 20 jours'
-      : key === '3-flacons'
-      ? 'Traitement 2 mois'
-      : key === '5-flacons'
-      ? 'Traitement 3 mois 1/2'
-      : ''}
-  </p>
           </div>
 
 
