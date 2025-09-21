@@ -2028,7 +2028,7 @@ const testimonials = [
 
           <div className="solution-card">
             <Award size={28} className="solution-card-icon formula-icon" />
-            <h3>{lang === 'ar' ? 'تركيبة مرخّصة' : 'Formule Brevetée'}</h3>
+            <h3>{lang === 'ar' ? 'تركيبة مبتكرة' : 'Formule Brevetée'}</h3>
             <p>
               {lang === "ar"
                 ? "ثمرة البحث والتطوير وخبرة مختبر Authentic Laboratory®."
@@ -2274,13 +2274,13 @@ const testimonials = [
         <div className="scientific-card-new">
           <div className="scientific-card-icon"><FlaskConical size={32} /></div>
           <h4>{lang === 'ar' ? 'مختبر Authentic Laboratory®' : 'Authentic Laboratory®'}</h4>
-          <p>{lang === 'ar' ? 'مختبر مغربي متخصص في تطوير حلول الصحة.' : 'Un laboratoire Marocain spécialisé dans le développement de solutions de santé.'}</p>
+          <p>{lang === 'ar' ? 'مختبر متخصص في انتاج المكملات الغذائية والزيوت العطرية العلاجية' : 'Un laboratoire Marocain spécialisé dans le développement de solutions de santé.'}</p>
         </div>
 
         <div className="scientific-card-new featured">
           <div className="scientific-card-icon"><Award size={32} /></div>
           <h4>{lang === 'ar' ? 'تركيبة حاصلة على براءة اختراع' : 'Formule Brevetée'}</h4>
-          <p>{lang === 'ar' ? 'تركيبة علمية مبتكرة محمية و100٪ مغربية.' : 'Une formule scientifique innovante protégée et 100% Marocaine.'}</p>
+          <p>{lang === 'ar' ? 'تركيبة علمية مبتكرة ومحمية' : 'Une formule scientifique innovante protégée et 100% Marocaine.'}</p>
         </div>
 
         <div className="scientific-card-new">
